@@ -17,6 +17,8 @@
     #└─┬───┴─┬─────────────────
       #│-v-4 │ Prompt Appearance
       #└─────┴───────────────────
+        # TODO add lines for current hg / git branch, color depending on whether
+        #      current
 
         # text colors -v-
         TXTBLK='\[\e[0;30m\]'           # Black - Regular
