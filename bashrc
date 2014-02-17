@@ -81,7 +81,7 @@
             if [ $prev_exit = 0 ] ; then
               the_ps1+="${TXTGRN}✓"
             else
-              the_ps1+="${TXTRED}✗ (exit code ${prev_exit})"
+              the_ps1+="${TXTRED}✗ (${prev_exit})"
             fi
             the_ps1+="${TXTRST}\n\n"
           fi
@@ -89,7 +89,7 @@
           the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H "
           the_ps1+="${BLDBLU}\w\n"
 
-          the_ps1+="${TXTGRN}[${BLDBLU}\!${TXTGRN}] 〉${TXTRST}"
+          the_ps1+="${TXTGRN}[${BLDBLU}!\!${TXTGRN}] 〉${TXTRST}"
           export PS1=${the_ps1}
         }
         PROMPT_COMMAND=change_ps1
@@ -108,4 +108,4 @@
         # echo -n <value> will supress trailing newline
         # -^-
 
-# vim: set fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=2 sts=2 :
+# vim: set nowrap fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=2 sts=2 :
