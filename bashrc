@@ -84,24 +84,14 @@
             the_ps1+="${TXTRST}\n\n"
           fi
 
-          the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H\n"
-          the_ps1+="${BLDBLU} pwd: \w\n"
+          the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H "
+          the_ps1+="${BLDBLU}\w\n"
 
-          local git_diff=$(git diff 2>/dev/null)
-          if [ $? != 0 ] ; then
-            if [ git_diff = "" ] ; then
-              the_ps1+="${TXTRED}"
-            else
-              the_ps1+="${TXTYLW}"
-            fi
-            the_ps1+="git branch: $(git branch)\n"
-          fi
-
-          the_ps1+="${BLDYLW}[${BLDBLU}\!${BLDYLW}]${BLDBLU} ⇒ ${TXTRST}"
+          the_ps1+="${TXTGRN}[${BLDBLU}\!${TXTGRN}] 〉${TXTRST}"
           export PS1=${the_ps1}
         }
         PROMPT_COMMAND=change_ps1
-        export PS2="${BLDGRN}…${BLDBLU}⇒ ${TXTRST}"
+        export PS2="${BLDBLU}    … ${TXTGRN}〉${TXTRST}"
 
         # Notes:
         # ===-v-
