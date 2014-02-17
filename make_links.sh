@@ -11,7 +11,7 @@
 #└─────┴───────────
 
 dot_files_dir=~/dot_files
-old_files_dir=~/dotfiles_old
+old_files_dir=~/dot_files_old
 dot_files="bashrc vimrc hgrc"
 
 #│-v-1 │ Main Body of Script
@@ -23,7 +23,7 @@ cd $dot_files_dir/
 
 for dot_file in $dot_files; do
     mv ~/.$dot_file $old_files_dir/
-    ln -s $dot_files_dir/$dot_file ~/.$file
+    ln -s $dot_files_dir/$dot_file ~/.$dot_file
 done
 
 # vim: set ft=sh fmr=-v-,-^- fdm=marker cms=#%s et ts=4 sw=4 sts=4 :
