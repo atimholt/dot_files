@@ -1,8 +1,7 @@
 
-┌─────────────────────┐
-│About This Repository│
-│<atimholt@gmail.com> │
-└─────────────────────┘
+│About This Repository
+│<atimholt@gmail.com> 
+└──────────────────────────────────────────
 
 This repository is for the easy tracking and distribution of my *nix settings
 dot files. Upon installing a new system, my methodology up to now has been to mv
