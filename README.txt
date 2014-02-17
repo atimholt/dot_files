@@ -1,6 +1,6 @@
 
 │About This Repository
-│<atimholt@gmail.com> 
+│ atimholt@gmail.com  
 └──────────────────────────────────────────
 
 This repository is for the easy tracking and distribution of my *nix settings
