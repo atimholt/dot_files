@@ -73,7 +73,7 @@
         {
           prev_exit=$?
           the_ps1=""
-          if [ terminal_is_new = 1 ] ; then
+          if [ $terminal_is_new = 1 ] ; then
             terminal_is_new=0
           else
             if [ $prev_exit = 0 ] ; then
@@ -83,9 +83,9 @@
             fi
           fi
 
-          the_ps1+="${TXTCYN}\w\n"
+          the_ps1+="${TXTBLU}\w\n"
 
-          the_ps1+="${TXTCYN} ⇒ ${TXTRST}"
+          the_ps1+="${TXTBLU} ⇒ ${TXTRST}"
           export PS1=${the_ps1}
         }
         PROMPT_COMMAND=change_ps1
