@@ -71,14 +71,15 @@
 
         function change_ps1
         {
+          prev_exit=$?
           the_ps1=""
           if [ terminal_is_new = 1 ] ; then
             terminal_is_new=0
           else
-            if [ /$? = 0 ] ; then
+            if [ $prev_exit = 0 ] ; then
               the_ps1+="${TXTGRN}✓\n\n"
             else
-              the_ps1+="${TXTRED}✗ (exit code ${$?})\n\n"
+              the_ps1+="${TXTRED}✗ (exit code ${prev_exit})\n\n"
             fi
           fi
 
