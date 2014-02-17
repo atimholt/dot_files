@@ -83,13 +83,14 @@
             fi
           fi
 
-          the_ps1+="${TXTBLU}\w\n"
+          the_ps1+="${TXTGRN}\u${TXTCYN}@${TXTGRN}\H\n"
+          the_ps1+="${TXTCYN} pwd: \w\n"
 
-          the_ps1+="${TXTBLU} ⇒ ${TXTRST}"
+          the_ps1+="${TXTYLW}[${TXTCYN}\!${TXTYLW}]${TXTCYN} ⇒ ${TXTRST}"
           export PS1=${the_ps1}
         }
         PROMPT_COMMAND=change_ps1
-        export PS2="${TXTCYN}…⇒ ${TXTRST}"
+        export PS2="${TXTGRN}…${TXTCYN}⇒ ${TXTRST}"
 
         # Notes:
         # ===-v-
