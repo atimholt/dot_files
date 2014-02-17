@@ -71,20 +71,31 @@
 
         function change_ps1
         {
-          prev_exit=$?
-          the_ps1=""
+          local prev_exit=$?
+          local the_ps1=""
           if [ $terminal_is_new = 1 ] ; then
             terminal_is_new=0
           else
             if [ $prev_exit = 0 ] ; then
-              the_ps1+="${TXTGRN}✓\n\n"
+              the_ps1+="${TXTGRN}✓"
             else
-              the_ps1+="${TXTRED}✗ (exit code ${prev_exit})\n\n"
+              the_ps1+="${TXTRED}✗ (exit code ${prev_exit})"
             fi
+            the_ps1+="${TXTRST}\n\n"
           fi
 
           the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H\n"
           the_ps1+="${BLDBLU} pwd: \w\n"
+
+          local git_diff=$(git diff 2>/dev/null)
+          if [ $? != 0 ] ; then
+            if [ git_diff = "" ] ; then
+              the_ps1+="${TXTRED}"
+            else
+              the_ps1+="${TXTYLW}"
+            fi
+            the_ps1+="git branch: $(git branch)\n"
+          fi
 
           the_ps1+="${BLDYLW}[${BLDBLU}\!${BLDYLW}]${BLDBLU} ⇒ ${TXTRST}"
           export PS1=${the_ps1}
