@@ -7,6 +7,11 @@
 # │For use upon a fresh OS install or upon the addition of another dot file.│
 # └─────────────────────────────────────────────────────────────────────────┘
 
+#│-v-1 │ To-Do's
+#└─────┴─────────
+# TODO rework file names and write another (powershell) script for multi-system
+#      compatability and automatic generation of variable "dot_files"
+
 #│-v-1 │ Variables
 #└─────┴───────────
 
