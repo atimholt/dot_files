@@ -26,6 +26,8 @@
         #      current
 
         # text colors -v-
+        # Taken from (then fixed proper):
+        # http://www.reddit.com/r/commandline/comments/1do8cb/A/c9sdp29
         TXTBLK='\[\e[0;30m\]'           # Black - Regular
         TXTRED='\[\e[0;31m\]'           # Red
         TXTGRN='\[\e[0;32m\]'           # Green
