@@ -3,7 +3,7 @@
 #│-v-1 │ To-Do's
 #└─────┴─────────
   # (not actually settings, just settings todo's)
-  # TODO Make a neat PS1
+  # TODO sensible aliases
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
@@ -22,8 +22,6 @@
     #└─┬───┴─┬─────────────────
       #│-v-4 │ Prompt Appearance
       #└─────┴───────────────────
-        # TODO add lines for current hg / git branch, color depending on whether
-        #      current
 
         # text colors -v-
         # Taken from (then fixed proper):
