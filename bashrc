@@ -11,6 +11,11 @@
   #└─────┴──────────
     # vi input mode for the command line
     set -o vi
+
+    # default editors
+    export EDITOR="vim"
+    export VISUAL="vim"
+
   #│-v-2 │ Appearance
   #└─┬───┴─┬──────────
     #│-v-3 │ Built-in Settings
