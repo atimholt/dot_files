@@ -97,12 +97,12 @@
           # repo branch and status by color
           # git code adapted from http://thepugautomatic.com/2008/12/git-dirty-prompt/
           current_branch="$(git branch --no-color 2> /dev/null | sed -e \
-                         '/^[^*]/d' -e "s/* \(.*\)/[\1]/")"
-          if [ "${current_branch}" != "[]" ] ; then
-            if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] ; then
-              the_ps1+="${TXTGRN}"
-            else
+                         '/^[^*]/d' -e "s/* \(.*\)/[git:\1]/")"
+          if [ "${current_branch}" != "[git:]" ] ; then
+            if [ -n "$(git status -s 2> /dev/null)" ] ; then
               the_ps1+="${TXTYLW}"
+            else
+              the_ps1+="${TXTGRN}"
             fi
             the_ps1+=" ${current_branch}"
           fi
