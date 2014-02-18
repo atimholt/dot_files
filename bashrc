@@ -50,9 +50,11 @@
         terminal_is_new=1
 
         function change_ps1
-        {
+        { #-v-
           local prev_exit=$?
           local the_ps1=""
+
+          # “pre” prompt stuff.
           if [ $terminal_is_new = 1 ] ; then
             terminal_is_new=0
           else
@@ -61,14 +63,17 @@
             else
               the_ps1+="${TXTRED}✗ (${prev_exit})"
             fi
-            the_ps1+="${TXTRST}\n\n"
-          fi
+            the_ps1+="${TXTRST}\n\n" # gap between associates this with previous
+          fi                         # command.
 
+          # basic info.
           the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H "
           the_ps1+="${BLDBLU}\w"
 
           # repo branch and status by color
           # git code adapted from http://thepugautomatic.com/2008/12/git-dirty-prompt/
+          # TODO indicate whether is the head.
+          #-v-
           current_branch="$(git branch --no-color 2> /dev/null | sed -e \
                          '/^[^*]/d' -e "s/* \(.*\)/\1/")"
           if [ -n "${current_branch}" ] ; then
@@ -89,10 +94,13 @@
               the_ps1+=" [hg:${current_branch}]"
             fi
           fi
+          #-^-
 
+          # history number of current command.
           the_ps1+="\n${TXTGRN}[${BLDBLU}!\!${TXTGRN}] 〉${TXTRST}"
+
           export PS1=${the_ps1}
-        }
+        } #-^-
         PROMPT_COMMAND=change_ps1
         export PS2="${BLDBLU}    … ${TXTGRN}〉${TXTRST}"
 
