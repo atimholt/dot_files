@@ -99,7 +99,7 @@
           current_branch="$(git branch --no-color 2> /dev/null | sed -e \
                          '/^[^*]/d' -e "s/* \(.*\)/[git:\1]/")"
           if [ "${current_branch}" != "[git:]" ] ; then
-            if [ -n "$(git status -s 2> /dev/null)" ] ; then
+            if [ -n "$(git status -s -u no 2> /dev/null)" ] ; then
               the_ps1+="${TXTYLW}"
             else
               the_ps1+="${TXTGRN}"
