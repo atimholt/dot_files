@@ -92,9 +92,22 @@
           fi
 
           the_ps1+="${BLDGRN}\u${BLDBLU}@${BLDGRN}\H "
-          the_ps1+="${BLDBLU}\w\n"
+          the_ps1+="${BLDBLU}\w"
 
-          the_ps1+="${TXTGRN}[${BLDBLU}!\!${TXTGRN}] 〉${TXTRST}"
+          # repo branch and status by color
+          # git code adapted from http://thepugautomatic.com/2008/12/git-dirty-prompt/
+          current_branch="$(git branch --no-color 2> /dev/null | sed -e \
+                         '/^[^*]/d' -e "s/* \(.*\)/[\1]/")"
+          if [ "${current_branch}" != "[]" ] ; then
+            if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] ; then
+              the_ps1+="${TXTGRN}"
+            else
+              the_ps1+="${TXTYLW}"
+            fi
+            the_ps1+=" ${current_branch}"
+          fi
+
+          the_ps1+="\n${TXTGRN}[${BLDBLU}!\!${TXTGRN}] 〉${TXTRST}"
           export PS1=${the_ps1}
         }
         PROMPT_COMMAND=change_ps1
