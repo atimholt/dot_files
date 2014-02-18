@@ -3,18 +3,37 @@
 #│-v-1 │ To-Do's
 #└─────┴─────────
   # (not actually settings, just settings todo's)
-  # TODO sensible aliases
+  # For more todo’s, try /-ing “TODO”.
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
   #│-v-2 │ Behavior
-  #└─────┴──────────
-    # vi input mode for the command line
-    set -o vi
+  #└─┬───┴─┬────────
+    #│-v-3 │ Built-in Settings
+    #└─────┴───────────────────
+      # vi input mode for the command line
+      set -o vi
 
-    # default editors
-    export EDITOR="vim"
-    export VISUAL="vim"
+      # default editors
+      export EDITOR="vim"
+      export VISUAL="vim"
+
+    #│-v-3 │ Aliases
+    #└─────┴─────────
+      ## ls
+      ll='ls -l'
+      la='ls -A'
+
+      ## Mercurial
+      function hgdiff()
+      {
+        hg diff $1 | vim - -R -M
+      }
+
+      function hghp()
+      {
+        hg help $1 | gvim - -R -M
+      }
 
   #│-v-2 │ Appearance
   #└─┬───┴─┬──────────
