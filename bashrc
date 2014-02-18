@@ -78,6 +78,16 @@
               the_ps1+="${TXTGRN}"
             fi
             the_ps1+=" [git:${current_branch}]"
+          else # Only necessary if it’s not already another kind of repo.
+            current_branch="$(hg branch 2> /dev/null)"
+            if [ -n "${current_branch}" ] ; then
+              if [ -n "$(hg stat -q 2> /dev/null)" ] ; then
+                the_ps1+="${TXTYLW}"
+              else
+                the_ps1+="${TXTGRN}"
+              fi
+              the_ps1+=" [hg:${current_branch}]"
+            fi
           fi
 
           the_ps1+="\n${TXTGRN}[${BLDBLU}!\!${TXTGRN}] 〉${TXTRST}"
