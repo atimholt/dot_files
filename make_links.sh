@@ -12,7 +12,7 @@
 
 dot_files_dir=~/dot_files
 old_files_dir=~/dot_files_old
-dot_files="bashrc vimrc hgrc"
+dot_files="bashrc vimrc hgrc gitconfig"
 
 #│-v-1 │ Main Body of Script
 #└─────┴─────────────────────
