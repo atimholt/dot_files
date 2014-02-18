@@ -44,36 +44,7 @@
         BLDPUR='\[\e[1;35m\]'           # Purple
         BLDCYN='\[\e[1;36m\]'           # Cyan
         BLDWHT='\[\e[1;37m\]'           # White
-        UNDBLK='\[\e[4;30m\]'           # Black - Underline
-        UNDRED='\[\e[4;31m\]'           # Red
-        UNDGRN='\[\e[4;32m\]'           # Green
-        UNDYLW='\[\e[4;33m\]'           # Yellow
-        UNDBLU='\[\e[4;34m\]'           # Blue
-        UNDPUR='\[\e[4;35m\]'           # Purple
-        UNDCYN='\[\e[4;36m\]'           # Cyan
-        UNDWHT='\[\e[4;37m\]'           # White
-        BAKBLK='\[\e[40m\]'             # Black - Background
-        BAKRED='\[\e[41m\]'             # Red
-        BAKGRN='\[\e[42m\]'             # Green
-        BAKYLW='\[\e[43m\]'             # Yellow
-        BAKBLU='\[\e[44m\]'             # Blue
-        BAKPUR='\[\e[45m\]'             # Purple
-        BAKCYN='\[\e[46m\]'             # Cyan
-        BAKWHT='\[\e[47m\]'             # White
         TXTRST='\[\e[0m\]'              # Text Reset
-
-        TXT236='\[\e[38;5;236m\]'       # Darkest Grey - Regular
-        TXT238='\[\e[38;5;238m\]'       # Darker Grey
-        TXTDGY='\[\e[38;5;000m\]'       # Dark Grey
-        TXT232='\[\e[38;5;232m\]'       # Black
-        TXTBRD='\[\e[38;5;088m\]'       # Bright Red
-        TXTBBR='\[\e[38;5;196m\]'       # Brightest Red
-
-        BAK233='\[\e[48;5;233m\]'       # Darkest Grey - Background
-        BAK241='\[\e[48;5;241m\]'       # Darker Grey
-        BAK000='\[\e[48;5;000m\]'       # Dark Grey
-        BAKBRD='\[\e[48;5;130m\]'       # Bright Red
-        BAKBBR='\[\e[48;5;166m\]'       # Brightest Red
         #-^-
 
         terminal_is_new=1
