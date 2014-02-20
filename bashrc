@@ -21,7 +21,7 @@
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
-      ll='ls -l'
+      ll='ls -lFh'
       la='ls -A'
 
       ## Mercurial
