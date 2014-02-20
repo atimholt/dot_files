@@ -4,6 +4,7 @@
 #└─────┴─────────
   # (not actually settings, just settings todo's)
   # For more todo’s, try /-ing “TODO”.
+  # TODO refactor bashprompt to function pieces, maybe.
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
