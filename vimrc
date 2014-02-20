@@ -42,7 +42,7 @@
   " Expand the runtime path to a global, cloud-based location.
   if has('win32')
     " These probably don’t have to be different, but eh.
-    set runtimepath+=~/Dropbox/Vim/GlobalRuntimePath
+    set runtimepath+=$HOME/Dropbox/Vim/GlobalRuntimePath
   else
     set runtimepath+=~/Dropbox/Vim/GlobalRuntimePath
   endif
