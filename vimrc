@@ -34,6 +34,7 @@
   " TODO Have timdisplaymode switch display mode switched into!
   " TODO Write some filter-switching function, mapped to <leader>F or
   "      something, that changes NERDTree's filter list. Maybe with a menu.
+  " TODO begin (partial?) transition from Pathogen to Vundle.
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
