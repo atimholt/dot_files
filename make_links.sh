@@ -27,6 +27,7 @@ dot_files["bashrc"]=".bashrc"
 dot_files["vimrc"]=".vimrc"
 dot_files["hgrc"]=".hgrc"
 dot_files["gitconfig"]=".gitconfig"
+dot_files["inputrc"]=".inputrc"
 
 #│-v-1 │ Main Body of Script
 #└─────┴─────────────────────
