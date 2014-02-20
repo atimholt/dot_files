@@ -202,17 +202,7 @@
     "└─────┴────────────────────────────
 
       " Quick settings access
-        " TODO: Move the function to function area, remap to remap area?
-        "         Honestly, I think not—an exception makes sense here, at least.
-        function! MyQuickSettings()
-          :tabedit $MYVIMRC
-          :lcd $HOME
-          :vs ~/Dropbox/Vim/vimrc.vim
-          :vertical resize 101
-        endfunction
-
-        nnoremap <silent> <F2> :call MyQuickSettings()<cr>
-
+        nnoremap <silent> <F2> :tabedit $MYVIMRC<cr>
 
       " Reload vimrc when saved
         au! BufWritePost $MYVIMRC source $MYVIMRC
