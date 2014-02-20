@@ -35,6 +35,8 @@
   " TODO Write some filter-switching function, mapped to <leader>F or
   "      something, that changes NERDTree's filter list. Maybe with a menu.
   " TODO begin (partial?) transition from Pathogen to Vundle.
+  " TODO look into changing “__keyword” style ‘links’ herein to actual tag
+  "      links
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
