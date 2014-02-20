@@ -25,7 +25,6 @@
   " TODO Set up some cool Arpeggio mappings.
   "      Simulate touchcursor for vim arrow-key reassignments.
   " TODO Look into the 'comments' setting and gq (to add "/// " and stuff)
-  " TODO Actually clone vim-origami plugin, rather than just download.
   " TODO Extract multi-compatible font changing shpiel to a function, instead
   "      of repetitive if, else block.
   " TODO Make special vim characters into unicode symbols (like the
@@ -62,13 +61,27 @@
 "│-v-1 │ Plug-in Settings
 "└─┬───┴─┬────────────────
   "│-v-2 │ plug-in manager
-  "└─────┴─────────────────
-    " pathogen startup stuff
+  "└─┬───┴─┬───────────────
+    "│-v-3 │ Pathogen
+    "└─────┴──────────
       filetype off
       call pathogen#infect()
       call pathogen#helptags()
       filetype plugin on
 
+    "│-v-3 │ Vundle
+    "└─────┴────────
+      filetype off
+      set runtimepath+=~/.vim/bundle/vundle/
+
+      call vundle#rc()
+
+      " let Vundle manage Vundle
+      Bundle 'gmarik/vundle'
+
+      Bundle 'kshenoy/vim-origami'
+
+      filetype plugin indent on
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
