@@ -36,6 +36,7 @@
   " TODO begin (partial?) transition from Pathogen to Vundle.
   " TODO look into changing “__keyword” style ‘links’ herein to actual tag
   "      links
+  " TODO Maybe try YouCompleteMe plugin.
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
