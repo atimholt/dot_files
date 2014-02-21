@@ -73,6 +73,7 @@
 
     "│-v-3 │ Vundle
     "└─────┴────────
+      " TODO Evaluate using VAM or vim-flavor instead.
       filetype off
       set runtimepath+=~/.vim/bundle/vundle/
 
