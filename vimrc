@@ -105,6 +105,11 @@
       Bundle 'nathanaelkane/vim-indent-guides'
       Bundle 'vimwiki/vimwiki'
       " Bundle 'Lokaltog/powerline'
+      " Replaces powerline:
+      Bundle 'bling/vim-airline'
+
+      "" Plugins to try:
+
 
       filetype plugin indent on
 
@@ -238,6 +243,14 @@
       let g:surround_{char2nr("q")} = "“\r”"
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
+    "│-v-3 │ airline
+    "└─────┴─────────
+      let g:airline_left_sep='▒'
+      let g:airline_right_sep='▒'
+      " let g:airline_left_sep='▌'
+      " let g:airline_right_sep='▐'
+      " let g:airline_left_sep='▶'
+      " let g:airline_right_sep='◀'
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
@@ -301,7 +314,8 @@
         "└─────┴─────────────
           ":set statusline=%F%m%r%h%w\ (%{&ff})\ typ:%Y\ ASCII=\%04.8b\ HEX=\%04.4B\ %l,%v %p%%\ LEN=%L
           "set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%08O:%02B]
-          set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%02B]
+          " This is the one I was using, but I’m using vim-airline now.
+          " set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%02B]
 
           set laststatus=2
             " “The value of this option influences when the
