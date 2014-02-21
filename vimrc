@@ -189,8 +189,12 @@
       let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
       " Enable importing of custom modules for python interpolation.
-      " TODO Universalize this.
-      py import sys; sys.path.append("C:\\Users\\atimh_000\\Dropbox\\Vim\\GlobalRuntimePath\\UltiSnipsSnippets\\pymodules\\")
+      if has('win32')
+        py import sys; sys.path.append("C:\\Users\\atimh_000\\Dropbox\\Vim\\GlobalRuntimePath\\UltiSnipsSnippets\\pymodules\\")
+      else
+        " This should work, but test it out.
+        py import sys; sys.path.append("/home/tim/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/pymodules/")
+      endif
 
     "│-v-3 │ Arpeggio Settings
     "└─────┴───────────────────
