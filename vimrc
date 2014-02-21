@@ -37,6 +37,7 @@
   " TODO look into changing “__keyword” style ‘links’ herein to actual tag
   "      links
   " TODO Maybe try YouCompleteMe plugin.
+  " TODO Evaluate which of the many rainbow parethesis plugins is best.
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
@@ -81,6 +82,28 @@
       Bundle 'gmarik/vundle'
 
       Bundle 'kshenoy/vim-origami'
+      Bundle 'a.vim'
+      Bundle 'sjl/badwolf'
+      Bundle 'git://git.wincent.com/command-t.git'
+      Bundle 'Conque-Shell'
+      " Bundle 'camelcasemotion'
+      Bundle 'kien/ctrlp.vim'
+      Bundle 'sjl/gundo.vim'
+      " Bundle 'mbbill/undotree'
+      Bundle 'scrooloose/nerdtree'
+      Bundle 'noahfrederick/vim-hemisu'
+      Bundle 'roman/rainbow'
+      Bundle 'tpope/vim-repeat'
+      Bundle 'ShowMarks'
+      Bundle 'tpope/vim-surround'
+      Bundle 'bpstahlman/txtfmt'
+      Bundle 'SirVer/ultisnips'
+      Bundle 'kana/vim-arpeggio'
+      Bundle 'OmniCppComplete'
+      " Bundle 'Lokaltog/vim-easymotion'
+      Bundle 'nathanaelkane/vim-indent-guides'
+      Bundle 'vimwiki/vimwiki'
+      " Bundle 'Lokaltog/powerline'
 
       filetype plugin indent on
 
