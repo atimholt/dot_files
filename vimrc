@@ -109,6 +109,9 @@
       Bundle 'bling/vim-airline'
 
       "" Plugins to try:
+      " Bundle 'git://repo.or.cz/vcscommand'
+      Bundle 'ludovicchabant/vim-lawrencium'
+      Bundle 'tpope/vim-fugitive'
 
 
       filetype plugin indent on
@@ -245,12 +248,18 @@
       let g:surround_{char2nr("i")} = "\r"
     "│-v-3 │ airline
     "└─────┴─────────
-      let g:airline_left_sep='▒'
-      let g:airline_right_sep='▒'
+      " let g:airline_left_sep='▒'
+      " let g:airline_right_sep='▒'
       " let g:airline_left_sep='▌'
       " let g:airline_right_sep='▐'
-      " let g:airline_left_sep='▶'
-      " let g:airline_right_sep='◀'
+      let g:airline_left_sep='▶'
+      let g:airline_right_sep='◀'
+
+      "Trying this one:
+      let g:airline#extensions#tabline#enabled = 1
+      let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+      let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+      let g:airline#extensions#whitespace#enabled = 0
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
