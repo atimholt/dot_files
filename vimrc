@@ -107,6 +107,7 @@
       " Bundle 'Lokaltog/powerline'
       " Replaces powerline:
       Bundle 'bling/vim-airline'
+      Bundle 'scrooloose/nerdcommenter'
 
       "" Plugins to try:
       " Bundle 'git://repo.or.cz/vcscommand'
