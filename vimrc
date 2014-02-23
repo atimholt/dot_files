@@ -248,13 +248,16 @@
       let g:surround_{char2nr("i")} = "\r"
     "│-v-3 │ airline
     "└─────┴─────────
-      " let g:airline_left_sep='▒'
-      " let g:airline_right_sep='▒'
-      " let g:airline_left_sep='▌'
-      " let g:airline_right_sep='▐'
-      " let g:airline_left_sep='▶'
-      " let g:airline_right_sep='◀'
-      let g:airline_powerline_fonts=1
+      if has('win32')
+        let g:airline_left_sep='▒'
+        let g:airline_right_sep='▒'
+        " let g:airline_left_sep='▌'
+        " let g:airline_right_sep='▐'
+        " let g:airline_left_sep='▶'
+        " let g:airline_right_sep='◀'
+      else
+        let g:airline_powerline_fonts=1
+      endif
 
       "Trying this one:
       let g:airline#extensions#tabline#enabled = 1
@@ -668,7 +671,7 @@
             set nospell
 
             if has('win32')
-              set guifont=Consolas\ for\ Powerline:h16
+              set guifont=Consolas:h16
             else
               set guifont=Consolas\ for\ Powerline\ 16
             endif
@@ -1025,7 +1028,7 @@
             if has('win32')
               " :set guifont=consolas:h12
               " set guifont=Liberation\ Mono\ for\ Powerline:h9
-              set guifont=Liberation\ Mono\ for\ Powerline:h18
+              set guifont=Liberation\ Mono:h18
             else
               set guifont=Liberation\ Mono\ for\ Powerline\ 18
             endif
@@ -1045,7 +1048,7 @@
             setlocal linebreak
 
             if has('win32')
-              set guifont=Consolas\ for\ Powerline:h20
+              set guifont=Consolas:h20
             else
               set guifont=Consolas\ for\ Powerline\ 16
             endif
