@@ -33,7 +33,6 @@
   " TODO Have timdisplaymode switch display mode switched into!
   " TODO Write some filter-switching function, mapped to <leader>F or
   "      something, that changes NERDTree's filter list. Maybe with a menu.
-  " TODO begin (partial?) transition from Pathogen to Vundle.
   " TODO look into changing “__keyword” style ‘links’ herein to actual tag
   "      links
   " TODO Maybe try YouCompleteMe plugin.
@@ -253,8 +252,9 @@
       " let g:airline_right_sep='▒'
       " let g:airline_left_sep='▌'
       " let g:airline_right_sep='▐'
-      let g:airline_left_sep='▶'
-      let g:airline_right_sep='◀'
+      " let g:airline_left_sep='▶'
+      " let g:airline_right_sep='◀'
+      let g:airline_powerline_fonts=1
 
       "Trying this one:
       let g:airline#extensions#tabline#enabled = 1
@@ -668,9 +668,9 @@
             set nospell
 
             if has('win32')
-              set guifont=Consolas:h16
+              set guifont=Consolas\ for\ Powerline:h16
             else
-              set guifont=Consolas\ 16
+              set guifont=Consolas\ for\ Powerline\ 16
             endif
             call ToggleFullScreen()
 
@@ -1024,10 +1024,10 @@
 
             if has('win32')
               " :set guifont=consolas:h12
-              " set guifont=Liberation\ Mono:h9
-              set guifont=Liberation\ Mono:h18
+              " set guifont=Liberation\ Mono\ for\ Powerline:h9
+              set guifont=Liberation\ Mono\ for\ Powerline:h18
             else
-              set guifont=Liberation\ Mono\ 18
+              set guifont=Liberation\ Mono\ for\ Powerline\ 18
             endif
 
             colorscheme badwolf
@@ -1045,9 +1045,9 @@
             setlocal linebreak
 
             if has('win32')
-              set guifont=Consolas:h20
+              set guifont=Consolas\ for\ Powerline:h20
             else
-              set guifont=Consolas\ 16
+              set guifont=Consolas\ for\ Powerline\ 16
             endif
 
             colorscheme timatrix
