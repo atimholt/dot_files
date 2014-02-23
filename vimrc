@@ -74,9 +74,9 @@
     "└─────┴────────
       " TODO Evaluate using VAM or vim-flavor instead.
       filetype off
-      set runtimepath+=~/.vim/bundle/vundle/
+      set runtimepath+=~/.vim/vbundle/vundle/
 
-      call vundle#rc()
+      call vundle#rc("~/.vim/vbundle")
 
       " let Vundle manage Vundle
       Bundle 'gmarik/vundle'
