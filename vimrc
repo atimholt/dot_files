@@ -409,6 +409,12 @@
           "small bullet
           :digraph ** 8729
 
+          "Directional quotes
+          :digraph \", 8220
+          :digraph \". 8221
+          :digraph ', 8216
+          :digraph '. 8217
+
         " Some math stuff
           "funcapply, for immediately after a function name and before its
           "arguments
