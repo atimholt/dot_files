@@ -246,29 +246,6 @@ function prompt
 
   # repo branch and status by color
   #-v-
-  $current_branch = ""
-  $git_return = ""
-  $( $git_return = & git branch --no-color ) 2>&1 | Out-Null
-  if ( $($git_return).Length -ne 0 )
-  {
-    ForEach ($line in $git_return)
-    {
-      if ( $line -match "^\s?\*" )
-      {
-        $current_branch = $line -replace "^\s?\*\s?", ""
-      }
-    }
-    $branch_prompt_text = " [git:$current_branch]"
-    if ( $($(git status -s -u no 2> /dev/null) 2>&1 | Out-Null).Length -ne 0 )
-    {
-      Write-Host $branch_prompt_text -NoNewLine -ForegroundColor "darkyellow"
-    }
-    else
-    {
-      Write-Host $branch_prompt_text -NoNewLine -ForegroundColor "darkgreen"
-    }
-    
-  }
   #-^-
 
   Write-Host "`n[" -ForegroundColor "darkgreen" -NoNewLine
