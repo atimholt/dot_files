@@ -212,3 +212,47 @@
       #  Get-ChildItem -Exclude .*
       #}
 
+#│-v-1 │ Prompt Line
+#└─────┴─────────────
+function prompt
+{
+  # Default contents:
+  #"PS $($executionContext.SessionState.Path.CurrentLocation)$('>' * ($nestedPromptLevel + 1)) "
+  ## .Link
+  ## http://go.microsoft.com/fwlink/?LinkID=225750
+  ## .ExternalHelp System.Management.Automation.dll-help.xml
+
+  # Refer to these sites for info:
+  # http://technet.microsoft.com/en-us/library/hh847739.aspx
+
+  #$saved_last_exit_code = $LastExitCode
+  $the_history = $(get-history)
+  $command_number = 1
+  if ( $the_history.Length -ne 0 )
+  {
+    $command_number = $(get-history)[-1].id + 1
+    Write-Host "`n" -NoNewLine
+    #if ( $saved_last_exit_code -eq $null -or $saved_last_exit_code -eq 0 )
+    #{
+      #Write-Host "OK`n" -ForegroundColor "Green"
+    #}
+    #else
+    #{
+      #Write-Host "X $($saved_last_exit_code)`n" -ForegroundColor "Red"
+    #}
+  }
+
+  Write-Host $($executionContext.SessionState.Path.CurrentLocation) -NoNewLine -ForegroundColor "Blue"
+
+  # repo branch and status by color
+  #-v-
+  #-^-
+
+  Write-Host "`n[" -ForegroundColor "darkgreen" -NoNewLine
+
+  Write-Host "r $($command_number)" -ForegroundColor "blue" -NoNewLine
+  Write-Host "] $('>' * ($nestedPromptLevel + 1))" -ForegroundColor "darkgreen" -NoNewLine
+
+# Must return an object
+  " "
+}
