@@ -1,0 +1,22 @@
+# Tim Holt’s custom compose sequences.
+# Default is at /usr/share/X11/locale/en_US.UTF-8/Compose
+# Go there for proper syntax in this file.
+#
+# To make this work (as per
+# http://forums.mate-desktop.org/viewtopic.php?f=2&t=135 ):
+# Put "GTK_IM_MODULE=xim" in /etc/environment
+
+<Multi_key> <period> <period> 		: "…"   ellipsis  # HORIZONTAL ELLIPSIS
+<Multi_key> <P> <I> 			: "¶"   paragraph # PILCROW SIGN
+<Multi_key> <plus> <minus> 		: "±"   plusminus # PLUS-MINUS SIGN
+<Multi_key> <exclam> <exclam> 		: "¡"   exclamdown # INVERTED EXCLAMATION MARK
+<Multi_key> <question> <question> 	: "¿"   questiondown # INVERTED QUESTION MARK
+
+<Multi_key> <o> <c> 			: "©"   copyright # COPYRIGHT SIGN
+<Multi_key> <c> <o> 			: "©"   copyright # COPYRIGHT SIGN
+<Multi_key> <o> <r> 			: "®"   registered # REGISTERED SIGN
+<Multi_key> <r> <o> 			: "®"   registered # REGISTERED SIGN
+
+<Multi_key> <z> <z> 			: "Z"   registered # REGISTERED SIGN
+
+# vim: set fmr=-v-,-^- fdm=marker cms=#%s noet list ts=8 sw=8 sts=8 :
