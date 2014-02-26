@@ -6,17 +6,93 @@
 # http://forums.mate-desktop.org/viewtopic.php?f=2&t=135 ):
 # Put "GTK_IM_MODULE=xim" in /etc/environment
 
+# Punctuation
+#-v-
 <Multi_key> <period> <period> 		: "…"   ellipsis  # HORIZONTAL ELLIPSIS
 <Multi_key> <P> <I> 			: "¶"   paragraph # PILCROW SIGN
-<Multi_key> <plus> <minus> 		: "±"   plusminus # PLUS-MINUS SIGN
 <Multi_key> <exclam> <exclam> 		: "¡"   exclamdown # INVERTED EXCLAMATION MARK
 <Multi_key> <question> <question> 	: "¿"   questiondown # INVERTED QUESTION MARK
+<Multi_key> <exclam> <question> 	: "‽"   U203D # INTERROBANG
+<Multi_key> <S> <question> 		: "⸮"   ironymark # IRONY MARK
+<Multi_key> <question> <S> 		: "⸮"   ironymark # IRONY MARK
+<Multi_key> <c> <|> 			: "¢"   centsign # CENT SIGN
+<Multi_key> <|> <c> 			: "¢"   centsign # CENT SIGN
+
+# Directional quotes
+<Multi_key> <apostrophe> <comma> 	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <period> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <quotedbl> <comma> 		: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <period> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+
+# Dashes
+<Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
+<Multi_key> <minus> <n> 		: "–"   U2013 # EN DASH
+<Multi_key> <minus> <minus> <minus> 	: "—"   U2014 # EM DASH
+<Multi_key> <minus> <m> 		: "—"   U2014 # EM DASH
 
 <Multi_key> <o> <c> 			: "©"   copyright # COPYRIGHT SIGN
 <Multi_key> <c> <o> 			: "©"   copyright # COPYRIGHT SIGN
 <Multi_key> <o> <r> 			: "®"   registered # REGISTERED SIGN
 <Multi_key> <r> <o> 			: "®"   registered # REGISTERED SIGN
+<Multi_key> <t> <m> 		 	: "™"   U2122 # TRADE MARK SIGN
+#-^-
 
-<Multi_key> <z> <z> 			: "Z"   registered # REGISTERED SIGN
+# Math
+#-v-
+<Multi_key> <o> <o> 			: "°"   degree # DEGREE SIGN
+<Multi_key> <plus> <minus> 		: "±"   plusminus # PLUS-MINUS SIGN
+<Multi_key> <minus> <plus> 		: "±"   plusminus # PLUS-MINUS SIGN
+<Multi_key> <x> <x> 			: "×"   multiply # MULTIPLICATION SIGN
 
-# vim: set fmr=-v-,-^- fdm=marker cms=#%s noet list ts=8 sw=8 sts=8 :
+<Multi_key> <v> <slash> 		: "√"   U221a   # v / SQUARE ROOT
+<Multi_key> <slash> <v> 		: "√"   U221a   # / v SQUARE ROOT
+<Multi_key> <8> <8> 			: "∞"   U221e   # 8 8 INFINITY
+<Multi_key> <equal> <underscore> 	: "≡"   U2261   # = _ IDENTICAL TO
+<Multi_key> <underscore> <U2260> 	: "≢"   U2262   # _ ≠ NOT IDENTICAL TO
+<Multi_key> <U2260> <underscore> 	: "≢"   U2262   # ≠ _ NOT IDENTICAL TO
+<Multi_key> <less> <underscore>  	: "≤"   U2264   # < _ LESS-THAN OR EQUAL TO
+<Multi_key> <underscore> <less> 	: "≤"   U2264   # _ < LESS-THAN OR EQUAL TO
+<Multi_key> <greater> <underscore> 	: "≥"   U2265   # > _ GREATER-THAN OR EQUAL TO
+<Multi_key> <underscore> <greater> 	: "≥"   U2265   # _ > GREATER-THAN OR EQUAL TO
+<Multi_key> <underscore> <U2282> 	: "⊆"   U2286   # _ ⊂ SUBSET OF OR EQUAL TO
+<Multi_key> <U2282> <underscore> 	: "⊆"   U2286   # ⊂ _ SUBSET OF OR EQUAL TO
+<Multi_key> <underscore> <U2283> 	: "⊇"   U2287   # _ ⊃ SUPERSET OF OR EQUAL TO
+<Multi_key> <U2283> <underscore> 	: "⊇"   U2287   # ⊃ _ SUPERSET OF OR EQUAL TO
+<Multi_key> <colon> <period> 		: "∴"   therefore # THEREFORE
+<Multi_key> <period> <colon> 		: "∵"   because # BECAUSE
+#-^-
+
+# Symbols
+#-v-
+<Multi_key> <less> <minus> 		: "←" U2190 # LEFTWARDS ARROW
+<Multi_key> <minus> <greater> 		: "→" U2192 # RIGHTWARDS ARROW
+<Multi_key> <m> <u> 			: "µ"   mu # MICRO SIGN
+#-^-
+
+# lower case superscript letters
+#-v-
+# (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ)
+
+<Multi_key> <a> <S> 			: "ᵃ"   asuperscript #
+
+# These keys are not a priority, but here’s the pattern if it’s needed later.
+# Note that no superscript ‘q’ exists in unicode.
+#-^-
+
+# Esperanto
+#-v-
+<Multi_key> <C> <x> 	: "Ĉ"   Ccircumflex # LATIN CAPITAL LETTER C WITH CIRCUMFLEX
+<Multi_key> <c> <x> 	: "ĉ"   ccircumflex # LATIN SMALL LETTER C WITH CIRCUMFLEX
+<Multi_key> <G> <x> 	: "Ĝ"   Gcircumflex # LATIN CAPITAL LETTER G WITH CIRCUMFLEX
+<Multi_key> <g> <x> 	: "ĝ"   gcircumflex # LATIN SMALL LETTER G WITH CIRCUMFLEX
+<Multi_key> <H> <x> 	: "Ĥ"   Hcircumflex # LATIN CAPITAL LETTER H WITH CIRCUMFLEX
+<Multi_key> <h> <x> 	: "ĥ"   hcircumflex # LATIN SMALL LETTER H WITH CIRCUMFLEX
+<Multi_key> <J> <x> 	: "Ĵ"   Hcircumflex # LATIN CAPITAL LETTER J WITH CIRCUMFLEX
+<Multi_key> <j> <x> 	: "ĵ"   hcircumflex # LATIN SMALL LETTER J WITH CIRCUMFLEX
+<Multi_key> <S> <x> 	: "Ŝ"   Hcircumflex # LATIN CAPITAL LETTER S WITH CIRCUMFLEX
+<Multi_key> <s> <x> 	: "ŝ"   hcircumflex # LATIN SMALL LETTER S WITH CIRCUMFLEX
+<Multi_key> <U> <x> 	: "Ŭ"   Ubreve # LATIN CAPITAL LETTER U WITH BREVE
+<Multi_key> <u> <x> 	: "ŭ"   ubreve # LATIN CAPITAL LETTER U WITH BREVE
+#-^-
+
+# vim: set fmr=-v-,-^- fdm=marker cms=#%s noet list ts=8 sw=8 sts=0 :
