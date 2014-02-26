@@ -275,16 +275,6 @@
       " Quick settings access
         nnoremap <silent> <F2> :tabedit $MYVIMRC<cr>
 
-      " Reload vimrc when saved
-        au! BufWritePost $MYVIMRC source $MYVIMRC
-
-        " Doesn’t work, because MyRefreshFullScreen doesn’t work.
-        " TODO: evaluate this thing.
-        function! MyRefreshVimrc()
-          :source $MYVIMRC
-          :call MyRefreshFullScreen()
-        endfunction
-
     "│-v-3 │ Tweakings/Feature Settings
     "└─┬───┴─┬──────────────────────────
       "│-v-4 │ Intended/Built-In Settings
