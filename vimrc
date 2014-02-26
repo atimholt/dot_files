@@ -666,11 +666,11 @@
             call g:ToggleNuMode(2)
             set nospell
 
-            if has('win32')
-              set guifont=Consolas:h16
-            else
-              set guifont=Consolas\ for\ Powerline\ 16
-            endif
+            "if has('win32')
+              "set guifont=Consolas:h16
+            "else
+              "set guifont=Consolas\ for\ Powerline\ 16
+            "endif
             call ToggleFullScreen()
 
             normal <c-w>=
