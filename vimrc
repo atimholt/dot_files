@@ -253,6 +253,7 @@
       let g:airline#extensions#whitespace#enabled = 0
 
       let g:airline_section_z="%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3c [%02B]"
+      let g:airline#extensions#tabline#show_buffers = 0
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
