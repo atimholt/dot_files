@@ -79,36 +79,32 @@
       " let Vundle manage Vundle
       Bundle 'gmarik/vundle'
 
-      Bundle 'kshenoy/vim-origami'
       Bundle 'a.vim'
       Bundle 'sjl/badwolf'
       Bundle 'git://git.wincent.com/command-t.git'
-      Bundle 'Conque-Shell'
-      " Bundle 'camelcasemotion'
       Bundle 'kien/ctrlp.vim'
       Bundle 'sjl/gundo.vim'
-      " Bundle 'mbbill/undotree'
       Bundle 'noahfrederick/vim-hemisu'
       Bundle 'roman/rainbow'
       Bundle 'tpope/vim-repeat'
-      Bundle 'ShowMarks'
       Bundle 'tpope/vim-surround'
       Bundle 'bpstahlman/txtfmt'
       Bundle 'SirVer/ultisnips'
       Bundle 'kana/vim-arpeggio'
       Bundle 'OmniCppComplete'
-      " Bundle 'Lokaltog/vim-easymotion'
-      Bundle 'nathanaelkane/vim-indent-guides'
       Bundle 'vimwiki/vimwiki'
-      " Bundle 'Lokaltog/powerline'
-      " Replaces powerline:
-      Bundle 'bling/vim-airline'
       Bundle 'scrooloose/nerdcommenter'
 
-      "" Plugins to try:
-      " Bundle 'git://repo.or.cz/vcscommand'
+      Bundle 'bling/vim-airline'
       Bundle 'ludovicchabant/vim-lawrencium'
       Bundle 'tpope/vim-fugitive'
+
+      "" Plugins to try:
+
+      " Bundle 'git://repo.or.cz/vcscommand'
+
+      " replaces gundo:
+      " Bundle 'mbbill/undotree'
 
 
       filetype plugin indent on
