@@ -11,3 +11,6 @@ cmd.vimdiff =
 [alias]
 vi  = vimdiff
 vim = vimdiff
+
+[merge-tools]  
+vimdiff.args = $base $local $opther -o $output
