@@ -3,14 +3,11 @@ username = Tim Holt <atimholt@gmail.com>
 
 [extensions]
 purge =
-hgext.extdiff =
 
-[extdiff]
-cmd.vimdiff =
+[ui]
+merge = vimdiff
 
-[alias]
-vi  = vimdiff
-vim = vimdiff
+[merge-tools]
+vimdiff.executable = vim
 
-[merge-tools]  
-vimdiff.args = $base $local $opther -o $output
+vimdiff.args = -d $base $local $output $other +close +close
