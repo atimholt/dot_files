@@ -3,3 +3,11 @@ username = Tim Holt <atimholt@gmail.com>
 
 [extensions]
 purge =
+hgext.extdiff =
+
+[extdiff]
+cmd.vimdiff =
+
+[alias]
+vi  = vimdiff
+vim = vimdiff
