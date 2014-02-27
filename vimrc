@@ -249,12 +249,25 @@
     "│-v-3 │ airline
     "└─────┴─────────
       if has('win32')
-        let g:airline_left_sep='▒'
-        let g:airline_right_sep='▒'
+        "let g:airline_left_sep='▒'
+        "let g:airline_right_sep='▒'
         " let g:airline_left_sep='▌'
         " let g:airline_right_sep='▐'
         " let g:airline_left_sep='▶'
         " let g:airline_right_sep='◀'
+
+        " old vim-powerline symbols
+        if !exists('g:airline_symbols')
+          let g:airline_symbols = {}
+        endif
+
+        let g:airline_left_sep = '⮀'
+        let g:airline_left_alt_sep = '⮁'
+        let g:airline_right_sep = '⮂'
+        let g:airline_right_alt_sep = '⮃'
+        let g:airline_symbols.branch = '⭠'
+        let g:airline_symbols.readonly = '⭤'
+        let g:airline_symbols.linenr = '⭡'
       else
         let g:airline_powerline_fonts=1
       endif
@@ -276,7 +289,7 @@
         nnoremap <silent> <F2> :tabedit $MYVIMRC<cr>
 
       " Reload vimrc when saved
-        au! BufWritePost $MYVIMRC source $MYVIMRC
+        "au! BufWritePost $MYVIMRC source $MYVIMRC
 
         " Doesn’t work, because MyRefreshFullScreen doesn’t work.
         " TODO: evaluate this thing.
@@ -677,7 +690,7 @@
             set nospell
 
             if has('win32')
-              set guifont=Consolas:h16
+              set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
             else
               set guifont=Consolas\ for\ Powerline\ 16
             endif
@@ -1032,11 +1045,9 @@
             endif
 
             if has('win32')
-              " :set guifont=consolas:h12
-              " set guifont=Liberation\ Mono\ for\ Powerline:h9
-              set guifont=Liberation\ Mono:h18
+              set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
             else
-              set guifont=Liberation\ Mono\ for\ Powerline\ 18
+              set guifont=Consolas\ for\ Powerline\ 18
             endif
 
             colorscheme badwolf
@@ -1053,11 +1064,11 @@
 
             setlocal linebreak
 
-            if has('win32')
-              set guifont=Consolas:h20
-            else
-              set guifont=Consolas\ for\ Powerline\ 16
-            endif
+            if has('win32')                                          
+              set guifont=Consolas_for_Powerline_FixedD:h20:cDEFAULT 
+            else                                                     
+              set guifont=Consolas\ for\ Powerline\ 18               
+            endif                                                    
 
             colorscheme timatrix
             setlocal display+=lastline
