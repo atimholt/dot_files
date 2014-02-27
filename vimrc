@@ -31,8 +31,6 @@
   "      window-dividers into box characters, and 'no line' characters into
   "      null-set characters.
   " TODO Have timdisplaymode switch display mode switched into!
-  " TODO Write some filter-switching function, mapped to <leader>F or
-  "      something, that changes NERDTree's filter list. Maybe with a menu.
   " TODO look into changing “__keyword” style ‘links’ herein to actual tag
   "      links
   " TODO Maybe try YouCompleteMe plugin.
@@ -90,7 +88,6 @@
       Bundle 'kien/ctrlp.vim'
       Bundle 'sjl/gundo.vim'
       " Bundle 'mbbill/undotree'
-      Bundle 'scrooloose/nerdtree'
       Bundle 'noahfrederick/vim-hemisu'
       Bundle 'roman/rainbow'
       Bundle 'tpope/vim-repeat'
@@ -227,12 +224,6 @@
       let showmarks_textlower = "\t:"
       let showmarks_textupper = "\t:"
       let showmarks_textother = "\t:"
-
-    "│-v-3 │ NERD Tree
-    "└─────┴───────────
-      " Mappings (@__nerd_tree_mappings):
-
-      " let NERDTreeDirArrows=1
 
     "│-v-3 │ latex-suite
     "└─────┴─────────────
@@ -890,10 +881,6 @@
           "│-v-6 │ __rainbow_parentheses_mappings:
           "└─────┴─────────────────────────────────
             nnoremap <silent> <leader>r :RainbowParenthesesToggle<cr>
-
-          "│-v-6 │ __nerd_tree_mappings:
-          "└─────┴───────────────────────
-            nnoremap <silent> <leader>. :NERDTree<cr>
 
       "│-v-4 │ Auto-commands
       "└─┬───┴─┬─────────────
