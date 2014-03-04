@@ -68,36 +68,42 @@
       call pathogen#helptags()
       filetype plugin on
 
-    "│-v-3 │ Vundle
-    "└─────┴────────
+    "│-v-3 │ neobundle
+    "└─────┴───────────
       " TODO Evaluate using VAM or vim-flavor instead.
-      filetype off
-      set runtimepath+=~/.vim/vbundle/vundle/
+      if has('vim_starting')
+        set nocompatible               " Be iMproved
 
-      call vundle#rc("~/.vim/vbundle")
+        " Required:
+        set runtimepath+=~/.vim/neobundle/neobundle.vim/
+      endif
 
-      " let Vundle manage Vundle
-      Bundle 'gmarik/vundle'
+      " Required:
+      call neobundle#rc(expand('~/.vim/neobundle/'))
 
-      Bundle 'a.vim'
-      Bundle 'sjl/badwolf'
-      Bundle 'git://git.wincent.com/command-t.git'
-      Bundle 'kien/ctrlp.vim'
-      Bundle 'sjl/gundo.vim'
-      Bundle 'noahfrederick/vim-hemisu'
-      Bundle 'roman/rainbow'
-      Bundle 'tpope/vim-repeat'
-      Bundle 'tpope/vim-surround'
-      Bundle 'bpstahlman/txtfmt'
-      Bundle 'SirVer/ultisnips'
-      Bundle 'kana/vim-arpeggio'
-      Bundle 'OmniCppComplete'
-      Bundle 'vimwiki/vimwiki'
-      Bundle 'scrooloose/nerdcommenter'
+      " Let NeoBundle manage NeoBundle
+      " Required:
+      NeoBundleFetch 'Shougo/neobundle.vim'
 
-      Bundle 'bling/vim-airline'
-      Bundle 'ludovicchabant/vim-lawrencium'
-      Bundle 'tpope/vim-fugitive'
+      NeoBundle 'a.vim'
+      NeoBundle 'sjl/badwolf'
+      NeoBundle 'git://git.wincent.com/command-t.git'
+      NeoBundle 'kien/ctrlp.vim'
+      NeoBundle 'sjl/gundo.vim'
+      NeoBundle 'noahfrederick/vim-hemisu'
+      NeoBundle 'roman/rainbow'
+      NeoBundle 'tpope/vim-repeat'
+      NeoBundle 'tpope/vim-surround'
+      NeoBundle 'bpstahlman/txtfmt'
+      NeoBundle 'SirVer/ultisnips'
+      NeoBundle 'kana/vim-arpeggio'
+      NeoBundle 'OmniCppComplete'
+      NeoBundle 'vimwiki/vimwiki'
+      NeoBundle 'scrooloose/nerdcommenter'
+
+      NeoBundle 'bling/vim-airline'
+      NeoBundle 'ludovicchabant/vim-lawrencium'
+      NeoBundle 'tpope/vim-fugitive'
 
       "" Plugins to try:
 
@@ -106,8 +112,9 @@
       " replaces gundo:
       " Bundle 'mbbill/undotree'
 
-
       filetype plugin indent on
+
+      NeoBundleCheck
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
