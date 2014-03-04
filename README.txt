@@ -10,15 +10,14 @@ or source from my Dropbox folder. There are pros and cons to that situation, but
 I have decided that using a repository, hosted on a public website, has many
 more benefits.
 
-To begin with, the repository will be in an in-between state that does not
-reflect its end (or ‘cruising’) condition. Eventually, all important dot files
-will be contained herein, along with utility scripts for actualizing them into
-the home folder (symlinking them upon first install, or when adding new files).
+All my important dot files are contained herein, along with a utility script
+(make_links.sh) for actualizing them into the home folder (symlinking them upon
+first install, or when adding new files).
 
-This is not a complete solution. I still consider Dropbox to be great for other
-things that may be closely intertwined with this repository. For example,
-‘~/Dropbox/Vim/GlobalRuntimePath/’ will still contain all my Vim plugins and
-scripts (with the exception of my vimrc, eventually), notably including any that
-will automatically actualize files herein to the home folder, as previously
-mentioned. I may choose to source those in or link from here, though.
+This repository is not yet totally self-contained. For example,
+~/Dropbox/Vim/GlobalRuntimePath/ still contains a couple files for making vim
+work the way I want.
+
+This repository’s main location is on bitbucket, but I’ll be keeping a parallel
+version of it on github.
 
