@@ -4,15 +4,6 @@ username = Tim Holt <atimholt@gmail.com>
 [extensions]
 purge =
 hgext.bookmarks =
-hggit =
-
-# hg-github, for parallel repos on bitbucket (in mercurial) and github (in git)
-# to intall:
-# pip install -U hg-github
-# OR
-# easy_install -U hg-github
-# OR see https://github.com/stephenmcd/hg-github
-#hggithub =
 
 [ui]
 merge = vimdiff
