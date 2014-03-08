@@ -19,8 +19,6 @@
 # From: http://stackoverflow.com/a/246128/837406
 dot_files_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-old_files_dir=~/dot_files_old
-
 declare -A dot_files
 
 dot_files["bashrc"]=".bashrc"
@@ -32,8 +30,6 @@ dot_files["XCompose"]=".XCompose"
 
 #│-v-1 │ Main Body of Script
 #└─────┴─────────────────────
-
-mkdir -p $old_files_dir/
 
 cd $dot_files_dir/
 
