@@ -36,6 +36,12 @@
         hg help $1 | gvim - -R -M
       }
 
+      ## Personal shortcuts
+      function cdtw()
+      {
+        cd ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/
+      }
+
   #│-v-2 │ Appearance
   #└─┬───┴─┬──────────
     #│-v-3 │ Built-in Settings
