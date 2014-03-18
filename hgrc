@@ -4,6 +4,7 @@ username = Tim Holt <atimholt@gmail.com>
 [extensions]
 purge =
 hgext.bookmarks =
+eol =
 
 [ui]
 merge = vimdiff
