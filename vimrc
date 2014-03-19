@@ -61,13 +61,6 @@
 "└─┬───┴─┬────────────────
   "│-v-2 │ plug-in manager
   "└─┬───┴─┬───────────────
-    "│-v-3 │ Pathogen
-    "└─────┴──────────
-      filetype off
-      call pathogen#infect()
-      call pathogen#helptags()
-      filetype plugin on
-
     "│-v-3 │ neobundle
     "└─────┴───────────
       " TODO Evaluate using VAM or vim-flavor instead.
@@ -85,6 +78,7 @@
       " Required:
       NeoBundleFetch 'Shougo/neobundle.vim'
 
+      NeoBundle 'tpope/vim-pathogen'
       NeoBundle 'a.vim'
       NeoBundle 'sjl/badwolf'
       NeoBundle 'git://git.wincent.com/command-t.git'
@@ -124,6 +118,15 @@
       filetype plugin indent on
 
       NeoBundleCheck
+
+    "│-v-3 │ Pathogen
+    "└─────┴──────────
+    " This is still here for edge-case ‘plugins’, like minor custom plugins I
+    " don’t yet want to bother with putting into a public repository.
+      filetype off
+      call pathogen#infect()
+      call pathogen#helptags()
+      filetype plugin on
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
