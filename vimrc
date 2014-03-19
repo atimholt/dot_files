@@ -118,6 +118,7 @@
 
       " My own plugins:
       NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
+      NeoBundle 'bitbucket:atimholt/my_vimrc_extended', {'type': 'hg'}
 
       filetype plugin indent on
 
