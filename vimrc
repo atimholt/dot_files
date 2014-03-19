@@ -100,6 +100,7 @@
       NeoBundle 'OmniCppComplete'
       NeoBundle 'vimwiki/vimwiki'
       NeoBundle 'scrooloose/nerdcommenter'
+      NeoBundle 'PProvost/vim-ps1'
 
       NeoBundle 'bling/vim-airline'
       NeoBundle 'ludovicchabant/vim-lawrencium'
