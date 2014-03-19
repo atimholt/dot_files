@@ -116,6 +116,9 @@
       NeoBundle 'kshenoy/vim-signature'
       "NeoBundle 'jeetsukumaran/vim-markology'
 
+      " My own plugins:
+      NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
+
       filetype plugin indent on
 
       NeoBundleCheck
