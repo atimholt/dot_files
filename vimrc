@@ -112,6 +112,10 @@
       " replaces gundo:
       " Bundle 'mbbill/undotree'
 
+      " Show marks:
+      NeoBundle 'kshenoy/vim-signature'
+      "NeoBundle 'jeetsukumaran/vim-markology'
+
       filetype plugin indent on
 
       NeoBundleCheck
@@ -267,6 +271,10 @@
       let g:airline_section_z="%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3c [%02B]"
       let g:airline#extensions#tabline#show_buffers = 0
       let g:airline#extensions#tabline#tab_min_count = 2
+
+    "│-v-3 │ vim-signature
+    "└─────┴───────────────
+      nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
