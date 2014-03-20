@@ -242,7 +242,12 @@ function prompt
     #}
   }
 
-  Write-Host $($executionContext.SessionState.Path.CurrentLocation) -NoNewLine -ForegroundColor "Blue"
+  # Abbreviate the home directory
+  $prompt_path = $($executionContext.SessionState.Path.CurrentLocation)
+  $prompt_path = $prompt_path -replace $($home -replace "\\", "\\"), "~"
+  $prompt_path += "\"
+
+  Write-Host $($prompt_path) -NoNewLine -ForegroundColor "Blue"
 
   # repo branch and status by color
   #-v-
