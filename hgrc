@@ -6,6 +6,9 @@ purge =
 hgext.bookmarks =
 eol =
 
+[eol]
+only-consistent = False
+
 [ui]
 merge = vimdiff
 
