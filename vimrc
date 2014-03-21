@@ -57,6 +57,11 @@
   " and from every location in this file where the prerequisite would more
   " naturally be categorized.
 
+  "│-v-2 │ Leader Key settings
+  "└─────┴─────────────────────
+  " See __mapleader_settings
+    let mapleader = "<space>"
+
 "│-v-1 │ Plug-in Settings
 "└─┬───┴─┬────────────────
   "│-v-2 │ plug-in manager
@@ -697,14 +702,10 @@
       "└─┬───┴─┬────────
         "│-v-5 │ Leader Key Settings
         "└─────┴─────────────────────
-          let mapleader = ","
-                " doesn't work?:
-          nnoremap <C-,> ,
-          vnoremap <C-,> ,
+          " __mapleader_settings
 
           " Still want this functionality!
           map \u <Nop>
-          nnoremap \ ,
 
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
@@ -783,7 +784,7 @@
         "│-v-5 │ __search_mappings:
         "└─────┴────────────────────
           " Switch off search highlighting.
-          nnoremap <silent> <leader><space> :noh<cr>
+          nnoremap <silent> <leader>, :noh<cr>
 
         "│-v-5 │ Quick window-width reset
         "└─────┴──────────────────────────
