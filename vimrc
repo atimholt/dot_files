@@ -221,10 +221,6 @@
     "└─────┴───────────────────
       call arpeggio#load()
 
-    "│-v-3 │ EasyMotion
-    "└─────┴────────────
-      let g:EasyMotion_leader_key = '('
-
     "│-v-3 │ Indent Guides
     "└─────┴───────────────
       let g:indent_guides_space_guides = 0
