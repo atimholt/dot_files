@@ -60,7 +60,7 @@
   "│-v-2 │ Leader Key settings
   "└─────┴─────────────────────
   " See __mapleader_settings
-    let mapleader = "<space>"
+    let mapleader = "\<space>"
 
 "│-v-1 │ Plug-in Settings
 "└─┬───┴─┬────────────────
