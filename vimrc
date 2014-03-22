@@ -16,10 +16,6 @@
     " This may be obsolete, but I don’t think it is—it’s still necessary when
     " not on a wide screen.
   " TODO Make “i_Ctrl-R ,” put the “+” yank buffer’s contents.
-  "
-  " TODO mappings that “Hesitate”:
-    " <leader>i
-    " <leader>w
   " TODO Look into the conceal setting and this reddit thread:
   "   http://redd.it/okzja
   " TODO Set up some cool Arpeggio mappings.
