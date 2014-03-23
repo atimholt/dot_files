@@ -91,6 +91,7 @@
       NeoBundle 'tpope/vim-surround'
       NeoBundle 'bpstahlman/txtfmt'
       NeoBundle 'SirVer/ultisnips'
+      NeoBundle 'honza/vim-snippets'
       NeoBundle 'kana/vim-arpeggio'
       NeoBundle 'OmniCppComplete'
       NeoBundle 'vimwiki/vimwiki'
