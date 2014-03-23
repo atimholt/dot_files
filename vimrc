@@ -803,7 +803,7 @@
         "└─┬───┴─┬────────────────────────────────────────────
           "│-v-6 │ __spell_check_mapping:
           "└─────┴────────────────────────
-            nnoremap <F5> :call g:ToggleSpellMode()<cr>
+            nnoremap <leader>s :call g:ToggleSpellMode()<cr>
 
           "│-v-6 │ __fixed_window_width:
           "└─────┴───────────────────────
@@ -888,7 +888,6 @@
           "│-v-6 │ __a_mappings:
           "└─────┴───────────────
             nnoremap <silent> <leader>a :AV<cr>
-            nnoremap <silent> <leader>s :AV<cr>
 
             " TODO: move this somewhere more sensible:
             nnoremap <silent> <leader>v :vs<cr>
