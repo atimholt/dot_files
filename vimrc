@@ -208,7 +208,7 @@
       " Also wasn't compatible with my custom use of <s-tab>, even though it
       " is after a reestablishment of said custom use, so there you go.
       let g:UltiSnipsExpandTrigger="<c-t>"
-      let g:UltiSnipsJumpForwardTrigger="<c-n>"
+      let g:UltiSnipsJumpForwardTrigger="<c-l>"
       let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
       " Enable importing of custom modules for python interpolation.
