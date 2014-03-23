@@ -116,6 +116,7 @@
       " My own plugins:
       NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
       NeoBundle 'bitbucket:atimholt/my_vimrc_extended', {'type': 'hg'}
+      NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
 
       filetype plugin indent on
 
@@ -210,14 +211,6 @@
       let g:UltiSnipsExpandTrigger="<c-t>"
       let g:UltiSnipsJumpForwardTrigger="<c-l>"
       let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-
-      " Enable importing of custom modules for python interpolation.
-      if has('win32')
-        py import sys; sys.path.append("C:\\Users\\atimh_000\\Dropbox\\Vim\\GlobalRuntimePath\\UltiSnipsSnippets\\pymodules\\")
-      else
-        " This should work, but test it out.
-        py import sys; sys.path.append("/home/tim/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/pymodules/")
-      endif
 
     "│-v-3 │ Arpeggio Settings
     "└─────┴───────────────────
