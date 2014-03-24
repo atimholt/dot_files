@@ -798,6 +798,7 @@
         "│-v-5 │ Digraph
         "└─────┴─────────
           Arpeggio inoremap jk <c-k>
+          Arpeggio cnoremap jk <c-k>
 
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
