@@ -301,26 +301,15 @@
       let g:startify_bookmarks = ['~/dot_files/vimrc']
       let g:startify_session_dir = '~/.vim/neobundle/my_vimrc_extended/Sessions'
 
-      "let g:startify_list_order
-      "let g:startify_bookmarks
-      "let g:startify_files_number
-      "let g:startify_session_detection
-      "let g:startify_session_autoload
-      "let g:startify_session_persistence
-      "let g:startify_session_delete_buffers
-      "let g:startify_skiplist
-      "let g:startify_skiplist_server
-      "let g:startify_change_to_dir
+      let g:startify_files_number = 5
       "let g:startify_custom_indices
       "let g:startify_custom_header
       "let g:startify_custom_footer
-      "let g:startify_restore_position
-      "let g:startify_empty_buffer_key
-      "let g:startify_enable_special
-      "let g:startify_session_savevars
-      "let g:startify_session_savecmds
-      "let g:startify_disable_at_vimenter
-
+      let g:startify_restore_position = 1
+      let g:startify_session_savevars = [
+             \ 'g:startify_session_savevars',
+             \ 'g:startify_session_savecmds'
+             \ ]
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
