@@ -123,7 +123,10 @@
       " My own plugins:
       NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
       NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
-         \ {'rev' : '63e77fb0cfab', 'type': 'hg'}
+         \ {'rev' : '63e77fb0cfab',
+         \ 'type': 'hg',
+         \ 'directory': 'my_vimrc_extended'}
+
       NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
 
       filetype plugin indent on
