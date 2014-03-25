@@ -298,6 +298,7 @@
                  \ '\.DS_Store'
                  \ ]
 
+      let g:startify_bookmarks = ['~/dot_files/vimrc']
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
