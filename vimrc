@@ -285,6 +285,8 @@
 
     "│-v-3 │ Startify
     "└─────┴──────────
+      let g:startify_list_order = ['sessions', 'bookmarks', 'dir',  'files']
+
       let g:startify_skiplist = [
                  \ 'COMMIT_EDITMSG',
                  \ $VIMRUNTIME .'/doc',
