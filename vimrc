@@ -103,6 +103,7 @@
       NeoBundle 'vimwiki/vimwiki'
       NeoBundle 'scrooloose/nerdcommenter'
       NeoBundle 'PProvost/vim-ps1'
+      NeoBundle 'mhinz/vim-startify'
 
       NeoBundle 'bling/vim-airline'
       NeoBundle 'ludovicchabant/vim-lawrencium'
@@ -281,6 +282,17 @@
     "│-v-3 │ vim-signature
     "└─────┴───────────────
       nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
+
+    "│-v-3 │ Startify
+    "└─────┴──────────
+      let g:startify_skiplist = [
+                 \ 'COMMIT_EDITMSG',
+                 \ $VIMRUNTIME .'/doc',
+                 \ 'C:/Program Files (x86)/vim/doc',
+                 \ 'neobundle/.*/doc',
+                 \ '\.DS_Store'
+                 \ ]
+
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
