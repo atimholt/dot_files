@@ -299,6 +299,8 @@
                  \ ]
 
       let g:startify_bookmarks = ['~/dot_files/vimrc']
+      let g:startify_session_dir = '~/.vim/neobundle/my_vimrc_extended/Sessions'
+
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
