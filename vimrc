@@ -533,36 +533,6 @@
             endif
           endfunction
 
-        "│-v-5 │ (functions) View and Folds saving
-        "└─────┴───────────────────────────────────
-          " (mappings @__viewdir_mappings)
-          " TODO: for realsy, this needs to be its own script in the
-          " repository
-          " TODO: echo the current mode on toggle
-          " TODO: loadview automatically in zigzagproj mode on file loading
-
-          function! g:toggleviewdir()
-            if g:viewdirmode == "normal"
-              let g:viewdirmode = "zigzagproj"
-            else
-              let g:viewdirmode = "normal"
-            endif
-
-            call g:applyviewdir()
-          endfunction
-
-          function! g:applyviewdir()
-            if g:viewdirmode == "normal"
-              set viewdir=~/Dropbox/Vim/GlobalRuntimePath/view/
-            else
-              set viewdir=~/Dropbox/code/ZigZagDungeon/vimview/
-            endif
-            "echo "
-          endfunction
-
-          let g:viewdirmode = "normal"
-          call g:applyviewdir()
-
         "│-v-5 │ (function) open writing project
         "└─────┴─────────────────────────────────
           " (mappings @__open_writing_project)
@@ -723,10 +693,6 @@
           "│-v-6 │ __display_mode_mappings:
           "└─────┴──────────────────────────
             nnoremap <silent> <leader>d :call ToggleDisplayMode()<cr>
-
-          "│-v-6 │ __viewdir_mappings
-          "└─────┴─────────────────────
-            nnoremap <silent> <f6> :call g:toggleviewdir()<cr>
 
           "│-v-6 │ Insert literal tab character
           "└─────┴──────────────────────────────
