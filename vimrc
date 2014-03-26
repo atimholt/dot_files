@@ -123,7 +123,7 @@
       " My own plugins:
       NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
       NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
-         \ {'rev' : '63e77fb0cfab',
+         \ {'rev' : '7ce24b179f88',
          \ 'type': 'hg',
          \ 'directory': 'my_vimrc_extended'}
 
