@@ -464,6 +464,18 @@
               echo (a:0 == 1 ? a:1 : a:2) "OFF"
             endif
           endfunction
+        "│-v-5 │ (function BufInTab
+        "└─────┴────────────────────
+          "Tests whether a buff with the given name is in the tab.
+          function! g:BufInTab(...)
+            let s:current_tabpagebuflist = tabpagebuflist()
+            for i in s:current_tabpagebuflist
+              if bufname(i) == a:1
+                return 1
+              endif
+            endfor
+            return 0
+          endfunction
 
         "│-v-5 │ (function) Box character (turburul) hax
         "└─────┴─────────────────────────────────────────
@@ -510,34 +522,15 @@
           " (auto-commands @__multi_window_autocmds)
 
           function! TimWinLeaveWithGundo()
-            if !GundoInTab() && g:timdisplaymode == 'code'
-              ":vertical resize
+            if g:timdisplaymode == 'code' && !g:BufInTab("__Gundo__")
               :set nowrap
-              ":set norelativenumber
-              ":set nonumber
             endif
           endfunction
 
           function! TimWinEnterWithGundo()
-            if !GundoInTab() && g:timdisplaymode == 'code'
-              if g:tim_number_mode == 0
-                ":vertical resize 81
-              else
-                ":vertical resize 85
-              endif
+            if g:timdisplaymode == 'code' && !g:BufInTab("__Gundo__")
               :set wrap
-              :call g:TimDisplayNumbers()
             endif
-          endfunction
-
-          function! GundoInTab()
-            let s:current_tabpagebuflist = tabpagebuflist()
-            for i in s:current_tabpagebuflist
-              if bufname(i) == "__Gundo__"
-                return 1
-              endif
-            endfor
-            return 0
           endfunction
 
         "│-v-5 │ (functions) Line-number Mode switching
