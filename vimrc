@@ -301,9 +301,6 @@
           :syntax enable
           :set cindent
 
-          " Stopped using this when I started using Powershell more.
-          ":set shellslash
-
           :set switchbuf=useopen,usetab,newtab
 
           " Allows the closing of buffers without saving.
@@ -318,18 +315,20 @@
 
         "│-v-5 │ vimdiff settings
         "└─────┴──────────────────
-          set diffopt=filler,vertical,context:3
+          set diffopt=filler,vertical,context:3,foldcolumn:0
 
         "│-v-5 │ Spelling
         "└─────┴──────────
-          set spelllang=en_us,es,eo
+          set spelllang=en_us,eo,es
 
         "│-v-5 │ Status Line
         "└─────┴─────────────
+          "Old tries at it, for reference:
           ":set statusline=%F%m%r%h%w\ (%{&ff})\ typ:%Y\ ASCII=\%04.8b\ HEX=\%04.4B\ %l,%v %p%%\ LEN=%L
           "set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%08O:%02B]
-          " This is the one I was using, but I’m using vim-airline now.
-          " set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%02B]
+
+          " For when AirlineToggle is off
+          set statusline=%<[%02n]\ %F%(\ %m%h%w%y%r%)\ %a%=\ %8l,%c%V/%L\ (%P)\ [%02B]
 
           set laststatus=2
             " “The value of this option influences when the
@@ -338,18 +337,16 @@
         "│-v-5 │ Folds
         "└─────┴──────────
           :set foldmethod=marker
-          :set foldmarker=//v,//^
-          :set commentstring=%s
 
         "│-v-5 │ WildMenu
         "└─────┴──────────
           set wildmode=longest,list,full
-          :set wildmenu
+          set wildmenu
 
         "│-v-5 │ persistent undo
         "└─────┴─────────────────
           set undofile
-          set undodir=~/vim_undo_files
+          set undodir=~/Dropbox/Vim/vim_undo_files
 
         "│-v-5 │ search settings
         "└─────┴─────────────────
@@ -357,7 +354,6 @@
           set smartcase
           set gdefault
           set incsearch
-          set showmatch
           set hlsearch
           " Mappings (@__search_mappings):
           " - Switch off search highlighting.
@@ -379,13 +375,9 @@
             set shellredir=>
           endif
 
-        "│-v-5 │ mkview settings
-        "└─────┴─────────────────
-          set viewdir=~/Dropbox/Vim/GlobalRuntimePath/view/
-
         "│-v-5 │ Custom Digraph Settings
         "└─────┴─────────────────────────
-        " Esperanto:
+        " Esperanto: ─────────────────────────────────────────────────────-v-6
           :digraph Cx 264
           :digraph cx 265
           :digraph Gx 284
@@ -399,11 +391,11 @@
           :digraph Ux 364
           :digraph ux 365
 
-        " Graphical, dark diamond suit and dark heart suit.
+        " Graphical, dark diamond suit and dark heart suit: ──────────────-v-6
           :digraph cD 9830
           :digraph cH 9829
 
-        " Some assorted punctuation
+        " Some assorted punctuation: ─────────────────────────────────────-v-6
           "ellipsis
           :digraph .. 8230
 
@@ -416,16 +408,18 @@
           :digraph ', 8216
           :digraph '. 8217
 
-        " Some math stuff
+          "Bullet
+          :digraph .b 8226
+
+          "Interrobang
+          :digraph ?! 8253
+
+        " Some math stuff: ───────────────────────────────────────────────-v-6
           "funcapply, for immediately after a function name and before its
           "arguments
           :digraph fa 8289
-        " Bullet
-          :digraph .b 8226
-        " Interrobang
-          :digraph ?! 8253
 
-        " lower case superscript letters
+        " lower case superscript letters: ────────────────────────────────-v-6
         " (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ)
           :digraph aS 7491
           :digraph bS 7495
@@ -941,6 +935,10 @@
         :set guioptions=c
         " Note that fullscreen plugin doesn't work well with anything but null
         " (or similar).
+
+      "│-v-4 │ matching paren highlighting
+      "└─────┴─────────────────────────────
+        set showmatch
 
       "│-v-4 │ Color scheme
       "└─────┴──────────────
