@@ -565,9 +565,6 @@
       "└─┬───┴─┬────────
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
-          "nnoremap <tab> %
-          "vnoremap <tab> %
-
           nnoremap <silent> <leader>t :tabs<cr>
 
           nnoremap j gj
