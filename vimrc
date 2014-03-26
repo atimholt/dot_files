@@ -486,35 +486,22 @@
           " └────┴─┘
         " (mapping @__box_characters_mapping)
           function! g:BoxCharacters()
-            :s'r'┌'e
-            gv
-            :s','┐'e
-            gv
-            :s'’'┘'e
-            gv
-            :s/'/┘/e
-            gv
-            :s'L'└'e
+            :'<,'>s'r'┌'e
+            :'<,'>s','┐'e
+            :'<,'>s'’'┘'e
+            :'<,'>s/'/┘/e
+            :'<,'>s'L'└'e
 
-            gv
-            :s'|'│'e
-            gv
-            :s'-'─'e
-            gv
-            :s'—'─'e
-            gv
-            :s'+'┼'e
+            :'<,'>s'|'│'e
+            :'<,'>s'-'─'e
+            :'<,'>s'—'─'e
+            :'<,'>s'+'┼'e
 
-            gv
-            :s'\^'┴'e
-            gv
-            :s'>'├'e
-            gv
-            :s'v'┬'e
-            gv
-            :s'T'┬'e
-            gv
-            :s'<'┤'e
+            :'<,'>s'\^'┴'e
+            :'<,'>s'>'├'e
+            :'<,'>s'v'┬'e
+            :'<,'>s'T'┬'e
+            :'<,'>s'<'┤'e
           endfunction
 
         "│-v-5 │ (functions) Multi-Window automatic stuff
