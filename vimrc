@@ -791,6 +791,7 @@
 
       "│-v-4 │ Fold line
       "└─────┴───────────────
+        " TODO: grok & change this.
         function! NeatFoldText()
           let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{{\d*\s*', '', 'g') . ' '
           let lines_count = v:foldend - v:foldstart + 1
