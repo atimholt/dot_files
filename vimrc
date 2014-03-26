@@ -65,71 +65,72 @@
   "│-v-2 │ plug-in manager (neobundle)
   "└─────┴─────────────────────────────
     " TODO Evaluate using VAM or vim-flavor instead.
+    "" precedence necessaries for neobundle: ─────────────────────────────-v-3
     if has('vim_starting')
-      set nocompatible               " Be iMproved
-
-      " Required:
       set runtimepath+=~/.vim/neobundle/neobundle.vim/
     endif
 
-    " Required:
     call neobundle#rc(expand('~/.vim/neobundle/'))
 
     " Let NeoBundle manage NeoBundle
-    " Required:
     NeoBundleFetch 'Shougo/neobundle.vim'
 
-    NeoBundle 'a.vim'
-    NeoBundle 'sjl/badwolf'
-    NeoBundle 'git://git.wincent.com/command-t.git'
-    NeoBundle 'kien/ctrlp.vim'
-    NeoBundle 'sjl/gundo.vim'
-    NeoBundle 'noahfrederick/vim-hemisu'
-    NeoBundle 'roman/rainbow'
-    NeoBundle 'tpope/vim-repeat'
-    NeoBundle 'tpope/vim-surround'
-    NeoBundle 'bpstahlman/txtfmt'
-    NeoBundle 'SirVer/ultisnips', '3.0'
-    NeoBundle 'honza/vim-snippets'
-    NeoBundle 'kana/vim-arpeggio'
-    NeoBundle 'OmniCppComplete'
-    NeoBundle 'vimwiki/vimwiki'
-    NeoBundle 'scrooloose/nerdcommenter'
-    NeoBundle 'PProvost/vim-ps1'
-    NeoBundle 'mhinz/vim-startify'
+    "" Plugins from the nice people of the Vim community: ────────────────-v-3
 
-    NeoBundle 'bling/vim-airline'
-    NeoBundle 'ludovicchabant/vim-lawrencium'
-    NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'a.vim' " ───────────────────── alternates between .cpp & .h
+    NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
+    NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
+    NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
+    NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
+    NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
+    NeoBundle 'noahfrederick/vim-hemisu' " ── some colorscheme or other
+    NeoBundle 'OmniCppComplete' " ─────────── cpp completion
+    NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
+    NeoBundle 'roman/rainbow' " ───────────── matching brackets match colors
+    NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
+    NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
+    NeoBundle 'sjl/badwolf' " ─────────────── awesome colorscheme
+    NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
+    NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
+    NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
+    " Because they’re compatible with vim-airline:
+    NeoBundle 'ludovicchabant/vim-lawrencium' " ── Mercurial integration
+    NeoBundle 'tpope/vim-fugitive' " ──────── git integration
+    " Used by vim-surround:
+    NeoBundle 'tpope/vim-repeat' " ────────── makes some plugins .-able
+    " Used by ultisnips:
+    NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
 
-    "" Plugins to try:
-
-    " Bundle 'git://repo.or.cz/vcscommand'
-
-    " replaces gundo:
-    " Bundle 'mbbill/undotree'
-
-    " Show marks:
-    NeoBundle 'kshenoy/vim-signature'
-    "NeoBundle 'jeetsukumaran/vim-markology'
-
-    " My own plugins:
-    NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
+    "" My own plugins: ───────────────────────────────────────────────────-v-3
     NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
        \ {'rev' : '7ce24b179f88',
        \ 'type': 'hg',
        \ 'directory': 'my_vimrc_extended'}
-
+    NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
     NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
 
-    " Same thing as Pathogen plugin manager.
+    "" Same thing as Pathogen plugin manager: ────────────────────────────-v-3
     " Here for messing with stuff not ready for the light of day, or just
     " for messing around with.
     NeoBundleLocal ~/.vim/bundle
     NeoBundleLocal ~/Dropbox/Vim/GlobalRuntimePath/bundle/
 
-    filetype plugin indent on
+    "" Plugins to try: ───────────────────────────────────────────────────-v-3
 
+    " Not totally sure:
+    "NeoBundle 'git://git.wincent.com/command-t.git'
+    "NeoBundle 'kien/ctrlp.vim'
+    "NeoBundle 'git://repo.or.cz/vcscommand'
+
+    " replaces gundo:
+    "NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
+
+    " replaces vim-signature:
+    "NeoBundle 'jeetsukumaran/vim-markology' " ── Show marks on the left
+
+    "" Finishing up: ─────────────────────────────────────────────────────-v-3
+
+    filetype plugin indent on
     NeoBundleCheck
 
   "│-v-2 │ Individual plug-ins
