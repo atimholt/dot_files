@@ -631,14 +631,6 @@
           "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q *.h *.cpp<CR>
           map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ .<CR>
 
-        "│-v-5 │ Arpeggio shortcuts experiment
-        "└─────┴───────────────────────────────
-          "Arpeggio inoremap s, /
-          "Arpeggio inoremap s. \
-
-          "Arpeggio cnoremap s, /
-          "Arpeggio cnoremap s. \
-
         "│-v-5 │ Digraph
         "└─────┴─────────
           Arpeggio inoremap jk <c-k>
