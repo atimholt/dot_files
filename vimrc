@@ -37,21 +37,15 @@
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
-  "Shellslash setting
   if exists('+shellslash')
     set shellslash
   endif
 
   " Expand the runtime path to a global, cloud-based location.
-  if has('win32')
-    " These probably don’t have to be different, but eh.
-    set runtimepath+=$HOME/Dropbox/Vim/GlobalRuntimePath
-  else
-    set runtimepath+=~/Dropbox/Vim/GlobalRuntimePath
-  endif
+  set runtimepath+=$HOME/Dropbox/Vim/GlobalRuntimePath
 
   "For virtually everything, and sanity in general:
-  set nocp
+  set nocompatible
   filetype plugin on
 
   "For that which __requires_utf_8:
