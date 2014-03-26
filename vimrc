@@ -636,14 +636,17 @@
           Arpeggio inoremap jk <c-k>
           Arpeggio cnoremap jk <c-k>
 
+        "│-v-5 │ spell
+        "└─────┴───────
+          nnoremap <silent> <leader>s :call g:EchoToggle('spell', 'Spell check')<cr>
+
+        "│-v-5 │ Window Size
+        "└─────┴─────────────
+          nnoremap <silent> <leader>W :call g:EchoToggle('winfixwidth', 'Fixed Window Width')<cr>
+          nnoremap <silent> <leader>H :call g:EchoToggle('winfixheight', 'Fixed Window Height')<cr>
+
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
-          "│-v-6 │ __echo_toggle_mappings:
-          "└─────┴─────────────────────────
-            nnoremap <silent> <leader>s :call g:EchoToggle('spell', 'Spell check')<cr>
-            nnoremap <silent> <leader>W :call g:EchoToggle('winfixwidth', 'Fixed Window Width')<cr>
-            nnoremap <silent> <leader>H :call g:EchoToggle('winfixheight', 'Fixed Window Height')<cr>
-
           "│-v-6 │ __box_characters_mapping:
           "└─────┴───────────────────────────
             vnoremap <silent> <leader>x :call g:BoxCharacters()<cr>
