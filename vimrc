@@ -563,13 +563,6 @@
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
       "└─┬───┴─┬────────
-        "│-v-5 │ Leader Key Settings
-        "└─────┴─────────────────────
-          " __mapleader_settings
-
-          " Still want this functionality!
-          map \u <Nop>
-
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
           "nnoremap <tab> %
