@@ -452,17 +452,22 @@
 
       "│-v-4 │ Customized behavior
       "└─┬───┴─┬───────────────────
+        "│-v-5 │ (function) EchoToggle
+        "└─────┴───────────────────────
+          "for any local toggle setting
+          function! g:EchoToggle(...)
+            :execute "set " . a:1 . "!"
+            :execute "if &l:" . a:1
+              echo (a:0 == 1 ? a:1 : a:2) "ON"
+            else
+              echo (a:0 == 1 ? a:1 : a:2) "OFF"
+            endif
+          endfunction
+
         "│-v-5 │ (function) Toggle Spell Checking.
         "└─────┴───────────────────────────────────
           " (mapping @__spell_check_mapping)
-          function! g:ToggleSpellMode()
-            :set spell!
-            if &l:spell
-              echo "Spell check ON"
-            else
-              echo "Spell check OFF"
-            endif
-          endfunction
+          " (Uses g:EchoToggle())
 
         "│-v-5 │ (function) Toggle Fixed Window Width.
         "└─────┴───────────────────────────────────────
@@ -799,7 +804,7 @@
         "└─┬───┴─┬────────────────────────────────────────────
           "│-v-6 │ __spell_check_mapping:
           "└─────┴────────────────────────
-            nnoremap <leader>s :call g:ToggleSpellMode()<cr>
+            nnoremap <silent> <leader>s :call g:EchoToggle('spell', 'Spell check')<cr>
 
           "│-v-6 │ __fixed_window_width:
           "└─────┴───────────────────────
