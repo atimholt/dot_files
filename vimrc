@@ -588,16 +588,7 @@
 
         "│-v-5 │ toggle showing of invisible characters
         "└─────┴────────────────────────────────────────
-          nnoremap <silent> <leader>I :call g:ToggleList()<cr>
-          " TODO finish this indicator and stick it in the right place.
-          function! g:ToggleList()
-            :set list!
-            if &l:list
-              echo "List Invisible Characters ON"
-            else
-              echo "List Invisible Characters OFF"
-            endif
-          endfunction
+          nnoremap <silent> <leader>I :call g:EchoToggle('list', 'List Invisible Characters')<cr>
 
         "│-v-5 │ OS clip-board easy-integration.
         "└─────┴─────────────────────────────────
