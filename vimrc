@@ -32,6 +32,8 @@
   " TODO Maybe try YouCompleteMe plugin.
   " TODO Evaluate which of the many rainbow parethesis plugins is best.
   " TODO Fix adding comments to this file (vim filetype?)
+  " TODO Look into NeoComplete and vim-marching, from this:
+  "           http://www.reddit.com/r/vim/comments/1p0u0j/n/ccxlgc6
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
