@@ -135,41 +135,6 @@
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
-    "│-v-3 │ Gundo Settings
-    "└─────┴────────────────
-      nnoremap <silent> <leader>u :GundoToggle<cr>
-      let g:gundo_help=1
-      let g:gundo_right=0
-      let g:gundo_preview_bottom=0
-
-      " Mappings (@__gundo_mappings):
-        " toggle Gundo
-
-    "│-v-3 │ vimwiki Settings
-    "└─────┴──────────────────
-      let g:vimwiki_camel_case = 0
-
-      let wiki_1 = {}
-      let wiki_1.path = '~/Dropbox/Vim/vimwiki/'
-      let wiki_1.nested_syntaxes = {'c++': 'cpp', 'asm': 'asm', 'sh': 'sh'}
-
-      let wiki_2 = {}
-      let wiki_2.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
-
-      let wiki_3 = {}
-      let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
-
-      let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
-
-    "│-v-3 │ Full-Screen Mode Settings
-    "└─────┴───────────────────────────
-      " Mappings (@__full_screen_mappings):
-      function! ToggleFullScreen()
-        if has('win32')
-          :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
-        endif
-      endfunction
-
     "│-v-3 │ 'a' settings
     "└─────┴──────────────
       " Mappings (@__a_mappings):
@@ -177,42 +142,6 @@
       "Hopefully, changing the default when associated source doesn't yet exist.
       let g:alternateExtensions_h = "cpp,c,cxx,cc,CC"
 
-    "│-v-3 │ OmniCppComplete Settings
-    "└─────┴──────────────────────────
-      au BufNewFile,BufRead,BufEnter *.cpp,*.h set omnifunc=omni#cpp#complete#Main
-      let OmniCpp_ShowPrototypeInAbbr = 1
-
-    "│-v-3 │ Rainbow Parentheses Settings
-    "└─────┴──────────────────────────────
-      " (Steve Losh’s modified version, cleaned up and jazz)
-      " Mappings (@__rainbow_parentheses_mappings):
-
-    "│-v-3 │ UltiSnips Settings
-    "└─────┴────────────────────
-      let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
-      let g:UltiSnipsSnippetDirectories=["UltiSnips", "UltiSnipsSnippets"]
-      let g:UltiSnipsEditSplit = "horizontal"
-      let g:UltiSnipsUsePythonVersion = 2
-
-      " Wasn't compatible with digraphs, so I thought I'd try a remap.
-      " Also wasn't compatible with my custom use of <s-tab>, even though it
-      " is after a reestablishment of said custom use, so there you go.
-      let g:UltiSnipsExpandTrigger="<c-t>"
-      let g:UltiSnipsJumpForwardTrigger="<c-l>"
-      let g:UltiSnipsJumpBackwardTrigger="<c-h>"
-
-    "│-v-3 │ Arpeggio Settings
-    "└─────┴───────────────────
-      call arpeggio#load()
-
-    "│-v-3 │ Surround
-    "└─────┴──────────
-      " lenticular brackets
-      let g:surround_{char2nr("l")} = "〖\r〗"
-      " directional quotes
-      let g:surround_{char2nr("q")} = "“\r”"
-      " txtfmt italics delimiters
-      let g:surround_{char2nr("i")} = "\r"
     "│-v-3 │ airline
     "└─────┴─────────
       if !exists('g:airline_symbols')
@@ -241,9 +170,38 @@
       let g:airline#extensions#tabline#show_buffers = 0
       let g:airline#extensions#tabline#tab_min_count = 2
 
-    "│-v-3 │ vim-signature
-    "└─────┴───────────────
-      nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
+    "│-v-3 │ Arpeggio Settings
+    "└─────┴───────────────────
+      call arpeggio#load()
+
+    "│-v-3 │ Full-Screen Mode Settings
+    "└─────┴───────────────────────────
+      " Mappings (@__full_screen_mappings):
+      function! ToggleFullScreen()
+        if has('win32')
+          :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
+        endif
+      endfunction
+
+    "│-v-3 │ Gundo Settings
+    "└─────┴────────────────
+      nnoremap <silent> <leader>u :GundoToggle<cr>
+      let g:gundo_help=1
+      let g:gundo_right=0
+      let g:gundo_preview_bottom=0
+
+      " Mappings (@__gundo_mappings):
+        " toggle Gundo
+
+    "│-v-3 │ OmniCppComplete Settings
+    "└─────┴──────────────────────────
+      au BufNewFile,BufRead,BufEnter *.cpp,*.h set omnifunc=omni#cpp#complete#Main
+      let OmniCpp_ShowPrototypeInAbbr = 1
+
+    "│-v-3 │ Rainbow Parentheses Settings
+    "└─────┴──────────────────────────────
+      " (Steve Losh’s modified version, cleaned up and jazz)
+      " Mappings (@__rainbow_parentheses_mappings):
 
     "│-v-3 │ Startify
     "└─────┴──────────
@@ -274,6 +232,49 @@
              \ 'g:startify_session_savevars',
              \ 'g:startify_session_savecmds'
              \ ]
+
+    "│-v-3 │ Surround
+    "└─────┴──────────
+      " lenticular brackets
+      let g:surround_{char2nr("l")} = "〖\r〗"
+      " directional quotes
+      let g:surround_{char2nr("q")} = "“\r”"
+      " txtfmt italics delimiters
+      let g:surround_{char2nr("i")} = "\r"
+
+    "│-v-3 │ UltiSnips Settings
+    "└─────┴────────────────────
+      let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
+      let g:UltiSnipsSnippetDirectories=["UltiSnips", "UltiSnipsSnippets"]
+      let g:UltiSnipsEditSplit = "horizontal"
+      let g:UltiSnipsUsePythonVersion = 2
+
+      " Wasn't compatible with digraphs, so I thought I'd try a remap.
+      " Also wasn't compatible with my custom use of <s-tab>, even though it
+      " is after a reestablishment of said custom use, so there you go.
+      let g:UltiSnipsExpandTrigger="<c-t>"
+      let g:UltiSnipsJumpForwardTrigger="<c-l>"
+      let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+    "│-v-3 │ vim-signature
+    "└─────┴───────────────
+      nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
+
+    "│-v-3 │ vimwiki Settings
+    "└─────┴──────────────────
+      let g:vimwiki_camel_case = 0
+
+      let wiki_1 = {}
+      let wiki_1.path = '~/Dropbox/Vim/vimwiki/'
+      let wiki_1.nested_syntaxes = {'c++': 'cpp', 'asm': 'asm', 'sh': 'sh'}
+
+      let wiki_2 = {}
+      let wiki_2.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
+
+      let wiki_3 = {}
+      let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
+
+      let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
