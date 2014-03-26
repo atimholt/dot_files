@@ -182,23 +182,10 @@
       au BufNewFile,BufRead,BufEnter *.cpp,*.h set omnifunc=omni#cpp#complete#Main
       let OmniCpp_ShowPrototypeInAbbr = 1
 
-    "│-v-3 │ PowerShell syntaxy-stuff settings
-    "└─────┴───────────────────────────────────
-      au BufNewFile,BufRead,BufEnter *.ps1 set filetype=ps1
-
     "│-v-3 │ Rainbow Parentheses Settings
     "└─────┴──────────────────────────────
       " (Steve Losh’s modified version, cleaned up and jazz)
-
       " Mappings (@__rainbow_parentheses_mappings):
-      autocmd BufEnter * RainbowParenthesesLoadRound
-      autocmd BufEnter * RainbowParenthesesLoadBraces
-      "autocmd BufEnter * RainbowParenthesesLoadChevrons
-
-    "│-v-3 │ Powerline Settings
-    "└─────┴────────────────────
-      let Powerline_cache_file = ""
-      let Powerline_symbols = "fancy"
 
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
@@ -217,25 +204,6 @@
     "│-v-3 │ Arpeggio Settings
     "└─────┴───────────────────
       call arpeggio#load()
-
-    "│-v-3 │ Indent Guides
-    "└─────┴───────────────
-      let g:indent_guides_space_guides = 0
-
-    "│-v-3 │ Showmarks
-    "└─────┴───────────
-      let showmarks_enable = 0
-      "let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'`^<>[]{}()\""
-      let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.'`^"
-      let g:showmarks_ignore_type = "q"
-
-      let showmarks_textlower = "\t:"
-      let showmarks_textupper = "\t:"
-      let showmarks_textother = "\t:"
-
-    "│-v-3 │ latex-suite
-    "└─────┴─────────────
-      set grepprg=grep\ -nH\ $*
 
     "│-v-3 │ Surround
     "└─────┴──────────
