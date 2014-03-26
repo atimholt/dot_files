@@ -533,53 +533,6 @@
             endif
           endfunction
 
-        "│-v-5 │ (functions) Line-number Mode switching
-        "└─────┴────────────────────────────────────────
-          " (mappings @__line_number_modes_mappings)
-
-          let g:tim_number_mode = 1
-
-          function! g:ToggleNuMode(...)
-            if a:0
-              if(a:1 != -1)
-                let g:tim_number_mode = a:1
-              else
-                let g:tim_number_mode -= 1
-              endif
-            else
-              let g:tim_number_mode += 1
-            endif
-
-            if g:tim_number_mode > 2
-              let g:tim_number_mode = 0
-            endif
-            if g:tim_number_mode < 0
-              let g:tim_number_mode = 2
-            endif
-
-            call g:TimDisplayNumbers()
-          endfunc
-
-          function! g:TimDisplayNumbers()
-            if(g:tim_number_mode == 1)
-              if g:timdisplaymode == 'code'
-                ":vertical resize 85
-              endif
-              set number
-            elseif(g:tim_number_mode == 2)
-              if g:timdisplaymode == 'code'
-                ":vertical resize 85
-              endif
-              set relativenumber
-            else
-              if g:timdisplaymode == 'code'
-                ":vertical resize 81
-              endif
-              set nonumber
-              set norelativenumber
-            endif
-          endfunc
-
         "│-v-5 │ (functions) View and Folds saving
         "└─────┴───────────────────────────────────
           " (mappings @__viewdir_mappings)
@@ -615,22 +568,22 @@
           " (mappings @__open_writing_project)
           function! g:open_writing_project()
             :VimwikiIndex 2
-            call g:ToggleNuMode(2)
+            setlocal relativenumber
 
             cd ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe
 
             tabedit ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/NovelOld.txtfmt
-            call g:ToggleNuMode(2)
+            setlocal relativenumber
 
             vsplit ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/New_2011-07-09.txtfmt
-            call g:ToggleNuMode(2)
+            setlocal relativenumber
             set nospell
 
-            "if has('win32')
-              "set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
-            "else
-              "set guifont=Consolas\ for\ Powerline\ 16
-            "endif
+            if has('win32')
+              set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
+            else
+              set guifont=Consolas\ for\ Powerline\ 16
+            endif
             call ToggleFullScreen()
 
             normal <c-w>=
@@ -764,25 +717,8 @@
 
           "│-v-6 │ __line_number_modes_mappings:
           "└─────┴───────────────────────────────
-            if v:version < 704
-            "nnoremap <silent> <leader>n :call g:ToggleNuMode()<cr>
-
-              nnoremap <silent> <leader>NN :call g:ToggleNuMode(-1)<cr>
-             
-             
-              nnoremap <silent> <leader>n0 :call g:ToggleNuMode(0)<cr>
-              nnoremap <silent> <leader>no :call g:ToggleNuMode(0)<cr>
-              nnoremap <silent> <leader>nO :call g:ToggleNuMode(0)<cr>
-             
-              nnoremap <silent> <leader>na :call g:ToggleNuMode(1)<cr>
-              nnoremap <silent> <leader>nA :call g:ToggleNuMode(1)<cr>
-             
-              nnoremap <silent> <leader>nr :call g:ToggleNuMode(2)<cr>
-              nnoremap <silent> <leader>nR :call g:ToggleNuMode(2)<cr>
-            else
-              nnoremap <silent> <leader>nr :set relativenumber!<cr>
-              nnoremap <silent> <leader>na :set number!<cr>
-            endif
+            nnoremap <silent> <leader>nr :set relativenumber!<cr>
+            nnoremap <silent> <leader>na :set number!<cr>
 
           "│-v-6 │ __display_mode_mappings:
           "└─────┴──────────────────────────
