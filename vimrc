@@ -85,7 +85,6 @@
       " Required:
       NeoBundleFetch 'Shougo/neobundle.vim'
 
-      NeoBundle 'tpope/vim-pathogen'
       NeoBundle 'a.vim'
       NeoBundle 'sjl/badwolf'
       NeoBundle 'git://git.wincent.com/command-t.git'
@@ -129,18 +128,15 @@
 
       NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
 
+      " Same thing as Pathogen plugin manager.
+      " Here for messing with stuff not ready for the light of day, or just
+      " for messing around with.
+      NeoBundleLocal ~/.vim/bundle
+      NeoBundleLocal ~/Dropbox/Vim/GlobalRuntimePath/bundle/
+
       filetype plugin indent on
 
       NeoBundleCheck
-
-    "│-v-3 │ Pathogen
-    "└─────┴──────────
-    " This is still here for edge-case ‘plugins’, like minor custom plugins I
-    " don’t yet want to bother with putting into a public repository.
-      filetype off
-      call pathogen#infect()
-      call pathogen#helptags()
-      filetype plugin on
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
