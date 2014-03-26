@@ -760,9 +760,7 @@
 
       "│-v-4 │ Current-Row-Column highlighting
       "└─────┴─────────────────────────────────
-        "autocmd WinLeave * set nocursorline nocursorcolumn
-        "autocmd WinEnter * set cursorline cursorcolumn
-        "set cursorline cursorcolumn
+        nnoremap <silent> <leader>C :call g:EchoToggle('cursorcolumn')<cr>
 
         autocmd WinLeave * set nocursorline
         autocmd WinEnter * set cursorline
