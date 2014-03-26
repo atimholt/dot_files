@@ -288,7 +288,11 @@
 
     "│-v-3 │ Startify
     "└─────┴──────────
-      let g:startify_list_order = ['sessions', 'bookmarks', 'dir',  'files']
+      let g:startify_list_order = [
+                 \ [' Sessions'], 'sessions',
+                 \ [' Bookmarks'], 'bookmarks',
+                 \ [' Recent Files (current directory)'], 'dir',
+                 \ [' Recent Files'], 'files']
 
       let g:startify_skiplist = [
                  \ 'COMMIT_EDITMSG',
@@ -304,7 +308,8 @@
       let g:startify_files_number = 5
       "let g:startify_custom_indices
       "let g:startify_custom_header
-      "let g:startify_custom_footer
+      let g:startify_custom_footer = ["",
+          \ "  Current instance started: " . strftime("%Y-%m-%d %a %I:%M %p")]
       let g:startify_restore_position = 1
       let g:startify_session_savevars = [
              \ 'g:startify_session_savevars',
