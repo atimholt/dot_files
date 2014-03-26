@@ -62,77 +62,75 @@
 
 "│-v-1 │ Plug-in Settings
 "└─┬───┴─┬────────────────
-  "│-v-2 │ plug-in manager
-  "└─┬───┴─┬───────────────
-    "│-v-3 │ neobundle
-    "└─────┴───────────
-      " TODO Evaluate using VAM or vim-flavor instead.
-      if has('vim_starting')
-        set nocompatible               " Be iMproved
-
-        " Required:
-        set runtimepath+=~/.vim/neobundle/neobundle.vim/
-      endif
+  "│-v-2 │ plug-in manager (neobundle)
+  "└─────┴─────────────────────────────
+    " TODO Evaluate using VAM or vim-flavor instead.
+    if has('vim_starting')
+      set nocompatible               " Be iMproved
 
       " Required:
-      call neobundle#rc(expand('~/.vim/neobundle/'))
+      set runtimepath+=~/.vim/neobundle/neobundle.vim/
+    endif
 
-      " Let NeoBundle manage NeoBundle
-      " Required:
-      NeoBundleFetch 'Shougo/neobundle.vim'
+    " Required:
+    call neobundle#rc(expand('~/.vim/neobundle/'))
 
-      NeoBundle 'a.vim'
-      NeoBundle 'sjl/badwolf'
-      NeoBundle 'git://git.wincent.com/command-t.git'
-      NeoBundle 'kien/ctrlp.vim'
-      NeoBundle 'sjl/gundo.vim'
-      NeoBundle 'noahfrederick/vim-hemisu'
-      NeoBundle 'roman/rainbow'
-      NeoBundle 'tpope/vim-repeat'
-      NeoBundle 'tpope/vim-surround'
-      NeoBundle 'bpstahlman/txtfmt'
-      NeoBundle 'SirVer/ultisnips', '3.0'
-      NeoBundle 'honza/vim-snippets'
-      NeoBundle 'kana/vim-arpeggio'
-      NeoBundle 'OmniCppComplete'
-      NeoBundle 'vimwiki/vimwiki'
-      NeoBundle 'scrooloose/nerdcommenter'
-      NeoBundle 'PProvost/vim-ps1'
-      NeoBundle 'mhinz/vim-startify'
+    " Let NeoBundle manage NeoBundle
+    " Required:
+    NeoBundleFetch 'Shougo/neobundle.vim'
 
-      NeoBundle 'bling/vim-airline'
-      NeoBundle 'ludovicchabant/vim-lawrencium'
-      NeoBundle 'tpope/vim-fugitive'
+    NeoBundle 'a.vim'
+    NeoBundle 'sjl/badwolf'
+    NeoBundle 'git://git.wincent.com/command-t.git'
+    NeoBundle 'kien/ctrlp.vim'
+    NeoBundle 'sjl/gundo.vim'
+    NeoBundle 'noahfrederick/vim-hemisu'
+    NeoBundle 'roman/rainbow'
+    NeoBundle 'tpope/vim-repeat'
+    NeoBundle 'tpope/vim-surround'
+    NeoBundle 'bpstahlman/txtfmt'
+    NeoBundle 'SirVer/ultisnips', '3.0'
+    NeoBundle 'honza/vim-snippets'
+    NeoBundle 'kana/vim-arpeggio'
+    NeoBundle 'OmniCppComplete'
+    NeoBundle 'vimwiki/vimwiki'
+    NeoBundle 'scrooloose/nerdcommenter'
+    NeoBundle 'PProvost/vim-ps1'
+    NeoBundle 'mhinz/vim-startify'
 
-      "" Plugins to try:
+    NeoBundle 'bling/vim-airline'
+    NeoBundle 'ludovicchabant/vim-lawrencium'
+    NeoBundle 'tpope/vim-fugitive'
 
-      " Bundle 'git://repo.or.cz/vcscommand'
+    "" Plugins to try:
 
-      " replaces gundo:
-      " Bundle 'mbbill/undotree'
+    " Bundle 'git://repo.or.cz/vcscommand'
 
-      " Show marks:
-      NeoBundle 'kshenoy/vim-signature'
-      "NeoBundle 'jeetsukumaran/vim-markology'
+    " replaces gundo:
+    " Bundle 'mbbill/undotree'
 
-      " My own plugins:
-      NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
-      NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
-         \ {'rev' : '7ce24b179f88',
-         \ 'type': 'hg',
-         \ 'directory': 'my_vimrc_extended'}
+    " Show marks:
+    NeoBundle 'kshenoy/vim-signature'
+    "NeoBundle 'jeetsukumaran/vim-markology'
 
-      NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
+    " My own plugins:
+    NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
+    NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
+       \ {'rev' : '7ce24b179f88',
+       \ 'type': 'hg',
+       \ 'directory': 'my_vimrc_extended'}
 
-      " Same thing as Pathogen plugin manager.
-      " Here for messing with stuff not ready for the light of day, or just
-      " for messing around with.
-      NeoBundleLocal ~/.vim/bundle
-      NeoBundleLocal ~/Dropbox/Vim/GlobalRuntimePath/bundle/
+    NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
 
-      filetype plugin indent on
+    " Same thing as Pathogen plugin manager.
+    " Here for messing with stuff not ready for the light of day, or just
+    " for messing around with.
+    NeoBundleLocal ~/.vim/bundle
+    NeoBundleLocal ~/Dropbox/Vim/GlobalRuntimePath/bundle/
 
-      NeoBundleCheck
+    filetype plugin indent on
+
+    NeoBundleCheck
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
