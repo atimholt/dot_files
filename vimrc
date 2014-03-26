@@ -454,31 +454,14 @@
       "└─┬───┴─┬───────────────────
         "│-v-5 │ (function) EchoToggle
         "└─────┴───────────────────────
-          "for any local toggle setting
+        " (mappings @__echo_toggle_mappings)
+          " For any local toggle setting
           function! g:EchoToggle(...)
             :execute "set " . a:1 . "!"
             :execute "if &l:" . a:1
               echo (a:0 == 1 ? a:1 : a:2) "ON"
             else
               echo (a:0 == 1 ? a:1 : a:2) "OFF"
-            endif
-          endfunction
-
-        "│-v-5 │ (function) Toggle Spell Checking.
-        "└─────┴───────────────────────────────────
-          " (mapping @__spell_check_mapping)
-          " (Uses g:EchoToggle())
-
-        "│-v-5 │ (function) Toggle Fixed Window Width.
-        "└─────┴───────────────────────────────────────
-          " (mapping @__fixed_window_width)
-
-          function! g:TimToggleWindowFixedWidth()
-            :set winfixwidth!
-            if &l:winfixwidth
-              echo "Fixed Window Width ON"
-            else
-              echo "Fixed Window Width OFF"
             endif
           endfunction
 
@@ -802,17 +785,11 @@
 
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
-          "│-v-6 │ __spell_check_mapping:
-          "└─────┴────────────────────────
+          "│-v-6 │ __echo_toggle_mappings:
+          "└─────┴─────────────────────────
             nnoremap <silent> <leader>s :call g:EchoToggle('spell', 'Spell check')<cr>
-
-          "│-v-6 │ __fixed_window_width:
-          "└─────┴───────────────────────
-            nnoremap <leader>W :call g:TimToggleWindowFixedWidth()<cr>
-
-          "│-v-6 │ __fixed_window_height:
-          "└─────┴───────────────────────
-            nnoremap <leader>H :call g:TimToggleWindowFixedHeight()<cr>
+            nnoremap <silent> <leader>W :call g:EchoToggle('winfixwidth', 'Fixed Window Width')<cr>
+            nnoremap <silent> <leader>H :call g:EchoToggle('winfixheight', 'Fixed Window Height')<cr>
 
           "│-v-6 │ __box_characters_mapping:
           "└─────┴───────────────────────────
