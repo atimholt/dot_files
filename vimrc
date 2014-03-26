@@ -705,7 +705,7 @@
         "└─────┴─────────────────────────────────
           " (mappings @__open_writing_project)
           function! g:open_writing_project()
-            normal 2,ww
+            :VimwikiIndex 2
             call g:ToggleNuMode(2)
 
             cd ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe
