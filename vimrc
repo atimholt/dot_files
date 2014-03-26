@@ -586,16 +586,6 @@
         "└─────┴────────────────
           nnoremap <leader>b :set linebreak!<cr>
 
-        "│-v-5 │ Normal-Mode alternative access.
-        "└─────┴─────────────────────────────────
-          " TODO: Change the windows mapping to changing caps lock to esc.
-          "if has('win32')
-          "  inoremap hh <esc>
-          "  cnoremap hh <esc>
-          "endif
-          "Arpeggio inoremap tn <esc>
-          "Arpeggio cnoremap tn <esc>
-
         "│-v-5 │ toggle showing of invisible characters
         "└─────┴────────────────────────────────────────
           nnoremap <silent> <leader>I :call g:ToggleList()<cr>
