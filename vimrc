@@ -465,19 +465,6 @@
             endif
           endfunction
 
-        "│-v-5 │ (function) Toggle Fixed Window Height.
-        "└─────┴───────────────────────────────────────
-          " (mapping @__fixed_window_height)
-
-          function! g:TimToggleWindowFixedHeight()
-            :set winfixheight!
-            if &l:winfixheight
-              echo "Fixed Window Height ON"
-            else
-              echo "Fixed Window Height OFF"
-            endif
-          endfunction
-
         "│-v-5 │ (function) Box character (turburul) hax
         "└─────┴─────────────────────────────────────────
           " This:
