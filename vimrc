@@ -522,6 +522,7 @@
           " These settings rely heavily on the specific ways I personally use Vim.
           " (auto-commands @__multi_window_autocmds)
 
+          " __todo_display_mode
           function! TimWinLeaveWithGundo()
             if g:timdisplaymode == 'code' && !g:BufInTab("__Gundo__")
               :set nowrap
@@ -775,6 +776,7 @@
         " __requires_utf_8:
         set listchars=tab:│·,trail:·,extends:→
 
+        " __todo_display_mode
         au BufNewFile,BufRead *.cpp,*.h,*.vim,*.rb,*.java,*.snippets,*.py set list
 
       "│-v-4 │ Miscellaneous
@@ -784,6 +786,7 @@
 
       "│-v-4 │ Color Column
       "└─────┴──────────────
+        " __todo_display_mode
         set colorcolumn=81,101,121
 
       "│-v-4 │ Fold line
