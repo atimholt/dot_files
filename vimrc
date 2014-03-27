@@ -862,14 +862,37 @@
           return l:running_result
         endfunction "-^-
 
-        let s:fold_fill_char = '═'
+        " TODO move this line?
+        set fillchars=vert:│,fold:═
+        let v:folddashes = '═'
         function! s:FoldText() "-v-
           let l:actual_winwidth = s:ActualWinwidth()
-          let l:line1_text = getline(v:foldstart)
+          let l:line1_text = g:CorrectlySpacify(getline(v:foldstart))
           let l:lines_count = v:foldend - v:foldstart + 1
 
+          " Dashes in the indentation
+          let l:line1_text = substitute(
+              \ l:line1_text,
+              \ '^[ ]+',
+              \ repeat( v:folddashes, strdisplaywidth() - 1) . ' ',
+              \ 'e')
           " fill fairly wide whitespace regions
-          let l:line1_text = substitute(l:line1_text, "\s()\s", "", "g")
+          let l:line1_text = substitute(
+              \ l:line1_text,
+              \ ' \([ ]\{3,}\) ',
+              \ repeat(v:folddashes, strlen(submatch(1))).' ',
+              \ 'g')
+
+          let l:end_text = '╡ ' . printf("%10s", l:lines_count . ' lines') . ' ╞'
+          let l:end_text .= repeat(v:folddashes, 2 * v:foldlevel)
+
+          let l:too_long = 1
+          let l:shave_amount = 0
+          while l:too_long
+            l:shave_amount += 1
+            if 
+            endif
+          endwhile
 
         endfunction "-^-
         set foldtext=NeatFoldText()
