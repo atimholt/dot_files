@@ -792,18 +792,86 @@
       "│-v-4 │ Fold line
       "└─────┴───────────────
         " TODO: grok & change this.
-        function! NeatFoldText()
+        function! NeatFoldText() "-v-
           let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{{\d*\s*', '', 'g') . ' '
           let lines_count = v:foldend - v:foldstart + 1
           "let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
           let lines_count_text = '╡ ' . printf("%10s", lines_count . ' lines') . ' ╞'
           "let foldchar = '·'
           let foldchar = '═'
-          let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+          let foldtextstart = strpart(repeat(foldchar, (v:foldlevel - 1)*2) . line, 0, (winwidth(0)*2)/3)
           let foldtextend = lines_count_text . repeat(foldchar, 8)
           let length = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g'))
           return foldtextstart . repeat(foldchar, winwidth(0)-length) . foldtextend
-        endfunction
+        endfunction "-^-
+
+        function! s:ActualWinwidth() "-v-
+          " Assuming __current_window & __current_buffer only, for now. :/
+
+          let l:number_col_width = 0
+          if &number
+            " Only works for the __current_buffer! (it’s the line('$') )
+            let l:number_col_width =
+                \ max(strlen(line('$')) + 1, 3])
+            " This assumes the number of lines is less than 10,000,000,000
+          elseif &relativenumber
+            let l:number_col_width = 3
+            " I don’t know how tall a window has to be for this number to be
+            " bigger, but I haven’t run into it.
+          endif
+          if !l:number_col_width
+            let l:number_col_width = max([l:number_col_width, &numberwidth])
+          endif
+
+          let l:signs_width = 0
+          if has('+signs')
+            l:signs = []
+            redir =>l:signs|exe "sil sign place buffer=".bufnr('')|redir end
+            let l:signs = split(l:signs, "\n")[1:]
+
+            if !empty(signs)
+              let l:signs_width = 2
+            endif
+          endif
+
+          " Only works for the __current_window! (it’s the winwidth(0) )
+          return winwidth(0) - l:number_col_width - &foldcolumn - &l:signs_width
+        endfunction "-^-
+
+        function! g:CorrectlySpacify(...) "-v-
+          let l:running_result = a:1
+          let l:done = 0
+          while !l:done
+            " So ugly! substitute() is apparently the _only_ regex function in
+            " vimscript
+            let l:up_to_tab = substitute(l:running_result, '\t.*$', '', 'e')
+
+            if l:running_result =~# '\t'
+              let l:first_tab_col = strdisplaywidth(l:up_to_tab)
+              let l:first_tab_dw = strdisplaywidth("\t", l:first_tab_col)
+
+              let l:running_result = substitute(
+                    \ l:running_result,
+                    \ '\t',
+                    \ repeat(' ', l:first_tab_dw),
+                    \ 'e' )
+            else
+              let l:done = 1
+            endif
+          endwhile
+          return l:running_result
+        endfunction "-^-
+
+        let s:fold_fill_char = '═'
+        function! s:FoldText() "-v-
+          let l:actual_winwidth = s:ActualWinwidth()
+          let l:line1_text = getline(v:foldstart)
+          let l:lines_count = v:foldend - v:foldstart + 1
+
+          " fill fairly wide whitespace regions
+          let l:line1_text = substitute(l:line1_text, "\s()\s", "", "g")
+
+        endfunction "-^-
         set foldtext=NeatFoldText()
 
     "│-v-3 │ Custom Functions
