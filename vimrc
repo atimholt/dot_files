@@ -873,14 +873,14 @@
           " Dashes in the indentation
           let l:line1_text = substitute(
               \ l:line1_text,
-              \ '^\([ ]+\)',
-              \ repeat( g:my_fold_dashes, strdisplaywidth(submatch(1)) - 1) . ' ',
+              \ '^[ ]\+',
+              \ '\=repeat( g:my_fold_dashes, strlen(submatch(0)) - 1 ) . " " ',
               \ 'e')
           " fill fairly wide whitespace regions
           let l:line1_text = substitute(
               \ l:line1_text,
               \ ' \([ ]\{3,}\) ',
-              \ repeat(g:my_fold_dashes, strlen(submatch(1))).' ',
+              \ '\=" " . repeat(g:my_fold_dashes, strlen(submatch(1))) . " " ',
               \ 'g')
 
           let l:end_text = '╡ ' . printf("%10s", l:lines_count . ' lines') . ' ╞'
