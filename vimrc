@@ -865,9 +865,8 @@
 
         " TODO move this line?
         set fillchars=vert:│,fold:═
-        let g:my_fold_dashes = '═'
+        let g:my_fold_fill = '═'
         function! g:TimFoldText() "-v-
-          let l:actual_winwidth = g:ActualWinwidth()
           let l:line1_text = g:CorrectlySpacify(getline(v:foldstart))
           let l:lines_count = v:foldend - v:foldstart + 1
 
@@ -875,41 +874,40 @@
           let l:line1_text = substitute(
               \ l:line1_text,
               \ '^[ ]\+',
-              \ '\=repeat( g:my_fold_dashes, strlen(submatch(0)) - 1 ) . " " ',
+              \ '\=repeat( g:my_fold_fill, strlen(submatch(0)) - 1 ) . " " ',
               \ 'e')
           " fill fairly wide whitespace regions
           let l:line1_text = substitute(
               \ l:line1_text,
               \ ' \([ ]\{3,}\) ',
-              \ '\=" " . repeat(g:my_fold_dashes, strlen(submatch(1))) . " " ',
+              \ '\=" " . repeat(g:my_fold_fill, strlen(submatch(1))) . " " ',
               \ 'g')
 
           let l:end_text = '╡ ' . printf("%10s", l:lines_count . ' lines') . ' ╞'
-          let l:end_text .= repeat(g:my_fold_dashes, 2 * v:foldlevel)
+          let l:end_text .= repeat(g:my_fold_fill, 2 * v:foldlevel)
 
           " 'asymptotic' arrival at the right value, due to multibytes.
           " VimL sucks
           let l:kept_length = len(l:line1_text)
           let l:end_display_width = strdisplaywidth(l:end_text)
+          let l:actual_winwidth = g:ActualWinwidth()
           let l:over_amount = 0
           let l:too_long = 1
           while l:too_long && (l:kept_length > 0)
-            l:start_display_width = strdisplaywidth(
+            let l:start_display_width = strdisplaywidth(
                 \ strpart(l:line1_text, 0, l:kept_length))
-            l:over_amount = (l:start_display_width + l:end_display_width) - l:actual_winwidth
+            let l:over_amount = (l:start_display_width + l:end_display_width) - l:actual_winwidth
             if l:over_amount > 0
-              "let l:kept_length -= max([1, l:over_amount])
-              let l:kept_length -= l:over_amount
+              let l:kept_length -= max([1, l:over_amount])
+              "let l:kept_length -= l:over_amount
             else
               let l:too_long = 0
             endif
           endwhile
-          let g:my_debug_kept_length = l:kept_length
-          let g:my_debug_actual_winwidth = l:actual_winwidth
 
           let l:return_val = strpart(l:line1_text, 0, l:kept_length)
           if l:over_amount < 0
-            let l:return_val .= repeat(g:my_fold_dashes, -1 * l:over_amount)
+            let l:return_val .= repeat(g:my_fold_fill, -1 * l:over_amount)
           endif
           let l:return_val .= l:end_text
 
