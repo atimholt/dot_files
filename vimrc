@@ -791,20 +791,6 @@
 
       "│-v-4 │ Fold line
       "└─────┴───────────────
-        " TODO: grok & change this.
-        function! NeatFoldText() "-v-
-          let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{{\d*\s*', '', 'g') . ' '
-          let lines_count = v:foldend - v:foldstart + 1
-          "let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-          let lines_count_text = '╡ ' . printf("%10s", lines_count . ' lines') . ' ╞'
-          "let foldchar = '·'
-          let foldchar = '═'
-          let foldtextstart = strpart(repeat(foldchar, (v:foldlevel - 1)*2) . line, 0, (winwidth(0)*2)/3)
-          let foldtextend = lines_count_text . repeat(foldchar, 8)
-          let length = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g'))
-          return foldtextstart . repeat(foldchar, winwidth(0)-length) . foldtextend
-        endfunction "-^-
-
         function! g:ActualWinwidth() "-v-
           " Assuming __current_window & __current_buffer only, for now. :/
 
@@ -868,7 +854,6 @@
         let g:my_fold_fill = '═'
         function! g:TimFoldText() "-v-
           let l:line1_text = g:CorrectlySpacify(getline(v:foldstart))
-          let l:lines_count = v:foldend - v:foldstart + 1
 
           " Dashes in the indentation
           let l:line1_text = substitute(
@@ -883,6 +868,7 @@
               \ '\=" " . repeat(g:my_fold_fill, strlen(submatch(1))) . " " ',
               \ 'g')
 
+          let l:lines_count = v:foldend - v:foldstart + 1
           let l:end_text = '╡ ' . printf("%10s", l:lines_count . ' lines') . ' ╞'
           let l:end_text .= repeat(g:my_fold_fill, 2 * v:foldlevel)
 
