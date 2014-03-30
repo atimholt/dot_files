@@ -867,6 +867,7 @@
               \ ' \([ ]\{3,}\) ',
               \ '\=" " . repeat(g:my_fold_fill, strlen(submatch(1))) . " " ',
               \ 'g')
+          let l:line1_text .= "  "
 
           let l:lines_count = v:foldend - v:foldstart + 1
           let l:end_text = '╡ ' . printf("%10s", l:lines_count . ' lines') . ' ╞'
