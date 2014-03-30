@@ -31,7 +31,6 @@
   "      links
   " TODO Maybe try YouCompleteMe plugin.
   " TODO Evaluate which of the many rainbow parethesis plugins is best.
-  " TODO Fix adding comments to this file (vim filetype?)
   " TODO Look into NeoComplete and vim-marching, from this:
   "           http://www.reddit.com/r/vim/comments/1p0u0j/n/ccxlgc6
 
@@ -976,5 +975,5 @@
   " belong in this file.
   :source ~/Dropbox/code/zigzagdungeon/vimsetup.vim
 
-" vim: set fmr=-v-,-^- fdm=marker cms=//%s et ts=2 sw=2 sts=2 :
+" vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=2 sts=2 :
 
