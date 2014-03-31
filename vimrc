@@ -226,7 +226,8 @@
                  \ $VIMRUNTIME .'/doc',
                  \ 'C:/Program Files (x86)/vim/doc',
                  \ 'neobundle/.*/doc',
-                 \ '\.DS_Store'
+                 \ '\.DS_Store',
+                 \ 'smb-share'
                  \ ]
 
       let g:startify_bookmarks = ['~/dot_files/vimrc']
