@@ -82,13 +82,11 @@
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
-    NeoBundle 'noahfrederick/vim-hemisu' " ── some colorscheme or other
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'roman/rainbow' " ───────────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
-    NeoBundle 'sjl/badwolf' " ─────────────── awesome colorscheme
     NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
     NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
@@ -99,6 +97,18 @@
     NeoBundle 'tpope/vim-repeat' " ────────── makes some plugins .-able
     " Used by ultisnips:
     NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
+
+    "" Color Schemes: ────────────────────────────────────────────────────-v-3
+
+    NeoBundle 'sjl/badwolf' " ─────────────── ★★★★★ Beautiful & subdued
+    NeoBundle '3DGlasses.vim' " ───────────── ★★☆☆☆ A bit harsh (on purpose)
+    NeoBundle 'Ambient-Color-Scheme' " ────── ★★☆☆☆ A bit harsh (incomplete)
+              " known needs: signs column & colorcolumn
+
+    " unrated:
+    NeoBundle 'noahfrederick/vim-hemisu' " ── some colorscheme or other
+    " TODO: fix this:
+    "NeoBundle 'bdesham/biogoo', {'lazy' : 1, 'directory' : '~/.vim/bundle/biogoo/colors'} " ──────────── 
 
     "" My own plugins: ───────────────────────────────────────────────────-v-3
     NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
