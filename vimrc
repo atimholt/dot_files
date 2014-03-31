@@ -309,6 +309,7 @@
           set tabstop=2
           set backspace=indent,eol,start
           set ruler
+          set nojoinspaces
           :syntax enable
           :set cindent
 
