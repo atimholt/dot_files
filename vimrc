@@ -800,6 +800,10 @@
         " __todo_display_mode
         set colorcolumn=81,101,121
 
+      "│-v-4 │ fillchars
+      "└─────┴───────────
+        set fillchars=vert:│,fold:═
+
     "│-v-3 │ Custom Functions
     "└─┬───┴─┬────────────────
       "│-v-4 │ Display Mode Stuff
