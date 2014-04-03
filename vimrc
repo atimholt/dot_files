@@ -117,6 +117,7 @@
        \ 'directory': 'my_vimrc_extended'}
     NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
     NeoBundle 'bitbucket:atimholt/UltiSnipsSnippets', {'type': 'hg'}
+    NeoBundle 'bitbucket:atimholt/spiffy_foldtext', {'type': 'hg'}
 
     "" Same thing as Pathogen plugin manager: ────────────────────────────-v-3
     " Here for messing with stuff not ready for the light of day, or just
