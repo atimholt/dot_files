@@ -33,6 +33,7 @@
   " TODO Evaluate which of the many rainbow parethesis plugins is best.
   " TODO Look into NeoComplete and vim-marching, from this:
   "           http://www.reddit.com/r/vim/comments/1p0u0j/n/ccxlgc6
+  " TODO setup the a.vim replacement, fswitch, or go back to a.vim
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
@@ -76,9 +77,9 @@
 
     "" Plugins from the nice people of the Vim community: ────────────────-v-3
 
-    NeoBundle 'a.vim' " ───────────────────── alternates between .cpp & .h
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
+    NeoBundle 'derekwyatt/vim-fswitch' " ──── alternates between .cpp & .h 
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
