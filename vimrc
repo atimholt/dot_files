@@ -186,6 +186,18 @@
     "└─────┴───────────────────
       call arpeggio#load()
 
+    "│-v-3 │ FSwitch
+    "└─────┴─────────
+      nmap <silent> <Leader>of :FSHere<cr>
+      nmap <silent> <Leader>ol :FSRight<cr>
+      nmap <silent> <Leader>oL :FSSplitRight<cr>
+      nmap <silent> <Leader>oh :FSLeft<cr>
+      nmap <silent> <Leader>oH :FSSplitLeft<cr>
+      nmap <silent> <Leader>ok :FSAbove<cr>
+      nmap <silent> <Leader>oK :FSSplitAbove<cr>
+      nmap <silent> <Leader>oj :FSBelow<cr>
+      nmap <silent> <Leader>oJ :FSSplitBelow<cr>
+
     "│-v-3 │ Full-Screen Mode Settings
     "└─────┴───────────────────────────
       " Mappings (@__full_screen_mappings):
