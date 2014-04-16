@@ -34,6 +34,8 @@
   " TODO Look into NeoComplete and vim-marching, from this:
   "           http://www.reddit.com/r/vim/comments/1p0u0j/n/ccxlgc6
   " TODO setup the a.vim replacement, fswitch, or go back to a.vim
+  " TODO Get reedes/vim-textobj-quote working, or at least post about it not
+  "      working
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
