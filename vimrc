@@ -152,13 +152,6 @@
 
   "│-v-2 │ Individual plug-ins
   "└─┬───┴─┬───────────────────
-    "│-v-3 │ 'a' settings
-    "└─────┴──────────────
-      " Mappings (@__a_mappings):
-
-      "Hopefully, changing the default when associated source doesn't yet exist.
-      let g:alternateExtensions_h = "cpp,c,cxx,cc,CC"
-
     "│-v-3 │ airline
     "└─────┴─────────
       if !exists('g:airline_symbols')
@@ -739,13 +732,6 @@
           "│-v-6 │ __full_screen_mappings:
           "└─────┴─────────────────────────
             map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
-
-          "│-v-6 │ __a_mappings:
-          "└─────┴───────────────
-            nnoremap <silent> <leader>a :AV<cr>
-
-            " TODO: move this somewhere more sensible:
-            nnoremap <silent> <leader>v :vs<cr>
 
           "│-v-6 │ __rainbow_parentheses_mappings:
           "└─────┴─────────────────────────────────
