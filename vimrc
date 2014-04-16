@@ -88,6 +88,7 @@
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
+    NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
     NeoBundle 'roman/rainbow' " ───────────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
@@ -271,6 +272,33 @@
       let g:surround_{char2nr("q")} = "“\r”"
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
+
+    "│-v-3 │ thematic
+    "└─────┴──────────
+      let g:thematic#defaults = {
+      \ 'colorscheme': 'badwolf'
+      \ }
+
+      let g:thematic#themes = {}
+      " No idea why this difference is there. I’m *pretty* sure they’re the
+      " same fonts.
+      if has('win32')
+        let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline FixedD' }
+        let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline FixedD' }
+      elseif
+        let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline' }
+        let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline' }
+      endif
+      let g:thematic#themes._10 = {'font-size':10}
+      let g:thematic#themes._12 = {'font-size':12}
+      let g:thematic#themes._14 = {'font-size':14}
+      let g:thematic#themes._18 = {'font-size':18}
+
+      if has('win32')
+        set guifont=Consolas_for_Powerline_FixedD:h14:cDEFAULT
+      else
+        set guifont=Consolas\ for\ Powerline\ 14
+      endif
 
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
@@ -693,10 +721,6 @@
             nnoremap <silent> <leader>nr :set relativenumber!<cr>
             nnoremap <silent> <leader>na :set number!<cr>
 
-          "│-v-6 │ __display_mode_mappings:
-          "└─────┴──────────────────────────
-            nnoremap <silent> <leader>d :call ToggleDisplayMode()<cr>
-
           "│-v-6 │ Insert literal tab character
           "└─────┴──────────────────────────────
             inoremap <silent> <s-tab> <c-v><tab>
@@ -827,74 +851,6 @@
       "│-v-4 │ fillchars
       "└─────┴───────────
         set fillchars=vert:│,fold:═
-
-    "│-v-3 │ Custom Functions
-    "└─┬───┴─┬────────────────
-      "│-v-4 │ Display Mode Stuff
-      "└─────┴────────────────────
-        " Mappings (@__display_mode_mappings):
-        function! g:ApplyDisplayMode(...)
-          if a:0
-            let g:timdisplaymode = a:1
-          endif
-
-          if g:timdisplaymode == 'code'
-            "set cursorcolumn
-            set nospell                                    " -v-
-
-            if &filetype=='vimwiki'
-              setlocal linebreak
-            else
-              set nolinebreak
-            endif
-
-            if has('win32')
-              set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
-            else
-              set guifont=Consolas\ for\ Powerline\ 18
-            endif
-
-            colorscheme badwolf
-            set display-=lastline
-            let &showbreak = ''
-            set foldmarker=-v-,-^-
-            "au WinEnter * set cursorcolumn
-                                                           " -^-
-          elseif g:timdisplaymode == 'composition'
-            set nocursorcolumn
-            setlocal spell                                 " -v-
-            "inoremap <C-BS> <Esc>b1z=wi
-            inoremap <C-BS> <Esc>mp[s1z=`pi
-
-            setlocal linebreak
-
-            if has('win32')                                          
-              set guifont=Consolas_for_Powerline_FixedD:h20:cDEFAULT 
-            else                                                     
-              set guifont=Consolas\ for\ Powerline\ 18               
-            endif                                                    
-
-            colorscheme timatrix
-            setlocal display+=lastline
-            let &showbreak = '  '
-            " setlocal foldmarker={{{,}}}
-            set foldmarker=-v-,-^-
-            au BufEnter * set nocursorcolumn
-          endif                                            " -^-
-        endfunction
-
-        let g:timdisplaymode = ''
-        call g:ApplyDisplayMode('code')
-
-        function! ToggleDisplayMode()
-          if g:timdisplaymode == 'code'
-            let g:timdisplaymode = 'composition'
-          else
-            let g:timdisplaymode = 'code'
-          endif
-
-          call g:ApplyDisplayMode()
-        endfunction
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
