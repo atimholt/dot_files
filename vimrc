@@ -276,7 +276,7 @@
     "│-v-3 │ thematic
     "└─────┴──────────
       let g:thematic#defaults = {
-      \ 'colorscheme': 'badwolf'
+      \ 'colorscheme': ''
       \ }
 
       let g:thematic#themes = {}
