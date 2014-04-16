@@ -288,13 +288,6 @@
       let g:thematic#themes._14 = {'font-size':14}
       let g:thematic#themes._18 = {'font-size':18}
 
-      " TODO move this
-      if has('win32')
-        set guifont=Consolas_for_Powerline_FixedD:h14:cDEFAULT
-      else
-        set guifont=Consolas\ for\ Powerline\ 14
-      endif
-
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
       let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
@@ -821,6 +814,14 @@
       "│-v-4 │ fillchars
       "└─────┴───────────
         set fillchars=vert:│,fold:═
+
+      "│-v-4 │ guifont
+      "└─────┴─────────
+        if has('win32')
+          set guifont=Consolas_for_Powerline_FixedD:h14:cDEFAULT
+        else
+          set guifont=Consolas\ for\ Powerline\ 14
+        endif
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
