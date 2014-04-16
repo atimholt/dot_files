@@ -268,6 +268,8 @@
 
     "│-v-3 │ thematic
     "└─────┴──────────
+      " Mappings (@__thematic_mappings):
+
       let g:thematic#defaults = {
       \ 'colorscheme': ''
       \ }
@@ -286,6 +288,7 @@
       let g:thematic#themes._14 = {'font-size':14}
       let g:thematic#themes._18 = {'font-size':18}
 
+      " TODO move this
       if has('win32')
         set guifont=Consolas_for_Powerline_FixedD:h14:cDEFAULT
       else
@@ -736,6 +739,13 @@
           "│-v-6 │ __rainbow_parentheses_mappings:
           "└─────┴─────────────────────────────────
             nnoremap <silent> <leader>r :RainbowParenthesesToggle<cr>
+
+          "│-v-6 │ __thematic_mappings:
+          "└─────┴──────────────────────
+            nnoremap <leader>T10 :Thematic _10<cr>
+            nnoremap <leader>T12 :Thematic _12<cr>
+            nnoremap <leader>T14 :Thematic _14<cr>
+            nnoremap <leader>T18 :Thematic _18<cr>
 
       "│-v-4 │ Auto-commands
       "└─┬───┴─┬─────────────
