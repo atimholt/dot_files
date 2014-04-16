@@ -284,7 +284,6 @@
       " same fonts.
       if has('win32')
         let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline FixedD' }
-        let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline FixedD' }
       elseif
         let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline' }
         let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline' }
@@ -580,24 +579,6 @@
             :'<,'>s'<'┤'e
           endfunction
 
-        "│-v-5 │ (functions) Multi-Window automatic stuff
-        "└─────┴──────────────────────────────────────────
-          " These settings rely heavily on the specific ways I personally use Vim.
-          " (auto-commands @__multi_window_autocmds)
-
-          " __todo_display_mode
-          function! TimWinLeaveWithGundo()
-            if g:timdisplaymode == 'code' && !g:BufInTab("__Gundo__")
-              :set nowrap
-            endif
-          endfunction
-
-          function! TimWinEnterWithGundo()
-            if g:timdisplaymode == 'code' && !g:BufInTab("__Gundo__")
-              :set wrap
-            endif
-          endfunction
-
         "│-v-5 │ (function) open writing project
         "└─────┴─────────────────────────────────
           " (mappings @__open_writing_project)
@@ -775,13 +756,6 @@
         "│-v-5 │ Independent auto-commands
         "└─────┴───────────────────────────
           autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
-        "│-v-5 │ function auto-commands
-        "└─┬───┴─┬──────────────────────
-          "│-v-6 │ __multi_window_autocmds
-          "└─────┴─────────────────────────
-            autocmd WinLeave * :call TimWinLeaveWithGundo()
-            autocmd WinEnter * :call TimWinEnterWithGundo()
-
       "│-v-4 │ Abbreviations
       "└─┬───┴─┬─────────────
         "│-v-5 │ Corrections
