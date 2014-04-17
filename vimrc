@@ -745,6 +745,7 @@
         "│-v-5 │ Independent auto-commands
         "└─────┴───────────────────────────
           autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
+
       "│-v-4 │ Abbreviations
       "└─┬───┴─┬─────────────
         "│-v-5 │ Corrections
@@ -822,6 +823,19 @@
         else
           set guifont=Consolas\ for\ Powerline\ 14
         endif
+
+    "│-v-3 │ Custom Settings
+    "└─────┴─────────────────
+      " Start maximized
+      if has('gui_running')
+        if has('win32')
+          au GUIEnter * simalt ~x
+        else
+          " Requires wmctrl to be installed. Works for 'most distros'
+          " from: http://stackoverflow.com/a/12450225/837406
+          call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+        endif
+      endif
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
