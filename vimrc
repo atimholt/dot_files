@@ -144,6 +144,9 @@
 
     " replaces vim-signature:
     "NeoBundle 'jeetsukumaran/vim-markology' " ── Show marks on the left
+    "
+    " replaces fswitch:
+    "NeoBundle 'ivan-cukic/vim-ctrlp-switcher' " ── Alternates between similarly named files
 
     "" Finishing up: ─────────────────────────────────────────────────────-v-3
 
