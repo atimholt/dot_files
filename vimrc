@@ -283,7 +283,7 @@
       " same fonts.
       if has('win32')
         let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline FixedD' }
-      elseif
+      else
         let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline' }
         let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline' }
       endif
