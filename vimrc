@@ -89,7 +89,7 @@
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
-    NeoBundle 'roman/rainbow' " ───────────── matching brackets match colors
+    NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'Shougo/vimfiler.vim' " ─────── netrw replacement (requires Unite)
@@ -226,8 +226,9 @@
 
     "│-v-3 │ Rainbow Parentheses Settings
     "└─────┴──────────────────────────────
-      " (Steve Losh’s modified version, cleaned up and jazz)
+      " Settings apply to the luochen1990 version.
       " Mappings (@__rainbow_parentheses_mappings):
+      let g:rainbow_active = 1
 
     "│-v-3 │ Startify
     "└─────┴──────────
@@ -734,7 +735,7 @@
 
           "│-v-6 │ __rainbow_parentheses_mappings:
           "└─────┴─────────────────────────────────
-            nnoremap <silent> <leader>r :RainbowParenthesesToggle<cr>
+            nnoremap <silent> <leader>r :RainbowToggle<cr>
 
           "│-v-6 │ __thematic_mappings:
           "└─────┴──────────────────────
