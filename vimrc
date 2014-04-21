@@ -296,6 +296,7 @@
 
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
+      " Mappings (@__Ultisnips_mappings):
       let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
       let g:UltiSnipsSnippetDirectories=["UltiSnips", "UltiSnipsSnippets"]
       let g:UltiSnipsEditSplit = "horizontal"
@@ -749,6 +750,10 @@
             nnoremap <leader>T12 :Thematic _12<cr>
             nnoremap <leader>T14 :Thematic _14<cr>
             nnoremap <leader>T18 :Thematic _18<cr>
+
+          "│-v-6 │ __Ultisnips_mappings
+          "└─────┴──────────────────────
+            nnoremap <leader>U :UltiSnipsEdit<cr>
 
       "│-v-4 │ Auto-commands
       "└─┬───┴─┬─────────────
