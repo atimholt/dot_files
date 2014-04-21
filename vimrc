@@ -297,7 +297,7 @@
       let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
       let g:UltiSnipsSnippetDirectories=["UltiSnips", "UltiSnipsSnippets"]
       let g:UltiSnipsEditSplit = "horizontal"
-      let g:UltiSnipsUsePythonVersion = 2
+      let g:UltiSnipsUsePythonVersion = 3
 
       " Wasn't compatible with digraphs, so I thought I'd try a remap.
       " Also wasn't compatible with my custom use of <s-tab>, even though it
