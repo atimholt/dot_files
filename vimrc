@@ -36,6 +36,8 @@
   " TODO setup the a.vim replacement, fswitch, or go back to a.vim
   " TODO Get reedes/vim-textobj-quote working, or at least post about it not
   "      working
+  " TODO Put ‘shorcuts’ for other (default, plugin) Snippets in quick-access
+  "      (:UltiSnipsEdit command) snippet files.
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
