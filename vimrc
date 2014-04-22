@@ -81,6 +81,7 @@
 
     "" Plugins from the nice people of the Vim community: ────────────────-v-3
 
+    NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
     NeoBundle 'derekwyatt/vim-fswitch' " ──── alternates between .cpp & .h 
@@ -231,6 +232,14 @@
       " Settings apply to the luochen1990 version.
       " Mappings (@__rainbow_parentheses_mappings):
       let g:rainbow_active = 1
+
+      function! RainbowOff()
+        if exists('b:rainbow_loaded')
+          call rainbow#clear()
+        endif
+      endfunction
+
+      au BufEnter *.vault call RainbowOff()
 
     "│-v-3 │ Startify
     "└─────┴──────────
