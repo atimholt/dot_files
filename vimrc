@@ -359,9 +359,10 @@
       "└─┬───┴─┬──────────────────────────
         "│-v-5 │ Editing Settings
         "└─────┴──────────────────
+          " TODO: set some of these in ftplugin
           set expandtab
-          set shiftwidth=2
-          set softtabstop=2
+          set shiftwidth=0
+          set softtabstop=0
           set tabstop=2
           set backspace=indent,eol,start
           set ruler
