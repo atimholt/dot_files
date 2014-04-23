@@ -700,10 +700,6 @@
           nnoremap <silent> <leader>W :call g:EchoToggle('winfixwidth', 'Fixed Window Width')<cr>
           nnoremap <silent> <leader>H :call g:EchoToggle('winfixheight', 'Fixed Window Height')<cr>
 
-        "│-v-5 │ window commands shortcut
-        "└─────┴──────────────────────────
-          Arpeggio nnoremap eu <c-w>
-
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
           "│-v-6 │ __box_characters_mapping:
