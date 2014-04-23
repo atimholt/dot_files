@@ -517,7 +517,10 @@
           :digraph yS 696
           :digraph zS 7611
 
-
+      "│-v-4 │ Encryption Settings
+      "└─────┴─────────────────────
+        set cm=blowfish
+          
       "│-v-4 │ Customized behavior
       "└─┬───┴─┬───────────────────
         "│-v-5 │ (function) EchoToggle
