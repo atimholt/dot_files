@@ -867,5 +867,5 @@
   " belong in this file.
   :source ~/Dropbox/code/zigzagdungeon/vimsetup.vim
 
-" vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=2 sts=2 :
+" vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=0 sts=0 :
 
