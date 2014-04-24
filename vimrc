@@ -107,6 +107,15 @@
     NeoBundle 'tpope/vim-repeat' " ────────── makes some plugins .-able
     " Used by ultisnips:
     NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
+    " Used by vimfiler & neobundle:
+    NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
     "" Color Schemes: ────────────────────────────────────────────────────-v-3
 
