@@ -182,6 +182,12 @@
         invoke-expression $("get-help -full {0} | v -R -" -f $topic)
       }
 
+      function hpf([string]$topic)
+      {
+        # TODO: Find a Vim filetype spec for powershell help output
+        invoke-expression $("get-help -full {0} > ~/temp/cached_ps_help/{0}_help.txt" -f $topic)
+      }
+
       function hghp([string]$topic)
       {
         # TODO: Find a Vim filetype spec for Mercurial help output
