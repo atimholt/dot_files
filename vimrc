@@ -623,6 +623,28 @@
             normal <c-w>=
           endfunction
 
+        "│-v-5 │ (function) switch off & preserve relnum state
+        "└─────┴───────────────────────────────────────────────
+          " (auto commands @__switch_off_and_preserve_relnum_state_autocmds)
+          function! g:OffRelNumPreserve()
+            let w:preserved_rnu = &relativenumber
+            let w:preserved_nu = &number
+
+            set norelativenumber
+            if w:preserved_rnu || w:preserved_nu
+              set number
+            endif
+          endfunction
+
+          function! g:RestoreRelNum()
+            if exists('w:preserved_rnu')
+              let &relativenumber = w:preserved_rnu
+            endif
+            if exists('w:preserved_nu')
+              let &number = w:preserved_nu
+            endif
+          endfunction
+
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
@@ -778,6 +800,13 @@
         "│-v-5 │ Independent auto-commands
         "└─────┴───────────────────────────
           autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
+
+        "│-v-5 │ Auto commands for customized behavior & functions
+        "└─┬───┴─┬─────────────────────────────────────────────────
+          "│-v-6 │ __switch_off_and_preserve_relnum_state_autocmds
+          "└─────┴─────────────────────────────────────────────────
+            au WinLeave * call g:OffRelNumPreserve()
+            au WinEnter * call g:RestoreRelNum()
 
       "│-v-4 │ Abbreviations
       "└─┬───┴─┬─────────────
