@@ -859,7 +859,12 @@
       "│-v-4 │ Invisible characters depiction.
       "└─────┴─────────────────────────────────
         " __requires_utf_8:
-        set listchars=tab:│·,trail:·,extends:→
+        "set listchars=tab:│·,trail:·,extends:→
+        if has('win32')
+          set listchars=tab:│·,eol:¬,extends:→
+        else
+          set listchars=tab:│·,eol:↩,extends:→
+        endif
 
         " __todo_display_mode
         au BufNewFile,BufRead *.cpp,*.h,*.vim,*.rb,*.java,*.snippets,*.py set list
