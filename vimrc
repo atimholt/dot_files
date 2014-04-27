@@ -249,6 +249,7 @@
       endfunction
 
       au BufEnter *.vault call RainbowOff()
+      au BufEnter *.wiki call RainbowOff()
 
     "│-v-3 │ Startify
     "└─────┴──────────
