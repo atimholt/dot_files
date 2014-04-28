@@ -770,6 +770,10 @@
             " This mapping is meant to be changed as needed.
             nnoremap <silent> <f7> :call g:open_writing_project()<cr>
 
+          "│-v-6 │ __toggle_listchars_mode
+          "└─────┴─────────────────────────
+            nnoremap <leader>L :call ToggleListCharsMode()<cr>
+
         "│-v-5 │ mappings to Plug-ins
         "└─┬───┴─┬────────────────────
           "│-v-6 │ __gundo_mappings:
@@ -859,15 +863,7 @@
 
       "│-v-4 │ Invisible characters depiction.
       "└─────┴─────────────────────────────────
-        " __requires_utf_8:
-        "set listchars=tab:│·,trail:·,extends:→
-        if has('win32')
-          set listchars=tab:│·,eol:¬,extends:→
-        else
-          set listchars=tab:│·,eol:↩,extends:→
-        endif
-
-        " __todo_display_mode
+        " TODO: put in my_vimrc_extended
         au BufNewFile,BufRead *.cpp,*.h,*.vim,*.rb,*.java,*.snippets,*.py set list
 
       "│-v-4 │ Miscellaneous
@@ -893,17 +889,57 @@
         endif
 
     "│-v-3 │ Custom Settings
-    "└─────┴─────────────────
-      " Start maximized
-      if has('gui_running')
-        if has('win32')
-          au GUIEnter * simalt ~x
-        else
-          " Requires wmctrl to be installed. Works for 'most distros'
-          " from: http://stackoverflow.com/a/12450225/837406
-          call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+    "└─┬───┴─┬───────────────
+      "│-v-4 │ Start maximized
+      "└─────┴─────────────────
+        if has('gui_running')
+          if has('win32')
+            au GUIEnter * simalt ~x
+          else
+            " Requires wmctrl to be installed. Works for 'most distros'
+            " from: http://stackoverflow.com/a/12450225/837406
+            call system('wmctrl -i -b add,maximized_vert,maximized_horz -r '.v:windowid)
+          endif
         endif
-      endif
+
+      "│-v-4 │ Toggle listchars mode
+      "└─────┴───────────────────────
+        " Mappings (@__toggle_listchars_mode):
+        " __requires_utf_8:
+        function! ToggleListCharsMode() "-v-
+          if !exists('g:listcharsmode')
+            let g:listcharsmode = 'trail'
+          else
+            if g:listcharsmode == 'eol'
+              let g:listcharsmode = 'trail'
+            else
+              let g:listcharsmode = 'eol'
+            endif
+          endif
+
+          " It was like it was trail mode, it can be hard to tell.
+          if !&list && !has('vim_starting')
+            let g:listcharsmode = 'eol'
+            set list
+            let l:message_tail = " (and 'list' turned ON)"
+          else
+            let l:message_tail = ''
+          endif
+
+          let l:message_beginning = 'listchars mode set to '
+          if g:listcharsmode == 'eol'
+            if has('win32')
+              set listchars=tab:│·,eol:¬,extends:→
+            else
+              set listchars=tab:│·,eol:↩,extends:→
+            endif
+          elseif g:listcharsmode == 'trail'
+            set listchars=tab:│·,trail:·,extends:→
+          endif
+
+          echo l:message_beginning . g:listcharsmode . l:message_tail
+        endfunction "-^-
+        silent call ToggleListCharsMode()
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
