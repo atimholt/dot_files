@@ -311,6 +311,7 @@
       let g:thematic#themes._10 = {'font-size':10}
       let g:thematic#themes._12 = {'font-size':12}
       let g:thematic#themes._14 = {'font-size':14}
+      let g:thematic#themes._16 = {'font-size':16}
       let g:thematic#themes._18 = {'font-size':18}
 
     "│-v-3 │ UltiSnips Settings
@@ -794,6 +795,7 @@
             nnoremap <leader>T10 :Thematic _10<cr>
             nnoremap <leader>T12 :Thematic _12<cr>
             nnoremap <leader>T14 :Thematic _14<cr>
+            nnoremap <leader>T16 :Thematic _16<cr>
             nnoremap <leader>T18 :Thematic _18<cr>
 
           "│-v-6 │ __Ultisnips_mappings
