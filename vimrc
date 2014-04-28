@@ -85,8 +85,8 @@
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
     NeoBundle 'derekwyatt/vim-fswitch' " ──── alternates between .cpp & .h 
+    NeoBundle 'junegunn/vader.vim' " ──────── Unit test suite for VimL
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
-    NeoBundle 'kana/vim-vspec' " ──────────── Unit test suite for VimL
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
