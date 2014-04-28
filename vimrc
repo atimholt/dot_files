@@ -930,11 +930,7 @@
 
           let l:message_beginning = 'listchars mode set to '
           if g:listcharsmode == 'eol'
-            if has('win32')
-              set listchars=tab:│·,eol:¬,extends:→
-            else
-              set listchars=tab:│·,eol:↩,extends:→
-            endif
+            set listchars=tab:│·,eol:¬,extends:→
           elseif g:listcharsmode == 'trail'
             set listchars=tab:│·,trail:·,extends:→
           endif
