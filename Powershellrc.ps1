@@ -122,6 +122,10 @@
 
       Set-Alias _7z 7z
 
+      Set-Alias Python2 C:\Python27\python.exe
+
+      Set-Alias Python3 C:\Python34\python.exe
+
       # Set-Alias c++ x86_64-w64-mingw32-c++
       # Set-Alias g++ x86_64-w64-mingw32-g++
 

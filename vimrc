@@ -529,6 +529,10 @@
           :digraph yS 696
           :digraph zS 7611
 
+        "│-v-5 │ augmented filetype detection
+        "└─────┴──────────────────────────────
+          au BufRead .hgignore set ft=hgignore
+
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
         set cm=blowfish
