@@ -86,6 +86,7 @@
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
     NeoBundle 'derekwyatt/vim-fswitch' " ──── alternates between .cpp & .h 
     NeoBundle 'junegunn/vader.vim' " ──────── Unit test suite for VimL
+    NeoBundle 'junegunn/vim-easy-align' " ─── Text vertical allignment
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
