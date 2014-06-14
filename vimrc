@@ -310,6 +310,7 @@
         let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline' }
         let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline' }
       endif
+      let g:thematic#themes._7 = {'font-size':7}
       let g:thematic#themes._10 = {'font-size':10}
       let g:thematic#themes._12 = {'font-size':12}
       let g:thematic#themes._14 = {'font-size':14}
@@ -534,6 +535,7 @@
         "│-v-5 │ augmented filetype detection
         "└─────┴──────────────────────────────
           au BufRead .hgignore set ft=hgignore
+          au BufRead .md set ft=markdown
 
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
@@ -798,6 +800,7 @@
 
           "│-v-6 │ __thematic_mappings:
           "└─────┴──────────────────────
+            nnoremap <leader>T7 :Thematic _7<cr>
             nnoremap <leader>T10 :Thematic _10<cr>
             nnoremap <leader>T12 :Thematic _12<cr>
             nnoremap <leader>T14 :Thematic _14<cr>

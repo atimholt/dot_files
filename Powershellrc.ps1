@@ -54,7 +54,7 @@
     if ($on_either_machine)
     {
       # Paths that happen to be the same!
-      $zigzag = "~\Dropbox\code\ZigZagDungeon\"
+      $zzd = "~/localcode/zzd_meta/zig_zag_dungeon/"
       $dropbox = "C:\Users\atimh_000\Dropbox\"
       $tempmine = "C:\Users\atimh_000\temp\"
 
