@@ -655,6 +655,19 @@
             endif
           endfunction
 
+        "│-v-5 │ (function) Insert contrary tabs
+        "└─────┴─────────────────────────────────
+          " (mappings @__insert_contrary_tabs)
+
+          " Inserts tabs when &expandtab, spaces when &noet
+          function! g:InsertContraryTabs()
+            if &et
+              normal i	la
+            else
+              exe ':normal i' . repeat(' ', &ts) . 'la'
+            endif
+          endfunction
+
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
@@ -752,9 +765,9 @@
             nnoremap <silent> <leader>nr :set relativenumber!<cr>
             nnoremap <silent> <leader>na :set number!<cr>
 
-          "│-v-6 │ Insert literal tab character
-          "└─────┴──────────────────────────────
-            inoremap <silent> <s-tab> <c-v><tab>
+          "│-v-6 │ __insert_contrary_indentation
+          "└─────┴───────────────────────────────
+            inoremap <silent> <s-tab> <c-o>:call g:InsertContraryTabs()<cr>
 
           "│-v-6 │ Insert date:
           "└─────┴──────────────
