@@ -3,10 +3,11 @@ editor = gvim -f
 username = Tim Holt <atimholt@gmail.com>
 
 [extensions]
-purge =
-hgext.bookmarks =
 eol =
+hgext.bookmarks =
 mq =
+purge =
+shelve =
 
 [eol]
 only-consistent = False
