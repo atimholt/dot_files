@@ -19,9 +19,8 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
-    #│-v-3 │ Built-in Settings
-    #└─────┴───────────────────
-      export JAVA_HOME="~/Manually_Installed/jdk1.8.0_25"
+      export JAVA_HOME="/home/tim/Manually_Installed/jdk1.8.0_25"
+      export PATH=$JAVA_HOME/bin:$PATH
 
     #│-v-3 │ Aliases
     #└─────┴─────────
