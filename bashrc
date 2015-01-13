@@ -19,6 +19,10 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
+    #│-v-3 │ Built-in Settings
+    #└─────┴───────────────────
+      export JAVA_HOME="~/Manually_Installed/jdk1.8.0_25"
+
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
@@ -142,3 +146,6 @@
         # -^-
 
 # vim: set nowrap fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=2 sts=2 :
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/home/tim/.gvm/bin/gvm-init.sh" ]] && source "/home/tim/.gvm/bin/gvm-init.sh"
