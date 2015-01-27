@@ -675,6 +675,7 @@
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
           nnoremap <silent> <leader>t :tabs<cr>
+          nnoremap <silent> <leader>B :buffers<cr>
 
           nnoremap j gj
           nnoremap k gk
