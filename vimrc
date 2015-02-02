@@ -610,7 +610,7 @@
         "│-v-5 │ (function) open writing project
         "└─────┴─────────────────────────────────
           " (mappings @__open_writing_project)
-          function! g:open_writing_project()
+          function! g:Open_writing_project()
             :VimwikiIndex 2
             setlocal relativenumber
 
@@ -790,7 +790,7 @@
           "│-v-6 │ __open_writing_project :
           "└─────┴──────────────────────────
             " This mapping is meant to be changed as needed.
-            nnoremap <silent> <f7> :call g:open_writing_project()<cr>
+            nnoremap <silent> <f7> :call g:Open_writing_project()<cr>
 
           "│-v-6 │ __toggle_listchars_mode
           "└─────┴─────────────────────────
