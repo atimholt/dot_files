@@ -74,7 +74,7 @@
       set runtimepath+=~/.vim/neobundle/neobundle.vim/
     endif
 
-    call neobundle#rc(expand('~/.vim/neobundle/'))
+    call neobundle#begin(expand('~/.vim/neobundle/'))
 
     " Let NeoBundle manage NeoBundle
     NeoBundleFetch 'Shougo/neobundle.vim'
@@ -163,6 +163,8 @@
     "NeoBundle 'ivan-cukic/vim-ctrlp-switcher' " ── Alternates between similarly named files
 
     "" Finishing up: ─────────────────────────────────────────────────────-v-3
+
+    call neobundle#end()
 
     filetype plugin indent on
     NeoBundleCheck
