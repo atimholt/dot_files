@@ -19,8 +19,9 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
-      export JAVA_HOME="/home/tim/Manually_Installed/jdk1.8.0_25"
-      export PATH=$JAVA_HOME/bin:$PATH
+      export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
+      #export PATH=$JAVA_HOME/bin:$PATH
+      export PATH=/home/tim/Manually_Installed_Programs/firefox:$PATH
 
     #│-v-3 │ Aliases
     #└─────┴─────────
