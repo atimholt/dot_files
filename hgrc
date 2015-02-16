@@ -1,6 +1,7 @@
 [ui]
 editor = gvim -f
 username = Tim Holt <atimholt@gmail.com>
+ssh = ssh -C
 
 [extensions]
 eol =
