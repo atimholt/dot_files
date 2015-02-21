@@ -97,7 +97,7 @@
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
-    NeoBundle 'Shougo/vimfiler.vim' " ─────── netrw replacement (requires Unite)
+    NeoBundle 'Shougo/vimfiler.vim', "b26cef0de28ef73fb7309e4a1f7853918d46944f" " ─────── netrw replacement (requires Unite)
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
     NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
