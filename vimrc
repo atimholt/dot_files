@@ -669,6 +669,18 @@
               exe ':normal i' . repeat(' ', &ts) . 'la'
             endif
           endfunction
+        "│-v-5 │ (function) Toggle both line numberings
+        "└─────┴────────────────────────────────────────
+          " (mappings @__line_number_modes_mappings)
+
+          " Inserts tabs when &expandtab, spaces when &noet
+          function! g:ToggleBothNums()
+            if &relativenumber && &number
+              set norelativenumber nonumber
+            else
+              set relativenumber number
+            endif
+          endfunction
 
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
@@ -767,6 +779,7 @@
           "└─────┴───────────────────────────────
             nnoremap <silent> <leader>nr :set relativenumber!<cr>
             nnoremap <silent> <leader>na :set number!<cr>
+            nnoremap <silent> <leader>nn :call g:ToggleBothNums()<cr>
 
           "│-v-6 │ __insert_contrary_indentation
           "└─────┴───────────────────────────────
