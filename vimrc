@@ -338,6 +338,12 @@
     "└─────┴───────────────
       nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
 
+    "│-v-3 │ vim-vault
+    "└─────┴───────────
+      if has('win32')
+        :let g:vault_password_command = 'python "\Program Files (Manually Installed)\pyxkcdpass\pyxkcdpass.py"'
+      endif
+
     "│-v-3 │ vimfiler
     "└─────┴──────────
       let g:vimfiler_as_default_explorer = 1
