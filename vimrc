@@ -680,12 +680,24 @@
         "└─────┴────────────────────────────────────────
           " (mappings @__line_number_modes_mappings)
 
-          " Inserts tabs when &expandtab, spaces when &noet
           function! g:ToggleBothNums()
             if &relativenumber && &number
               set norelativenumber nonumber
             else
               set relativenumber number
+            endif
+          endfunction
+
+        "│-v-5 │ (function) :cd between current file's directory and global cwd
+        "└─────┴────────────────────────────────────────────────────────────────
+          " (mappings @__local_file_cd_toggle)
+          function! g:LocalFileCDToggle()
+            if !exists('w:global_cwd')
+              let w:global_cwd = getcwd()
+              lcd %:p:h
+            else
+              exe 'lcd' w:global_cwd
+              unlet w:global_cwd
             endif
           endfunction
 
@@ -787,6 +799,10 @@
             nnoremap <silent> <leader>nr :set relativenumber!<cr>
             nnoremap <silent> <leader>na :set number!<cr>
             nnoremap <silent> <leader>nn :call g:ToggleBothNums()<cr>
+
+          "│-v-6 │ __local_file_cd_toggle
+          "└─────┴────────────────────────
+            nnoremap <leader>d :call g:LocalFileCDToggle()<cr>
 
           "│-v-6 │ __insert_contrary_indentation
           "└─────┴───────────────────────────────
