@@ -18,55 +18,21 @@
 #└─┬───┴─┬──────
   #│-v-2 │ Wide-Use Variables
   #└─────┴────────────────────
-    $computer_name = get-content env:computername
+    $progfilesx86 = ${env:ProgramFiles(x86)}
+    $progfiles_manual = "C:\Program Files (Manually Installed)\"
+    $all_progfiles = @($env:ProgramW6432, $progfilesx86, $progfiles_manual)
 
-    $desktop_name = "TIMWIN8DESKTOP"
-    $old_desktop_name = "BAGEND"
-    #$laptop_name = "atimh_000-PC"
-    $laptop_name = "TIMHOLT-PC"
+    $zzd = "~/local_code/zigzagdungeon/"
+    $dropbox = "~/Dropbox/"
+    $tempmine = "~/temp/"
 
-    $all_winPCs_list = @($old_desktop_name, $laptop_name, $desktop_name)
+    $minecraft_hidden = "C:\Users\Tim\AppData\Roaming\.minecraft"
 
-    $on_laptop = ($computer_name -eq $laptop_name)
-    $on_desktop = ($computer_name -eq $desktop_name)
-    $on_either_machine = ( $all_winPCs_list -contains $computer_name )
-
-    $progfilesx86 = ""
-    $progfiles_manual = ""
-    $all_progfiles = ""
-    if ($on_desktop)
-    {
-      $progfilesx86 = ${env:ProgramFiles(x86)}
-
-      $progfiles_manual = "C:\Program Files (Manually Installed)\"
-
-      $all_progfiles = @($env:ProgramW6432, $progfilesx86, $progfiles_manual)
-    }
-    elseif ($on_laptop)
-    {
-      $progfilesx86 = $env:ProgramFiles
-
-      $progfiles_manual = "C:\Program Files, Manually Installed\"
-
-      $all_progfiles = @($progfilesx86, $progfiles_manual)
-    }
-    
-    if ($on_either_machine)
-    {
-      # Paths that happen to be the same!
-      $zzd = "~/localcode/zzd_meta/zig_zag_dungeon/"
-      $dropbox = "C:\Users\atimh_000\Dropbox\"
-      $tempmine = "C:\Users\atimh_000\temp\"
-
-      $office = $progfilesx86 + "Microsoft Office\Office12\"
-      $minecraft_hidden = "C:\Users\atimh_000\AppData\Roaming\.minecraft"
-
-      $my_scripts = "~\Dropbox\PowerShellScripts\"
-    }
+    $my_scripts = "~\Dropbox\PowerShellScripts\"
 
     # Utility variables:
     $cpp_files = @("*.h", "*.cpp", "*.hpp")
-    $vim_runtime = "C:\Users\atimh_000\Dropbox\Vim\GlobalRuntimePath\"
+    $vim_runtime = "~/Dropbox/Vim/GlobalRuntimePath/"
       # Resultant files of the "hg merge [branch] -t internal:dump" command.
     $dump_files = @("*.base", "*.local", "*.orig", "*.other")
 
@@ -76,34 +42,28 @@
   #│-v-2 │ Path Augmentation
   #└─────┴───────────────────
     # Note, this method of path augmentation goes away when powershell closes!
-    if ($on_desktop)
-    {
-      #$env:path = $env:path + ";C:\Program Files (x86)\Vim\vim74"
-      $env:path = $env:path + ";C:\Program Files (Manually Installed)\doxys_1_15_win_bin"
-      $env:path = $env:path + ";C:\MinGW\bin"
-      $env:path = $env:path + ";C:\Program Files\MiKTeX 2.9\miktex\bin\x64"
-    }
-    elseif ($on_laptop)
-    {
-      $env:path = $env:path + ";C:\Program Files\Vim\vim73\"
-      $env:path = $env:path + ";C:\Program Files\TortoiseHg"
-      $env:path = $env:path + ";C:\Program Files\SlikSvn\bin\"
-      $env:path = $env:path + ";C:\MinGW\bin"
-    }
+    # TODO: Put these in a list, log the ones that don’t exist! (and check & log already present)
+    #if ($on_desktop)
+    #{
+    #  #$env:path = $env:path + ";C:\Program Files (x86)\Vim\vim74"
+    #  $env:path = $env:path + ";C:\Program Files (Manually Installed)\doxys_1_15_win_bin"
+    #  $env:path = $env:path + ";C:\MinGW\bin"
+    #  $env:path = $env:path + ";C:\Program Files\MiKTeX 2.9\miktex\bin\x64"
+    #}
+    #elseif ($on_laptop)
+    #{
+    #  $env:path = $env:path + ";C:\Program Files\Vim\vim73\"
+    #  $env:path = $env:path + ";C:\Program Files\TortoiseHg"
+    #  $env:path = $env:path + ";C:\Program Files\SlikSvn\bin\"
+    #  $env:path = $env:path + ";C:\MinGW\bin"
+    #}
 
-    if ( $on_either_machine )
-    {
-      $env:path = $env:path + ";" + $home + "\Dropbox\PowerShellScripts\"
-      $env:path = $env:path + ";C:\Program Files\7-Zip\"
-      # $env:path = $env:path + ";" + $progfiles_manual + "doxys\"
-    }
-
-  #│-v-2 │ Import Modules
-  #└─────┴────────────────
-    if ( $on_either_machine )
-    {
-      Import-Module Pscx
-    }
+    #if ( $on_any_machine )
+    #{
+       $env:path = $env:path + ";" + $HOME + "\Dropbox\PowerShellScripts\"
+       $env:path = $env:path + ";C:\Program Files\7-Zip\"
+    #  # $env:path = $env:path + ";" + $progfiles_manual + "doxys\"
+    #}
 
 #│-v-1 │ Utility
 #└─┬───┴─┬───────
@@ -124,15 +84,13 @@
 
       Set-Alias Python2 C:\Python27\python.exe
 
-      Set-Alias Python3 C:\Python34\python.exe
+      # TODO Update to python 3.4 (Python33 was for the Vim installation I got)
+      Set-Alias Python3 C:\Python33\python.exe
 
       # Set-Alias c++ x86_64-w64-mingw32-c++
       # Set-Alias g++ x86_64-w64-mingw32-g++
 
-      if ($on_either_machine)
-      {
-        set-alias say out-speech
-      }
+      set-alias say out-speech
 
     #│-v-3 │ Utility Functions
     #└─────┴───────────────────
@@ -148,7 +106,7 @@
 
       function lds
       {
-        if ( $on_either_machine )
+        if ( $on_any_machine )
         {
           C:\Program` Files\Intellectual` Reserve\LDS` View` 7.1\wcUView.exe
         }
@@ -174,7 +132,7 @@
 
       function word
       {
-        if ( $on_either_machine )
+        if ( $on_any_machine )
         {
           & ($office + "WINWORD.EXE")
         }
