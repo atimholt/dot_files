@@ -548,7 +548,7 @@
 
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
-        set cm=blowfish
+        set cm=blowfish2
           
       "│-v-4 │ Customized behavior
       "└─┬───┴─┬───────────────────
