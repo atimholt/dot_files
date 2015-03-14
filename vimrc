@@ -89,6 +89,7 @@
     NeoBundle 'junegunn/vim-easy-align' " ─── Text vertical allignment
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
+    NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
