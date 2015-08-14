@@ -734,45 +734,57 @@
                 let l:diff_type = "full"
 
                 if l:use_working_dir
-                  let l:left_command = "view " . l:file_name
+                  let l:left_command = "vert sv " . l:file_name
                 else
-                  let l:left_command = "read !hg cat " . l:file_name
+                  let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
+                  let l:left_command .= "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
                 endif
 
                 let l:right_command = "read !hg cat " . l:file_name
                 if a:0 > 0
+                  let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
+                else
+                  let l:right_command = "tabnew " . l:file_name . " (last commit) | " . l:right_command
                 endif
 
               elseif changed_file[0] == 'A'
                 let l:diff_type = "partial"
 
                 if l:use_working_dir
-                  let l:left_command = "view " . l:file_name
+                  let l:left_command = "vert sv " . l:file_name
                 else
-                  let l:left_command = "read !hg cat " . l:file_name
+                  let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
+                  let l:left_command .= "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
                 endif
 
-                let l:right_command = "call setline(line('.'),'Added file')"
+                let l:right_command = "tabnew " . l:file_name . "(added) | "
+                let l:right_command .= "call setline(line('.'),'Added file')"
               elseif changed_file[0] == 'R'
                 let l:diff_type = "partial"
-                let l:left_command = "call setline(line('.'),'Removed file')"
+
+                let l:left_command = "vnew " . l:file_name . "(removed) | "
+                let l:left_command .= "call setline(line('.'),'Removed file')"
+
                 let l:right_command = "read !hg cat " . l:file_name
                 if a:0 > 0
+                  let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
+                else
+                  let l:right_command = "tabnew " . l:file_name . " (last commit) | " . l:right_command
                 endif
               elseif changed_file[0] == '?'
                 let l:diff_type = "partial"
-                let l:left_command = "call setline(line('.','Unknown file ' . l:file_name)"
-                let l:right_command = "call setline(line('.'),'? Unknown file')"
+                let l:left_command = "vnew " . l:file_name . " (unknown) | "
+                let l:left_command .= "call setline(line('.','Unknown file ' . l:file_name)"
+                let l:right_command = "tabnew " . l:file_name . " (unknown) | "
+                let l:right_command .= "call setline(line('.'),'? Unknown file')"
               endif
 
               if l:diff_type != "none"
-                tabnew
                 execute l:right_command
-                vnew
                 execute l:left_command
               endif
 
