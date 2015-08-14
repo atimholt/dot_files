@@ -797,6 +797,8 @@
           endfunction
 
           "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <leader>vd :call g:MyHGDiff()<cr>
+          command! -nargs=* MyHGDiff :call g:MyHGDiff(<f-args>)
 
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
