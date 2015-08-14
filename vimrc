@@ -702,6 +702,90 @@
             endif
           endfunction
 
+        "│-v-5 │ (function) Mercurial diff two changesets completely
+        "└─────┴─────────────────────────────────────────────────────
+          function! g:MyHGDiff(...)
+            let l:use_working_dir = 1
+            let l:stat_command = ""
+
+            if a:0 == 0
+              " Compare working directory to parent
+              let l:stat_command = "hg stat"
+            elseif a:0 == 1
+              " Compare working directory to given rev
+              let l:stat_command = "hg stat --rev " . a:1
+            elseif a:0 == 2
+              " Compare revs to each other
+              let l:use_working_dir = 0
+              let l:stat_command = "hg stat --rev " . a:1 . " --rev " . a:2
+            endif
+
+            let l:stat_output = split(system(l:stat_command), '\n')
+
+            " Note: the string manipulation here works with exactly the kind
+            " of output that ‘hg stat’ gives.
+            for changed_file in l:stat_output
+              let l:file_name = strpart(changed_file, 2)
+              let l:diff_type = "none"
+              let l:left_command = ""
+              let l:right_command = ""
+
+              if changed_file[0] == 'M'
+                let l:diff_type = "full"
+
+                if l:use_working_dir
+                  let l:left_command = "edit " . l:file_name
+                else
+                  let l:left_command = "read !hg cat " . l:file_name
+                  let l:left_command .= " --rev " . a:2
+                endif
+
+                let l:right_command = "read !hg cat " . l:file_name
+                if a:0 > 0
+                  let l:right_command .= " --rev " . a:1
+                endif
+
+              elseif changed_file[0] == 'A'
+                let l:diff_type = "partial"
+
+                if l:use_working_dir
+                  let l:left_command = "edit " . l:file_name
+                else
+                  let l:left_command = "read !hg cat " . l:file_name
+                  let l:left_command .= " --rev " . a:2
+                endif
+
+                let l:right_command = "call setline(line('.'),'Added file')"
+              elseif changed_file[0] == 'R'
+                let l:diff_type = "partial"
+                let l:left_command = "call setline(line('.'),'Removed file')"
+                let l:right_command = "read !hg cat " . l:file_name
+                if a:0 > 0
+                  let l:right_command .= " --rev " . a:1
+                endif
+              elseif changed_file[0] == '?'
+                let l:diff_type = "partial"
+                let l:left_command = "call setline(line('.','Unknown file ' . l:file_name)"
+                let l:right_command = "call setline(line('.'),'? Unknown file')"
+              endif
+
+              if l:diff_type != "none"
+                tabnew
+                execute l:right_command
+                vnew
+                execute l:left_command
+              endif
+
+              if l:diff_type == "full"
+                windo difft
+              endif
+            endfor
+
+            echo len(l:stat_output) . " files compared."
+          endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
