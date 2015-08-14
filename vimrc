@@ -734,7 +734,7 @@
                 let l:diff_type = "full"
 
                 if l:use_working_dir
-                  let l:left_command = "edit " . l:file_name
+                  let l:left_command = "view " . l:file_name
                 else
                   let l:left_command = "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
@@ -749,7 +749,7 @@
                 let l:diff_type = "partial"
 
                 if l:use_working_dir
-                  let l:left_command = "edit " . l:file_name
+                  let l:left_command = "view " . l:file_name
                 else
                   let l:left_command = "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
