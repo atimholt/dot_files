@@ -353,6 +353,7 @@
 
     "│-v-3 │ vimwiki Settings
     "└─────┴──────────────────
+      " Mappings (@__vimwiki_mappings):
       let g:vimwiki_camel_case = 0
 
       let wiki_1 = {}
@@ -962,6 +963,9 @@
           "│-v-6 │ __Ultisnips_mappings
           "└─────┴──────────────────────
             nnoremap <leader>U :UltiSnipsEdit<cr>
+          "│-v-6 │ __vimwiki_mappings
+          "└─────┴────────────────────
+            nnoremap <leader># :VimwikiTable<cr>
 
       "│-v-4 │ Auto-commands
       "└─┬───┴─┬─────────────
