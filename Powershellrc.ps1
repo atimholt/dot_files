@@ -85,7 +85,7 @@
       Set-Alias Python2 C:\Python27\python.exe
 
       # TODO Update to python 3.4 (Python33 was for the Vim installation I got)
-      Set-Alias Python3 C:\Python33\python.exe
+      Set-Alias Python3 C:\Python34\python.exe
 
       # Set-Alias c++ x86_64-w64-mingw32-c++
       # Set-Alias g++ x86_64-w64-mingw32-g++
