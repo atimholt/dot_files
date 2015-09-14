@@ -429,10 +429,6 @@
             " “The value of this option influences when the
             " last window will have a status line…”
 
-        "│-v-5 │ Folds
-        "└─────┴──────────
-          :set foldmethod=marker
-
         "│-v-5 │ WildMenu
         "└─────┴──────────
           set wildmode=longest,list,full
