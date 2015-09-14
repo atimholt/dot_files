@@ -135,7 +135,7 @@
 
     "" My own plugins: ───────────────────────────────────────────────────-v-3
     NeoBundle 'bitbucket:atimholt/my_vimrc_extended',
-       \ {'rev' : '2b56cdbe1c41',
+       \ {'rev' : '0be686b7e7d6',
        \ 'type': 'hg',
        \ 'directory': 'my_vimrc_extended'}
     NeoBundle 'bitbucket:atimholt/ArrowKeyRepurpose', {'type': 'hg'}
