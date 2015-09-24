@@ -101,6 +101,7 @@
     NeoBundle 'Shougo/vimfiler.vim', "b26cef0de28ef73fb7309e4a1f7853918d46944f" " ─────── netrw replacement (requires Unite)
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
     NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
+    NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
     NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
