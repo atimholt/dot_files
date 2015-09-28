@@ -69,6 +69,16 @@
 <Multi_key> <m> <u> 			: "µ"   mu # MICRO SIGN
 #-^-
 
+# Emoji
+#-v-
+# Note that This will only be filling holes in the default supported emoji
+# in WinCompose
+<Multi_key> <ampersand> <n> <e> <u> <t> <r> <a> <l> 			: "😐" U1F610 # NEUTRAL FACE
+<Multi_key> <ampersand> <a> <s> <t> <o> <n> <i> <s> <h> <e> <d> 	: "😲" U1F632 # ASTONISHED FACE
+<Multi_key> <ampersand> <t> <o> <n> <g> <u> <e>				: "😛" U1F61B # FACE WITH STUCK-OUT TONGUE
+<Multi_key> <ampersand> <l> <e> <v> <i> <m> <a> <n>			: "🕴" U1F574 # Man in Business Suit Levitating
+#-^-
+
 # lower case superscript letters
 #-v-
 # (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ)
