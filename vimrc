@@ -933,6 +933,11 @@
           "└─────┴─────────────────────────
             nnoremap <leader>L :call ToggleListCharsMode()<cr>
 
+          "│-v-6 │ Easier-to-reach ctrl-w
+          "└─────┴────────────────────────
+            Arpeggio inoremap qj <c-w>
+            Arpeggio cnoremap qj <c-w>
+
         "│-v-5 │ mappings to Plug-ins
         "└─┬───┴─┬────────────────────
           "│-v-6 │ __gundo_mappings:
