@@ -803,6 +803,12 @@
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
       "└─┬───┴─┬────────
+        "│-v-5 │ Easier-to-reach ctrl-w
+        "└─────┴────────────────────────
+          Arpeggio cnoremap qj <c-w>
+          Arpeggio inoremap qj <c-w>
+          Arpeggio nnoremap qj <c-w>
+
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
           nnoremap <silent> <leader>t :tabs<cr>
@@ -932,11 +938,6 @@
           "│-v-6 │ __toggle_listchars_mode
           "└─────┴─────────────────────────
             nnoremap <leader>L :call ToggleListCharsMode()<cr>
-
-          "│-v-6 │ Easier-to-reach ctrl-w
-          "└─────┴────────────────────────
-            Arpeggio inoremap qj <c-w>
-            Arpeggio cnoremap qj <c-w>
 
         "│-v-5 │ mappings to Plug-ins
         "└─┬───┴─┬────────────────────
