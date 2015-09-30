@@ -206,6 +206,11 @@
     "└─────┴───────────────────
       call arpeggio#load()
 
+    "│-v-3 │ Arrow Key Repurpose
+    "└─────┴─────────────────────
+      let g:ArrowKeyRepurp_settings = {}
+      let g:ArrowKeyRepurp_settings.smart_space_mode = "always"
+
     "│-v-3 │ FSwitch
     "└─────┴─────────
       nmap <silent> <Leader>of :FSHere<cr>
