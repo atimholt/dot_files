@@ -741,11 +741,11 @@
                   let l:left_command = "vert sv " . l:file_name
                 else
                   let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
-                  let l:left_command .= "read !hg cat " . l:file_name
+                  let l:left_command .= "0read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
                 endif
 
-                let l:right_command = "read !hg cat " . l:file_name
+                let l:right_command = "0read !hg cat " . l:file_name
                 if a:0 > 0
                   let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
@@ -760,7 +760,7 @@
                   let l:left_command = "vert sv " . l:file_name
                 else
                   let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
-                  let l:left_command .= "read !hg cat " . l:file_name
+                  let l:left_command .= "0read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
                 endif
 
@@ -772,7 +772,7 @@
                 let l:left_command = "vnew " . l:file_name . "(removed) | "
                 let l:left_command .= "call setline(line('.'),'Removed file')"
 
-                let l:right_command = "read !hg cat " . l:file_name
+                let l:right_command = "0read !hg cat " . l:file_name
                 if a:0 > 0
                   let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
@@ -795,6 +795,9 @@
               if l:diff_type == "full"
                 windo difft
               endif
+
+              :wincmd t
+              :normal gg
             endfor
 
             echo len(l:stat_output) . " files compared."
