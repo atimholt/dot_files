@@ -1066,6 +1066,7 @@
       "└─────┴───────────────
         set showcmd
         setglobal display=lastline,uhex
+        set breakindent
 
       "│-v-4 │ Color Column
       "└─────┴──────────────
