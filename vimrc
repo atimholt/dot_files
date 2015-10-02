@@ -733,6 +733,8 @@
               let l:diff_type = "none"
               let l:left_command = ""
               let l:right_command = ""
+              let l:del_right_line1 = 0
+              let l:del_left_line1  = 0
 
               if changed_file[0] == 'M'
                 let l:diff_type = "full"
@@ -741,11 +743,13 @@
                   let l:left_command = "vert sv " . l:file_name
                 else
                   let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
-                  let l:left_command .= "0read !hg cat " . l:file_name
+                  let l:left_command .= "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
+                  let l:del_left_line1 = 1
                 endif
 
-                let l:right_command = "0read !hg cat " . l:file_name
+                let l:right_command = "read !hg cat " . l:file_name
+                let l:del_right_line1 = 1
                 if a:0 > 0
                   let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
@@ -760,8 +764,9 @@
                   let l:left_command = "vert sv " . l:file_name
                 else
                   let l:left_command = "vnew " . l:file_name . " (rev " . a:2 . ") | "
-                  let l:left_command .= "0read !hg cat " . l:file_name
+                  let l:left_command .= "read !hg cat " . l:file_name
                   let l:left_command .= " --rev " . a:2
+                  let l:del_left_line1 = 1
                 endif
 
                 let l:right_command = "tabnew " . l:file_name . "(added) | "
@@ -772,7 +777,8 @@
                 let l:left_command = "vnew " . l:file_name . "(removed) | "
                 let l:left_command .= "call setline(line('.'),'Removed file')"
 
-                let l:right_command = "0read !hg cat " . l:file_name
+                let l:right_command = "read !hg cat " . l:file_name
+                let l:del_right_line1 = 1
                 if a:0 > 0
                   let l:right_command = "tabnew " . l:file_name . " (rev " . a:1 . ") | " . l:right_command
                   let l:right_command .= " --rev " . a:1
@@ -790,6 +796,16 @@
               if l:diff_type != "none"
                 execute l:right_command
                 execute l:left_command
+              endif
+
+              if l:del_right_line1
+                wincmd b
+                normal ggdd
+              endif
+
+              if l:del_left_line1
+                wincmd t
+                normal ggdd
               endif
 
               if l:diff_type == "full"
