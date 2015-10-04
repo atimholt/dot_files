@@ -1025,6 +1025,18 @@
         " Note that fullscreen plugin doesn't work well with anything but null
         " (or similar).
 
+      "│-v-4 │ Windows Terminal Options (ConEmu)
+      "└─────┴───────────────────────────────────
+        " From https://www.reddit.com/r/PowerShell/comments/3lym4q/cvalfcx
+        if !empty($CONEMUBUILD)
+          set termencoding=utf8
+          set encoding=utf8
+          set term=xterm
+          set t_Co=256
+          let &t_AB="\e[48;5;%dm"
+          let &t_AF="\e[38;5;%dm"
+        endif
+
       "│-v-4 │ matching paren highlighting
       "└─────┴─────────────────────────────
         set showmatch

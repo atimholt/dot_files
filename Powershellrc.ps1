@@ -16,6 +16,25 @@
 
 #│ ▼1 │ Set-Up
 #└─┬──┴─┬──────
+  #│ ▼2 │ Code Page-ness
+  #└────┴────────────────
+    # From https://www.reddit.com/r/PowerShell/comments/3lym4q/cvalfcx
+    
+    function Set-CodePage
+    {
+      [CmdletBinding()]
+      param( [ValidateSet("UTF8", "Default")] [string]$CodePage )
+
+      $codePageToNum = @{ UTF8 = 65001; Default = 437; }
+
+      chcp $codePageToNum[$CodePage] | Out-Null
+    }
+
+    if(Test-Path Env:ConEmuBuild)
+    {
+      Set-CodePage UTF8
+    }
+
   #│ ▼2 │ Wide-Use Variables
   #└────┴────────────────────
     $progfilesx86 = ${env:ProgramFiles(x86)}
