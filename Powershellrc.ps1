@@ -6,18 +6,18 @@
 # Free to use for anyone
 
 
-#│-v-1 │ To-Do's  
-#└─────┴─────────
+#│ ▼1 │ To-Do's  
+#└────┴─────────
 # TODO   Protect the Wide-Use Variables from editing!
 # TODO   Put machine-dependant variables into the local machine's profile,
 #        including paths to installed programs (with 'if' checks on whether
 #        something is defined before messing with). Don't forget to put template
 #        code in this file's comments!
 
-#│-v-1 │ Set-Up
-#└─┬───┴─┬──────
-  #│-v-2 │ Wide-Use Variables
-  #└─────┴────────────────────
+#│ ▼1 │ Set-Up
+#└─┬──┴─┬──────
+  #│ ▼2 │ Wide-Use Variables
+  #└────┴────────────────────
     $progfilesx86 = ${env:ProgramFiles(x86)}
     $progfiles_manual = "C:\Program Files (Manually Installed)\"
     $all_progfiles = @($env:ProgramW6432, $progfilesx86, $progfiles_manual)
@@ -39,8 +39,8 @@
     # cmdlet default parameters
     $ls_x = @{"Exclude" = ".*"}
 
-  #│-v-2 │ Path Augmentation
-  #└─────┴───────────────────
+  #│ ▼2 │ Path Augmentation
+  #└────┴───────────────────
     # Note, this method of path augmentation goes away when powershell closes!
     # TODO: Put these in a list, log the ones that don’t exist! (and check & log already present)
     #if ($on_desktop)
@@ -65,12 +65,12 @@
     #  # $env:path = $env:path + ";" + $progfiles_manual + "doxys\"
     #}
 
-#│-v-1 │ Utility
-#└─┬───┴─┬───────
-  #│-v-2 │ Aliases & Utility Functions
-  #└─┬───┴─┬───────────────────────────
-    #│-v-3 │ Aliases
-    #└─────┴─────────
+#│ ▼1 │ Utility
+#└─┬──┴─┬───────
+  #│ ▼2 │ Aliases & Utility Functions
+  #└─┬──┴─┬───────────────────────────
+    #│ ▼3 │ Aliases
+    #└────┴─────────
       Set-Alias v gvim
 
       Set-Alias p. Push-Location
@@ -92,8 +92,8 @@
 
       set-alias say out-speech
 
-    #│-v-3 │ Utility Functions
-    #└─────┴───────────────────
+    #│ ▼3 │ Utility Functions
+    #└────┴───────────────────
       function list_path
       {
         $a = $env:path; $a.Split(";")
@@ -180,8 +180,8 @@
       #  Get-ChildItem -Exclude .*
       #}
 
-#│-v-1 │ Prompt Line
-#└─────┴─────────────
+#│ ▼1 │ Prompt Line
+#└────┴─────────────
 function prompt
 {
   # Default contents:
@@ -218,8 +218,8 @@ function prompt
   Write-Host $($prompt_path) -NoNewLine -ForegroundColor "Blue"
 
   # repo branch and status by color
-  #-v-
-  #-^-
+  #▼
+  #▲
 
   Write-Host "`n[" -ForegroundColor "darkgreen" -NoNewLine
 
@@ -229,3 +229,6 @@ function prompt
 # Must return an object
   " "
 }
+
+# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=0 :
+
