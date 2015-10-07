@@ -415,6 +415,8 @@
           " of the line, or tries to stay in the same column.
           set nostartofline
 
+          set directory=~/temp/vim_swaps
+
         "│-v-5 │ vimdiff settings
         "└─────┴──────────────────
           set diffopt=filler,vertical,context:3,foldcolumn:0
