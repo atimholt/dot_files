@@ -58,6 +58,9 @@
     # cmdlet default parameters
     $ls_x = @{"Exclude" = ".*"}
 
+    # small, shallow waf project automatic setup.
+    $qproj = "C:/Users/Tim/Dropbox/PythonScripts/qproj.py"
+
   #│ ▼2 │ Path Augmentation
   #└────┴───────────────────
     # Note, this method of path augmentation goes away when powershell closes!
