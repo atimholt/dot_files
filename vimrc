@@ -1082,6 +1082,9 @@
         setglobal display=lastline,uhex
         set breakindent
 
+        " So box drawing characters actually touch nicely:
+        set linespace=-1
+
       "│-v-4 │ Color Column
       "└─────┴──────────────
         " __todo_display_mode
