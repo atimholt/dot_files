@@ -1081,6 +1081,8 @@
         set showcmd
         setglobal display=lastline,uhex
         set breakindent
+        set showbreak=›\ 
+        set breakindentopt=shift:-2
 
         " So box drawing characters actually touch nicely:
         set linespace=-1
