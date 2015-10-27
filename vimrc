@@ -93,6 +93,7 @@
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
+    NeoBundle 'osyo-manga/vim-over' " ─────── show :s changes before making them
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
