@@ -103,6 +103,7 @@
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
     NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
+    NeoBundle 'terryma/vim-multiple-cursors' " ── Multiple cursors (duh)
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
     NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
@@ -243,6 +244,15 @@
 
       " Mappings (@__gundo_mappings):
         " toggle Gundo
+
+    "│-v-3 │ Multiple Cursors
+    "└─────┴──────────────────
+      " No settings messed with
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      " Note the end-of-line space! Use 'list' to see them.
+      vnoremap <leader>N :'<,'>MultipleCursorsFind 
+      nnoremap <leader>N :MultipleCursorsFind 
 
     "│-v-3 │ OmniCppComplete Settings
     "└─────┴──────────────────────────
