@@ -5,6 +5,7 @@ username = Tim Holt <atimholt@gmail.com>
 [extensions]
 eol =
 hgext.bookmarks =
+hggit =
 mq =
 purge =
 shelve =
