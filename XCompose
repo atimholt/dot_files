@@ -81,12 +81,34 @@
 
 # lower case superscript letters
 #-v-
-# (ᵃᵇᶜᵈᵉᶠᵍʰⁱʲᵏˡᵐⁿᵒᵖʳˢᵗᵘᵛʷˣʸᶻ)
-
-<Multi_key> <a> <S> 			: "ᵃ"   asuperscript #
-
-# These keys are not a priority, but here’s the pattern if it’s needed later.
 # Note that no superscript ‘q’ exists in unicode.
+
+<Multi_key> <a> <S> 			: "ᵃ"   a_superscript #
+<Multi_key> <b> <S> 			: "ᵇ"   b_superscript #
+<Multi_key> <c> <S> 			: "ᶜ"   c_superscript #
+<Multi_key> <d> <S> 			: "ᵈ"   d_superscript #
+<Multi_key> <e> <S> 			: "ᵉ"   e_superscript #
+<Multi_key> <f> <S> 			: "ᶠ"   f_superscript #
+<Multi_key> <g> <S> 			: "ᵍ"   g_superscript #
+<Multi_key> <h> <S> 			: "ʰ"   h_superscript #
+<Multi_key> <i> <S> 			: "ⁱ"   i_superscript #
+<Multi_key> <j> <S> 			: "ʲ"   j_superscript #
+<Multi_key> <k> <S> 			: "ᵏ"   k_superscript #
+<Multi_key> <l> <S> 			: "ˡ"   l_superscript #
+<Multi_key> <m> <S> 			: "ᵐ"   m_superscript #
+<Multi_key> <n> <S> 			: "ⁿ"   n_superscript #
+<Multi_key> <o> <S> 			: "ᵒ"   o_superscript #
+<Multi_key> <p> <S> 			: "ᵖ"   p_superscript #
+<Multi_key> <r> <S> 			: "ʳ"   r_superscript #
+<Multi_key> <s> <S> 			: "ˢ"   s_superscript #
+<Multi_key> <t> <S> 			: "ᵗ"   t_superscript #
+<Multi_key> <u> <S> 			: "ᵘ"   u_superscript #
+<Multi_key> <v> <S> 			: "ᵛ"   v_superscript #
+<Multi_key> <w> <S> 			: "ʷ"   w_superscript #
+<Multi_key> <x> <S> 			: "ˣ"   x_superscript #
+<Multi_key> <y> <S> 			: "ʸ"   y_superscript #
+<Multi_key> <z> <S> 			: "ᶻ"   z_superscript #
+
 #-^-
 
 # Esperanto
