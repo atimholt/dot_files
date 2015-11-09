@@ -168,6 +168,12 @@
     "
     " replaces fswitch:
     "NeoBundle 'ivan-cukic/vim-ctrlp-switcher' " ── Alternates between similarly named files
+    "
+    
+    " Full screen in Windows. doesn't quite just work out of the box.
+    "NeoBundle 'kkoenig/wimproved.vim', {
+    "  \ 'build' : {'windows' : 'cmake -G "NMake Makefiles" . && nmake'}}
+    "  " ───── Full screen in Windows
 
     "" Finishing up: ─────────────────────────────────────────────────────-v-3
 
