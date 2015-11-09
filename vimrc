@@ -1109,6 +1109,19 @@
       "└─────┴──────────────
         " __todo_display_mode
         set colorcolumn=81,101,121
+        
+        "" Mappings: ───────────────────────────────────────────────────-v-5
+        function! g:ToggleColorcolumn()
+          if &colorcolumn != ''
+            set colorcolumn=
+            echo "Color Columns OFF"
+          else
+            set colorcolumn=81,101,121
+            echo "Color Columns ON"
+          endif
+        endfunction
+        
+        nnoremap <silent> <leader>c :call g:ToggleColorcolumn()<cr>
 
       "│-v-4 │ fillchars
       "└─────┴───────────
