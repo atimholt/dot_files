@@ -1079,7 +1079,7 @@
 
       "│-v-4 │ Current-Row-Column highlighting
       "└─────┴─────────────────────────────────
-        nnoremap <silent> <leader>C :call g:EchoToggle('cursorcolumn')<cr>
+        nnoremap <silent> <leader>v :call g:EchoToggle('cursorcolumn')<cr>
 
         autocmd WinLeave * set nocursorline
         autocmd WinEnter * set cursorline
@@ -1108,20 +1108,57 @@
       "│-v-4 │ Color Column
       "└─────┴──────────────
         " __todo_display_mode
-        set colorcolumn=81,101,121
-        
+        set colorcolumn=81
+
         "" Mappings: ───────────────────────────────────────────────────-v-5
+        " Turn it on & off
         function! g:ToggleColorcolumn()
           if &colorcolumn != ''
+            let w:colorcolumn_setting = &colorcolumn
             set colorcolumn=
             echo "Color Columns OFF"
           else
-            set colorcolumn=81,101,121
+            let &colorcolumn = w:colorcolumn_setting
             echo "Color Columns ON"
           endif
         endfunction
-        
-        nnoremap <silent> <leader>c :call g:ToggleColorcolumn()<cr>
+
+        nnoremap <silent> <leader>Cc :call g:ToggleColorcolumn()<cr>
+        nnoremap <silent> <leader>CC :call g:ToggleColorcolumn()<cr>
+
+
+        function! g:Left_cc()
+          if &colorcolumn != ''
+            if &colorcolumn > 121
+              set colorcolumn=121
+            elseif &colorcolumn > 101
+              set colorcolumn=101
+            elseif &colorcolumn > 81
+              set colorcolumn=81
+            endif
+            echo "colorcolumn" &colorcolumn "←"
+          endif
+        endfunction
+
+        nnoremap <leader>Ch :call g:Left_cc()<cr>
+
+
+        function! g:Right_cc()
+          if &colorcolumn != ''
+            if &colorcolumn < 81
+              set colorcolumn=81
+            elseif &colorcolumn < 101
+              set colorcolumn=101
+            elseif &colorcolumn < 121
+              set colorcolumn=121
+            endif
+            echo "colorcolumn →" &colorcolumn
+          endif
+        endfunction
+
+        nnoremap <leader>Cl :call g:Right_cc()<cr>
+
+
 
       "│-v-4 │ fillchars
       "└─────┴───────────
