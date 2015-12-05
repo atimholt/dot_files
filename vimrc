@@ -1081,6 +1081,23 @@
       "└─────┴─────────────────────────────────
         nnoremap <silent> <leader>v :call g:EchoToggle('cursorcolumn')<cr>
 
+        function! g:PreserveCursorColumn()
+          if &cursorcolumn
+            let w:setting_cursorcolumn = 1
+            set nocursorcolumn
+          endif
+        endfunction
+
+        function! g:RestoreCursorColumn()
+          if exists('w:setting_cursorcolumn')
+            let &cursorcolumn = w:setting_cursorcolumn
+            unlet w:setting_cursorcolumn
+          endif
+        endfunction
+
+        autocmd WinLeave * call g:PreserveCursorColumn()
+        autocmd WinEnter * call g:RestoreCursorColumn()
+
         autocmd WinLeave * set nocursorline
         autocmd WinEnter * set cursorline
         set cursorline
