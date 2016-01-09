@@ -60,6 +60,9 @@
 <Multi_key> <U2283> <underscore> 	: "⊇"   U2287   # ⊃ _ SUPERSET OF OR EQUAL TO
 <Multi_key> <colon> <period> 		: "∴"   therefore # THEREFORE
 <Multi_key> <period> <colon> 		: "∵"   because # BECAUSE
+
+<Multi_key> <2> <u> 			: "↊"   turned digit two # TURNED DIGIT TWO
+<Multi_key> <3> <u> 			: "↋"   turned digit three # TURNED DIGIT THREE
 #-^-
 
 # Symbols
