@@ -92,6 +92,7 @@
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
+    NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
@@ -103,7 +104,6 @@
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'Shougo/vimfiler.vim', "b26cef0de28ef73fb7309e4a1f7853918d46944f" " ─────── netrw replacement (requires Unite)
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
-    NeoBundle 'sjl/gundo.vim' " ───────────── view undo history as a tree
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
     NeoBundle 'terryma/vim-multiple-cursors' " ── Multiple cursors (duh)
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
@@ -160,9 +160,6 @@
     "NeoBundle 'git://git.wincent.com/command-t.git'
     "NeoBundle 'kien/ctrlp.vim'
     "NeoBundle 'git://repo.or.cz/vcscommand'
-
-    " replaces gundo:
-    "NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
 
     " replaces vim-signature:
     "NeoBundle 'jeetsukumaran/vim-markology' " ── Show marks on the left
@@ -243,15 +240,19 @@
         endif
       endfunction
 
-    "│-v-3 │ Gundo Settings
+    "│-v-3 │ Undotree Settings
     "└─────┴────────────────
-      nnoremap <silent> <leader>u :GundoToggle<cr>
-      let g:gundo_help=1
-      let g:gundo_right=0
-      let g:gundo_preview_bottom=0
+      let g:undotree_SetFocusWhenToggle=1
+      let g:undotree_SplitWidt=40
 
-      " Mappings (@__gundo_mappings):
-        " toggle Gundo
+      " May as well try this again.
+      if has("persistent_undo")
+        set undodir='~/.undodir/'
+        set undofile
+      endif
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      nnoremap <silent> <leader>u :UndotreeToggle<cr>
 
     "│-v-3 │ Multiple Cursors
     "└─────┴──────────────────
@@ -987,11 +988,6 @@
 
         "│-v-5 │ mappings to Plug-ins
         "└─┬───┴─┬────────────────────
-          "│-v-6 │ __gundo_mappings:
-          "└─────┴───────────────────
-            " toggle Gundo:
-            nnoremap <silent> <leader>u :GundoToggle<cr>
-
           "│-v-6 │ __full_screen_mappings:
           "└─────┴─────────────────────────
             map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
