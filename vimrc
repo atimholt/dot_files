@@ -301,7 +301,7 @@
                  \ 'smb-share'
                  \ ]
 
-      let g:startify_bookmarks = ['~/dot_files/vimrc', '~/Copy/.tim.vault']
+      let g:startify_bookmarks = ['~/dot_files/vimrc', '~/Dropbox/.tim.vault']
       let g:startify_session_dir = '~/.vim/neobundle/my_vimrc_extended/Sessions'
 
       let g:startify_files_number = 5
