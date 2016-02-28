@@ -1245,5 +1245,11 @@
   " belong in this file.
   :source ~/Dropbox/code/zigzagdungeon/vimsetup.vim
 
+  " Regarding a list of all the books in Skyrim.
+  au BufRead Books_Checklist.txt nnoremap <silent> <leader>sr 0R[R]k<cr>
+  au BufRead Books_Checklist.txt nnoremap <silent> <leader>so 0R[O]k<cr>
+  au BufRead Books_Checklist.txt nnoremap <silent> <leader>s- 0R - k<cr>
+  au BufRead Books_Checklist.txt nnoremap <silent> <leader>s<space> 0R[ ]k<cr>
+
 " vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=0 sts=0 :
 
