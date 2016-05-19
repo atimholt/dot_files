@@ -321,6 +321,8 @@
       let g:surround_{char2nr("l")} = "〖\r〗"
       " directional quotes
       let g:surround_{char2nr("q")} = "“\r”"
+      " single directional quotes
+      let g:surround_{char2nr("a")} = "‘\r’"
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
 
