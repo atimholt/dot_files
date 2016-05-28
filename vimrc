@@ -127,6 +127,14 @@
       \    },
       \ }
 
+    " TODO: get this working
+      "\ 'build_commands' : 'cmake',
+    "NeoBundle 'kkoenig/wimproved.vim', {
+    "  \ 'build' : {
+    "  \     'windows' : 'cmake -G "NMake Makefiles" . && nmake',
+    "  \    },
+    "  \ }
+
     "" Color Schemes: ────────────────────────────────────────────────────-v-3
 
     NeoBundle 'sjl/badwolf' " ─────────────── ★★★★★ Beautiful & subdued
@@ -397,6 +405,11 @@
       let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
 
       let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+
+    "│-v-3 │ Wimproved
+    "└─────┴───────────
+      " Not actually working
+      "autocmd GUIEnter * silent! WToggleClean
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
