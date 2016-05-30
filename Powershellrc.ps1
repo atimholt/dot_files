@@ -44,6 +44,7 @@
     $zzd = "~/local_code/zigzagdungeon/"
     $dropbox = "~/Dropbox/"
     $tempmine = "~/temp/"
+    $inh = "~/Dropbox/timwrite/Book2/2016/inhuman_universe/"
 
     $minecraft_hidden = "C:\Users\Tim\AppData\Roaming\.minecraft"
 
