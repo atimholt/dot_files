@@ -1185,6 +1185,9 @@
         else
           set guifont=Consolas\ for\ Powerline\ 14
         endif
+      "│-v-4 │ Code indentation
+      "└─────┴──────────────────
+        au BufNewFile,BufRead *.cpp,*.h,*.hpp,*.vim,*.rb,*.java,*.snippets,*.py set et ts=4 sw=0 sts=0
 
     "│-v-3 │ Custom Settings
     "└─┬───┴─┬───────────────
