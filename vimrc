@@ -127,6 +127,14 @@
       \    },
       \ }
 
+    " TODO: get this working
+      "\ 'build_commands' : 'cmake',
+    "NeoBundle 'kkoenig/wimproved.vim', {
+    "  \ 'build' : {
+    "  \     'windows' : 'cmake -G "NMake Makefiles" . && nmake',
+    "  \    },
+    "  \ }
+
     "" Color Schemes: ────────────────────────────────────────────────────-v-3
 
     NeoBundle 'sjl/badwolf' " ─────────────── ★★★★★ Beautiful & subdued
@@ -233,7 +241,7 @@
 
     "│-v-3 │ Full-Screen Mode Settings
     "└─────┴───────────────────────────
-      " Mappings (@__full_screen_mappings):
+      " Mappings (@__full_screen_mappings)
       function! ToggleFullScreen()
         if has('win32')
           :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
@@ -321,6 +329,8 @@
       let g:surround_{char2nr("l")} = "〖\r〗"
       " directional quotes
       let g:surround_{char2nr("q")} = "“\r”"
+      " single directional quotes
+      let g:surround_{char2nr("a")} = "‘\r’"
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
 
@@ -395,6 +405,11 @@
       let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
 
       let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+
+    "│-v-3 │ Wimproved
+    "└─────┴───────────
+      " Not actually working
+      "autocmd GUIEnter * silent! WToggleClean
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
@@ -648,26 +663,36 @@
         "└─────┴─────────────────────────────────
           " (mappings @__open_writing_project)
           function! g:Open_writing_project()
-            :VimwikiIndex 2
-            setlocal relativenumber
+            cd ~/Dropbox/timwrite/Book2/2016/inhuman_universe/
 
-            cd ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe
+            edit ./NovelOld.txtfmt
+            setlocal relativenumber number
+            setlocal nospell noma ro
+            setlocal foldmethod=marker foldmarker=-v-,-^-
+            normal zR
 
-            tabedit ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/NovelOld.txtfmt
-            setlocal relativenumber
+            split ./New_2011-07-09.txtfmt
+            setlocal relativenumber number
+            setlocal nospell noma ro
+            setlocal foldmethod=marker foldmarker=-v-,-^-
+            normal zR
 
-            vsplit ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/New_2011-07-09.txtfmt
-            setlocal relativenumber
-            set nospell
+            " The actual current file.
+            split ./LaTeX/New_2016_05_25.tex
+            setlocal relativenumber number
+            set linebreak
+            normal H
+            normal zR
+            execute "normal /set spellfile\<cr>vi[\"ty"
+            execute @t
+            set spell
 
-            if has('win32')
-              set guifont=Consolas_for_Powerline_FixedD:h18:cDEFAULT
-            else
-              set guifont=Consolas\ for\ Powerline\ 16
-            endif
+            Thematic _12
             call ToggleFullScreen()
-
-            normal <c-w>=
+            execute "normal \<c-w>="
+            
+            execute "normal `."
+            execute 'normal zMzxzczOzz'
           endfunction
 
         "│-v-5 │ (function) switch off & preserve relnum state
@@ -988,7 +1013,7 @@
 
         "│-v-5 │ mappings to Plug-ins
         "└─┬───┴─┬────────────────────
-          "│-v-6 │ __full_screen_mappings:
+          "│-v-6 │ __full_screen_mappings
           "└─────┴─────────────────────────
             map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
 
