@@ -314,7 +314,7 @@
 
       let g:startify_files_number = 5
       "let g:startify_custom_indices
-      "let g:startify_custom_header
+      let g:startify_custom_header = []
       let g:startify_custom_footer = ["",
           \ "  Current instance started: " . strftime("%Y-%m-%d %a %I:%M %p")]
       let g:startify_restore_position = 1
