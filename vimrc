@@ -1214,6 +1214,10 @@
       "└─────┴──────────────────
         au BufNewFile,BufRead *.cpp,*.h,*.hpp,*.vim,*.rb,*.java,*.snippets,*.py set et ts=4 sw=0 sts=0
 
+      "│-v-4 │ Fold method defaults
+      "└─────┴──────────────────────
+        au BufNewFile,BufRead *.java set fdm=syntax
+
     "│-v-3 │ Custom Settings
     "└─┬───┴─┬───────────────
       "│-v-4 │ Start maximized
