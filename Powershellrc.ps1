@@ -196,6 +196,17 @@
         }
       }
 
+      # TODO perhaps multi-machine this
+      function waf-light
+      {
+        python C:/development_resources/waf/waf-light $args
+      }
+
+      function waf
+      {
+        python C:/development_resources/waf/waf $args
+      }
+
       #function lsx([string]$other_params)
       #{
       #  # TODO: This won't actually properly work yet.
