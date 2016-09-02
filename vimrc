@@ -1271,11 +1271,7 @@
       "└─────┴────────────────────────
         " Mappings for clang-format:
         " TODO: make this work for multiple machines/OS's
-        map <C-I> :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
-        imap <C-I> <c-o>:pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
-
-        " What... the... freak.  I'm just baffled.
-        iunmap <Tab>
+        map <leader>c :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
