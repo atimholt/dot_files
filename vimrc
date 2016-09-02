@@ -1274,6 +1274,9 @@
         map <C-I> :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
         imap <C-I> <c-o>:pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
+        " What... the... freak.  I'm just baffled.
+        iunmap <Tab>
+
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
   " This is meant for sourcing in convenience settings that don't really
