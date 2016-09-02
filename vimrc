@@ -1267,6 +1267,13 @@
         endfunction "-^-
         silent call ToggleListCharsMode()
 
+      "│-v-4 │ LLVM/Clang integration
+      "└─────┴────────────────────────
+        " Mappings for clang-format:
+        " TODO: make this work for multiple machines/OS's
+        map <C-I> :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+        imap <C-I> <c-o>:pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
   " This is meant for sourcing in convenience settings that don't really
