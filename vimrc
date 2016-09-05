@@ -1271,7 +1271,8 @@
       "└─────┴────────────────────────
         " Mappings for clang-format:
         " TODO: make this work for multiple machines/OS's
-        map <leader>c :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+        nnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+        vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
 "│-v-1 │ Transient settings
 "└─────┴────────────────────
