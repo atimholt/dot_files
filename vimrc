@@ -104,16 +104,6 @@
     NeoBundle 'tpope/vim-repeat' " ────────── makes some plugins .-able
     " Used by ultisnips:
     NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
-    " Used by vimfiler & neobundle:
-    NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'tools\\update-dll-mingw',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'linux' : 'make',
-      \     'unix' : 'gmake',
-      \    },
-      \ }
 
     " TODO: get this working
       "\ 'build_commands' : 'cmake',
