@@ -15,12 +15,8 @@
   " TODO Use winnr("$"), winnr(), winfixwidth to create a better resize
     " This may be obsolete, but I don’t think it is—it’s still necessary when
     " not on a wide screen.
-  " TODO Make “i_Ctrl-R ,” put the “+” yank buffer’s contents.
   " TODO Look into the conceal setting and this reddit thread:
   "   http://redd.it/okzja
-  " TODO Set up some cool Arpeggio mappings.
-  "      Simulate touchcursor for vim arrow-key reassignments.
-  " TODO Look into the 'comments' setting and gq (to add "/// " and stuff)
   " TODO Extract multi-compatible font changing shpiel to a function, instead
   "      of repetitive if, else block.
   " TODO Make special vim characters into unicode symbols (like the
@@ -30,14 +26,10 @@
   " TODO look into changing “__keyword” style ‘links’ herein to actual tag
   "      links
   " TODO Maybe try YouCompleteMe plugin.
-  " TODO Evaluate which of the many rainbow parethesis plugins is best.
   " TODO Look into NeoComplete and vim-marching, from this:
   "           http://www.reddit.com/r/vim/comments/1p0u0j/n/ccxlgc6
-  " TODO setup the a.vim replacement, fswitch, or go back to a.vim
   " TODO Get reedes/vim-textobj-quote working, or at least post about it not
   "      working
-  " TODO Put ‘shorcuts’ for other (default, plugin) Snippets in quick-access
-  "      (:UltiSnipsEdit command) snippet files.
 
 "│-v-1 │ “precedence” necessaries.
 "└─────┴───────────────────────────
