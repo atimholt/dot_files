@@ -80,7 +80,6 @@
     NeoBundle 'fboender/bexec' " ──────────── Execute the current buffer.
     NeoBundle 'gisraptor/vim-lilypond-integrator' " ── lilypond file syntax etc.
     NeoBundle 'junegunn/vader.vim' " ──────── Unit test suite for VimL
-    NeoBundle 'junegunn/vim-easy-align' " ─── Text vertical allignment
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
@@ -88,16 +87,13 @@
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
-    NeoBundle 'osyo-manga/vim-over' " ─────── show :s changes before making them
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
-    NeoBundle 'Shougo/vimfiler.vim', "b26cef0de28ef73fb7309e4a1f7853918d46944f" " ─────── netrw replacement (requires Unite)
     NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
-    NeoBundle 'terryma/vim-multiple-cursors' " ── Multiple cursors (duh)
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
     NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
@@ -130,9 +126,6 @@
     "" Color Schemes: ────────────────────────────────────────────────────-v-3
 
     NeoBundle 'sjl/badwolf' " ─────────────── ★★★★★ Beautiful & subdued
-    NeoBundle '3DGlasses.vim' " ───────────── ★★☆☆☆ A bit harsh (on purpose)
-    NeoBundle 'Ambient-Color-Scheme' " ────── ★★☆☆☆ A bit harsh (incomplete)
-              " known needs: signs column & colorcolumn
 
     " unrated:
     NeoBundle 'noahfrederick/vim-hemisu' " ── some colorscheme or other
