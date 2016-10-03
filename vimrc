@@ -92,7 +92,7 @@
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
-    NeoBundle 'SirVer/ultisnips', '3.0' " ─── powerful snippets
+    NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
