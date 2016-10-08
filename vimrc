@@ -91,6 +91,7 @@
     NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
+    NeoBundle 'scrooloose/nerdtree' " ─────── file tree navigator
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
