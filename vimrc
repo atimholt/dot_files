@@ -847,6 +847,24 @@
           nnoremap <leader>vd :call g:MyHGDiff()<cr>
           command! -nargs=* MyHGDiff :call g:MyHGDiff(<f-args>)
 
+        "│-v-5 │ (function) Diff current window
+        "└─────┴────────────────────────────────
+          function! g:DiffCurrentWindow()
+            if exists(':Hgvdiff') == 2
+              let l:diff_command = 'Hgvdiff'
+            elseif exists(':Gvdiff') == 2
+              let l:diff_command = 'Gvdiff'
+            else
+              return
+            endif
+
+            exe "normal \<c-w>\<c-s>\<c-w>T"
+            exe l:diff_command
+          endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <leader>D :call g:DiffCurrentWindow()<cr>
+
     "│-v-3 │ Mappings, Auto-Commands & Abbreviations.
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
@@ -870,6 +888,8 @@
           nnoremap <leader>l <C-W>l
           nnoremap <leader>j <C-W>j
           nnoremap <leader>k <C-W>k
+
+          nnoremap <leader>ct :tabc<cr>
 
         "│-v-5 │ display remaps
         "└─────┴────────────────
