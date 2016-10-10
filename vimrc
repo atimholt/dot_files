@@ -851,12 +851,6 @@
     "└─┬───┴─┬────────────────────────────────────────
       "│-v-4 │ Mappings
       "└─┬───┴─┬────────
-        "│-v-5 │ Easier-to-reach ctrl-w
-        "└─────┴────────────────────────
-          Arpeggio cnoremap qj <c-w>
-          Arpeggio inoremap qj <c-w>
-          Arpeggio nnoremap qj <c-w>
-
         "│-v-5 │ navigation remaps
         "└─────┴─────────────────────
           nnoremap <silent> <leader>t :tabs<cr>
@@ -919,12 +913,6 @@
         "└─────┴──────────────────────────
           nnoremap <leader><Bar>    :vertical resize 85<cr>
           nnoremap <leader><Bslash> :vertical resize 85<cr>
-
-        "│-v-5 │ Generate Tag files
-        "└─────┴────────────────────
-          "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-          "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q *.h *.cpp<CR>
-          map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ .<CR>
 
         "│-v-5 │ Digraph
         "└─────┴─────────
