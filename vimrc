@@ -1252,9 +1252,15 @@
 
       "│-v-4 │ LLVM/Clang integration
       "└─────┴────────────────────────
-        " Mappings for clang-format:
+
+        function! ClangFormatWholeBuffer()
+          let l:lines = "all"
+          pyf C:/Program Files/LLVM/share/clang/clang-format.py
+        endfunction
+
+        "" Mappings: ───────────────────────────────────────────────────-v-5
         " TODO: make this work for multiple machines/OS's
-        nnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+        nnoremap <leader>= :call ClangFormatWholeBuffer()<cr>
         vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
 "│-v-1 │ Transient settings
