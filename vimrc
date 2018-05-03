@@ -83,13 +83,13 @@
     NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
+    NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
-    NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
