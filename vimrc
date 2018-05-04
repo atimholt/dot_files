@@ -76,6 +76,7 @@
     NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
+    NeoBundle 'dawikur/algorithm-mnemonics.vim' " ── snippets for C++ algorithms
     NeoBundle 'derekwyatt/vim-fswitch' " ──── alternates between .cpp & .h
     NeoBundle 'fboender/bexec' " ──────────── Execute the current buffer.
     NeoBundle 'gisraptor/vim-lilypond-integrator' " ── lilypond file syntax etc.
