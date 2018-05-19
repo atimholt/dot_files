@@ -217,12 +217,14 @@
 
     "│-v-3 │ Full-Screen Mode Settings
     "└─────┴───────────────────────────
-      " Mappings (@__full_screen_mappings)
       function! ToggleFullScreen()
         if has('win32')
           :call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)
         endif
       endfunction
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
 
     "│-v-3 │ Undotree Settings
     "└─────┴────────────────
@@ -256,7 +258,6 @@
     "│-v-3 │ Rainbow Parentheses Settings
     "└─────┴──────────────────────────────
       " Settings apply to the luochen1990 version.
-      " Mappings (@__rainbow_parentheses_mappings):
       let g:rainbow_active = 1
 
       function! RainbowOff()
@@ -267,6 +268,9 @@
 
       au BufEnter *.vault call RainbowOff()
       au BufEnter *.wiki call RainbowOff()
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      nnoremap <silent> <leader>r :RainbowToggle<cr>
 
     "│-v-3 │ Startify
     "└─────┴──────────
@@ -312,8 +316,6 @@
 
     "│-v-3 │ thematic
     "└─────┴──────────
-      " Mappings (@__thematic_mappings):
-
       let g:thematic#defaults = {
       \ 'colorscheme': ''
       \ }
@@ -335,9 +337,17 @@
       let g:thematic#themes._16 = {'font-size':16}
       let g:thematic#themes._18 = {'font-size':18}
 
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      nnoremap <leader>T7 :Thematic _7<cr>
+      nnoremap <leader>T8 :Thematic _8<cr>
+      nnoremap <leader>T10 :Thematic _10<cr>
+      nnoremap <leader>T12 :Thematic _12<cr>
+      nnoremap <leader>T14 :Thematic _14<cr>
+      nnoremap <leader>T16 :Thematic _16<cr>
+      nnoremap <leader>T18 :Thematic _18<cr>
+
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
-      " Mappings (@__Ultisnips_mappings):
       let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
       let g:UltiSnipsSnippetDirectories=["UltiSnips", "UltiSnipsSnippets"]
       let g:UltiSnipsEditSplit = "horizontal"
@@ -349,6 +359,9 @@
       let g:UltiSnipsExpandTrigger="<c-t>"
       let g:UltiSnipsJumpForwardTrigger="<c-l>"
       let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      nnoremap <leader>U :UltiSnipsEdit<cr>
 
     "│-v-3 │ vim-signature
     "└─────┴───────────────
@@ -367,7 +380,6 @@
 
     "│-v-3 │ vimwiki Settings
     "└─────┴──────────────────
-      " Mappings (@__vimwiki_mappings):
       let g:vimwiki_camel_case = 0
 
       let wiki_1 = {}
@@ -381,6 +393,9 @@
       let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
 
       let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+
+      "" Mappings: ───────────────────────────────────────────────────-v-4
+      nnoremap <leader># :VimwikiTable<cr>
 
     "│-v-3 │ Wimproved
     "└─────┴───────────
@@ -568,12 +583,11 @@
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
         set cm=blowfish2
-          
+
       "│-v-4 │ Customized behavior
       "└─┬───┴─┬───────────────────
         "│-v-5 │ (function) EchoToggle
         "└─────┴───────────────────────
-        " (mappings @__echo_toggle_mappings)
           " For any local toggle setting
           function! g:EchoToggle(...)
             :execute "set " . a:1 . "!"
@@ -635,45 +649,11 @@
             :'<,'>s'<'┤'e
           endfunction
 
-        "│-v-5 │ (function) open writing project
-        "└─────┴─────────────────────────────────
-          " (mappings @__open_writing_project)
-          function! g:Open_writing_project()
-            cd ~/Dropbox/timwrite/Book2/2016/inhuman_universe/
-
-            edit ./NovelOld.txtfmt
-            setlocal relativenumber number
-            setlocal nospell noma ro
-            setlocal foldmethod=marker foldmarker=-v-,-^-
-            normal zR
-
-            split ./New_2011-07-09.txtfmt
-            setlocal relativenumber number
-            setlocal nospell noma ro
-            setlocal foldmethod=marker foldmarker=-v-,-^-
-            normal zR
-
-            " The actual current file.
-            split ./LaTeX/New_2016_05_25.tex
-            setlocal relativenumber number
-            set linebreak
-            normal H
-            normal zR
-            execute "normal /set spellfile\<cr>vi[\"ty"
-            execute @t
-            set spell
-
-            Thematic _12
-            call ToggleFullScreen()
-            execute "normal \<c-w>="
-            
-            execute "normal `."
-            execute 'normal zMzxzczOzz'
-          endfunction
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          vnoremap <silent> <leader>x :call g:BoxCharacters()<cr>
 
         "│-v-5 │ (function) switch off & preserve relnum state
         "└─────┴───────────────────────────────────────────────
-          " (auto commands @__switch_off_and_preserve_relnum_state_autocmds)
           function! g:OffRelNumPreserve()
             let w:preserved_rnu = &relativenumber
             let w:preserved_nu = &number
@@ -693,10 +673,12 @@
             endif
           endfunction
 
+          "" Auto Commands: ──────────────────────────────────────────────-v-6
+          au WinLeave * call g:OffRelNumPreserve()
+          au WinEnter * call g:RestoreRelNum()
+
         "│-v-5 │ (function) Insert contrary tabs
         "└─────┴─────────────────────────────────
-          " (mappings @__insert_contrary_tabs)
-
           " Inserts tabs when &expandtab, spaces when &noet
           function! g:InsertContraryTabs()
             if &et
@@ -705,10 +687,12 @@
               exe ':normal i' . repeat(' ', &ts) . 'la'
             endif
           endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          inoremap <silent> <s-tab> <c-o>:call g:InsertContraryTabs()<cr>
+
         "│-v-5 │ (function) Toggle both line numberings
         "└─────┴────────────────────────────────────────
-          " (mappings @__line_number_modes_mappings)
-
           function! g:ToggleBothNums()
             if &relativenumber && &number
               set norelativenumber nonumber
@@ -717,9 +701,13 @@
             endif
           endfunction
 
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <silent> <leader>nr :set relativenumber!<cr>
+          nnoremap <silent> <leader>na :set number!<cr>
+          nnoremap <silent> <leader>nn :call g:ToggleBothNums()<cr>
+
         "│-v-5 │ (function) :cd between current file's directory and global cwd
         "└─────┴────────────────────────────────────────────────────────────────
-          " (mappings @__local_file_cd_toggle)
           function! g:LocalFileCDToggle()
             if !exists('w:global_cwd')
               let w:global_cwd = getcwd()
@@ -729,6 +717,9 @@
               unlet w:global_cwd
             endif
           endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <leader>d :call g:LocalFileCDToggle()<cr>
 
         "│-v-5 │ (function) Mercurial diff two changesets completely
         "└─────┴─────────────────────────────────────────────────────
@@ -950,24 +941,6 @@
 
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
-          "│-v-6 │ __box_characters_mapping:
-          "└─────┴───────────────────────────
-            vnoremap <silent> <leader>x :call g:BoxCharacters()<cr>
-
-          "│-v-6 │ __line_number_modes_mappings:
-          "└─────┴───────────────────────────────
-            nnoremap <silent> <leader>nr :set relativenumber!<cr>
-            nnoremap <silent> <leader>na :set number!<cr>
-            nnoremap <silent> <leader>nn :call g:ToggleBothNums()<cr>
-
-          "│-v-6 │ __local_file_cd_toggle
-          "└─────┴────────────────────────
-            nnoremap <leader>d :call g:LocalFileCDToggle()<cr>
-
-          "│-v-6 │ __insert_contrary_indentation
-          "└─────┴───────────────────────────────
-            inoremap <silent> <s-tab> <c-o>:call g:InsertContraryTabs()<cr>
-
           "│-v-6 │ Insert date:
           "└─────┴──────────────
             nmap <F3> i<C-R>=strftime("%Y-%m-%d")<CR><Esc>
@@ -986,54 +959,9 @@
             " crappy vimlatex plugin, but even without it, <c-k> is useless.)
             imap <C-u> <nop>
 
-          "│-v-6 │ __open_writing_project :
-          "└─────┴──────────────────────────
-            " This mapping is meant to be changed as needed.
-            nnoremap <silent> <f7> :call g:Open_writing_project()<cr>
-
-          "│-v-6 │ __toggle_listchars_mode
-          "└─────┴─────────────────────────
-            nnoremap <leader>L :call ToggleListCharsMode()<cr>
-
-        "│-v-5 │ mappings to Plug-ins
-        "└─┬───┴─┬────────────────────
-          "│-v-6 │ __full_screen_mappings
-          "└─────┴─────────────────────────
-            map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
-
-          "│-v-6 │ __rainbow_parentheses_mappings:
-          "└─────┴─────────────────────────────────
-            nnoremap <silent> <leader>r :RainbowToggle<cr>
-
-          "│-v-6 │ __thematic_mappings:
-          "└─────┴──────────────────────
-            nnoremap <leader>T7 :Thematic _7<cr>
-            nnoremap <leader>T8 :Thematic _8<cr>
-            nnoremap <leader>T10 :Thematic _10<cr>
-            nnoremap <leader>T12 :Thematic _12<cr>
-            nnoremap <leader>T14 :Thematic _14<cr>
-            nnoremap <leader>T16 :Thematic _16<cr>
-            nnoremap <leader>T18 :Thematic _18<cr>
-
-          "│-v-6 │ __Ultisnips_mappings
-          "└─────┴──────────────────────
-            nnoremap <leader>U :UltiSnipsEdit<cr>
-          "│-v-6 │ __vimwiki_mappings
-          "└─────┴────────────────────
-            nnoremap <leader># :VimwikiTable<cr>
-
       "│-v-4 │ Auto-commands
-      "└─┬───┴─┬─────────────
-        "│-v-5 │ Independent auto-commands
-        "└─────┴───────────────────────────
-          autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
-
-        "│-v-5 │ Auto commands for customized behavior & functions
-        "└─┬───┴─┬─────────────────────────────────────────────────
-          "│-v-6 │ __switch_off_and_preserve_relnum_state_autocmds
-          "└─────┴─────────────────────────────────────────────────
-            au WinLeave * call g:OffRelNumPreserve()
-            au WinEnter * call g:RestoreRelNum()
+      "└─────┴───────────────────────────
+        autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
 
       "│-v-4 │ Abbreviations
       "└─┬───┴─┬─────────────
@@ -1087,6 +1015,8 @@
       "└─────┴─────────────────────────────────
         nnoremap <silent> <leader>v :call g:EchoToggle('cursorcolumn')<cr>
 
+        " Toggle the cursor column and cursor line depending on active window
+        " (these 2 funcs)
         function! g:PreserveCursorColumn()
           if &cursorcolumn
             let w:setting_cursorcolumn = 1
@@ -1218,7 +1148,6 @@
 
       "│-v-4 │ Toggle listchars mode
       "└─────┴───────────────────────
-        " Mappings (@__toggle_listchars_mode):
         " __requires_utf_8:
         function! ToggleListCharsMode() "-v-
           if !exists('g:listcharsmode')
@@ -1251,6 +1180,9 @@
         endfunction "-^-
         silent call ToggleListCharsMode()
 
+        "" Mapping: ────────────────────────────────────────────────────-v-5
+        nnoremap <leader>L :call ToggleListCharsMode()<cr>
+
       "│-v-4 │ LLVM/Clang integration
       "└─────┴────────────────────────
 
@@ -1264,17 +1196,7 @@
         nnoremap <leader>= :call ClangFormatWholeBuffer()<cr>
         vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
-"│-v-1 │ Transient settings
-"└─────┴────────────────────
-  " This is meant for sourcing in convenience settings that don't really
-  " belong in this file.
-  :source ~/Dropbox/code/zigzagdungeon/vimsetup.vim
-
-  " Regarding a list of all the books in Skyrim.
-  au BufRead Books_Checklist.txt nnoremap <silent> <leader>sr 0R[R]k<cr>
-  au BufRead Books_Checklist.txt nnoremap <silent> <leader>so 0R[O]k<cr>
-  au BufRead Books_Checklist.txt nnoremap <silent> <leader>s- 0R - k<cr>
-  au BufRead Books_Checklist.txt nnoremap <silent> <leader>s<space> 0R[ ]k<cr>
+" -^-1
 
 " vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=0 sts=0 :
 
