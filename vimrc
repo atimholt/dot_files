@@ -380,17 +380,24 @@
 
     "│-v-3 │ vimwiki Settings
     "└─────┴──────────────────
-      let g:vimwiki_camel_case = 0
+      let g:vimwiki_folding = 'expr'
 
       let wiki_1 = {}
       let wiki_1.path = '~/Dropbox/Vim/vimwiki/'
       let wiki_1.nested_syntaxes = {'c++': 'cpp', 'asm': 'asm', 'sh': 'sh'}
 
       let wiki_2 = {}
-      let wiki_2.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
+      let wiki_2.path = '~/Documents (Actual)/Inhuman Universe/wiki/'
+      let wiki_2.auto_toc = 1
+      let wiki_2.auto_tags = 1
+      let wiki_2.maxhi = 1
 
       let wiki_3 = {}
       let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
+
+      " The old Inhuman Universe wiki
+      "let wiki_4 = {}
+      "let wiki_4.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
 
       let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
 
