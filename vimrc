@@ -388,6 +388,7 @@
 
       let wiki_2 = {}
       let wiki_2.path = '~/Documents (Actual)/Inhuman Universe/wiki/'
+      let wiki_2.index = 'index'
       let wiki_2.auto_toc = 1
       let wiki_2.auto_tags = 1
       let wiki_2.maxhi = 1
@@ -400,6 +401,8 @@
       "let wiki_4.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
 
       let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
+
+      let g:vimwiki_dir_link = 'main_page'
 
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader># :VimwikiTable<cr>
