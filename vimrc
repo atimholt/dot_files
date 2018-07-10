@@ -420,7 +420,17 @@
     "└─────┴────────────────────────────
 
       " Quick settings access
-        nnoremap <silent> <F2> :tabedit $MYVIMRC<cr>
+      function! g:EditSettings()
+        tabedit ~/.vim/neobundle/my_vimrc_extended/
+        vsplit ~/dot_files/vimrc
+        set number relativenumber
+        vertical resize 100
+        normal `.
+        normal zx
+      endfunction
+
+      "" Mappings: ───────────────────────────────────────────────────────-v-4
+      nnoremap <silent> <F2> :call g:EditSettings()<cr>
 
     "│-v-3 │ Tweakings/Feature Settings
     "└─┬───┴─┬──────────────────────────
