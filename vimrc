@@ -406,6 +406,8 @@
 
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader># :VimwikiTable<cr>
+      nnoremap <F13> :VimwikiAll2HTML<cr>
+      nnoremap <F14> :Vimwiki2HTMLBrowse<cr>
 
     "│-v-3 │ Wimproved
     "└─────┴───────────
