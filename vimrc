@@ -408,6 +408,7 @@
       nnoremap <leader># :VimwikiTable<cr>
       nnoremap <F13> :VimwikiAll2HTML<cr>
       nnoremap <F14> :Vimwiki2HTMLBrowse<cr>
+      nnoremap <F15> :VimwikiTOC<cr>
 
     "│-v-3 │ Wimproved
     "└─────┴───────────
