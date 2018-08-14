@@ -262,7 +262,7 @@
 
       function! RainbowOff()
         if exists('b:rainbow_loaded')
-          call rainbow#clear()
+          call rainbow_main#clear()
         endif
       endfunction
 
