@@ -1143,9 +1143,9 @@
       "│-v-4 │ guifont
       "└─────┴─────────
         if has('win32')
-          set guifont=Consolas_for_Powerline_FixedD:h14:cDEFAULT
+          set guifont=Consolas_for_Powerline_FixedD:h10:cDEFAULT
         else
-          set guifont=Consolas\ for\ Powerline\ 14
+          set guifont=Consolas\ for\ Powerline\ 10
         endif
       "│-v-4 │ Code indentation
       "└─────┴──────────────────
