@@ -3,3 +3,5 @@
   email = atimholt@gmail.com
 [push]
 	default = simple
+[core]
+	autocrlf = false
