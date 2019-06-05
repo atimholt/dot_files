@@ -962,6 +962,12 @@
           nnoremap <silent> <leader>W :call g:EchoToggle('winfixwidth', 'Fixed Window Width')<cr>
           nnoremap <silent> <leader>H :call g:EchoToggle('winfixheight', 'Fixed Window Height')<cr>
 
+        "│-v-5 │ Diff current tab's windows
+        "└─────┴────────────────────────────
+        
+          nnoremap <silent> <leader>dt :windo difft<cr>
+          nnoremap <silent> <leader>do :windo diffo<cr>
+
         "│-v-5 │ mappings to customized-behavior & functions.
         "└─┬───┴─┬────────────────────────────────────────────
           "│-v-6 │ Insert date:
