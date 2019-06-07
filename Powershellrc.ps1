@@ -115,6 +115,8 @@
 
       set-alias say out-speech
 
+      set-alias vs "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe"
+
     #│ ▼3 │ Utility Functions
     #└────┴───────────────────
       function list_path
