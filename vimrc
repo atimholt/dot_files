@@ -603,6 +603,10 @@
           au BufRead .hgignore set ft=hgignore
           au BufRead .md set ft=markdown
 
+        "│-v-5 │ Window Split settings
+        "└─────┴───────────────────────
+          set splitright
+
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
         set cm=blowfish2
@@ -743,6 +747,30 @@
 
           "" Mappings: ───────────────────────────────────────────────────-v-6
           nnoremap <leader>d :call g:LocalFileCDToggle()<cr>
+
+        "│-v-5 │ (function) vsplit with a file in a parallel directory structure
+        "└─────┴─────────────────────────────────────────────────────────────────
+          function! g:ParallelVSplit()
+            if !exists('g:other_wd')
+              echom "No g:other_wd set!"
+            else
+              exe "vsplit " . g:other_wd . "/" . expand("%:p:.")
+            endif
+            windo difft
+            normal zR
+          endfunction
+
+          function! g:CurrentNetrwIsParallelDir()
+            if expand("%") =~? "netrwtreelisting"
+              let g:other_wd = substitute(getline(3), '^\"\s\+', "", "")
+            else
+              echom "Current window is not a Netrw listing!"
+            endif
+          endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <silent> <leader>/ :call g:ParallelVSplit()<cr>
+          nnoremap <silent> <leader><Bslash> :call g:CurrentNetrwIsParallelDir()<cr>
 
         "│-v-5 │ (function) Mercurial diff two changesets completely
         "└─────┴─────────────────────────────────────────────────────
@@ -946,7 +974,6 @@
         "│-v-5 │ Quick window-width reset
         "└─────┴──────────────────────────
           nnoremap <leader><Bar>    :vertical resize 85<cr>
-          nnoremap <leader><Bslash> :vertical resize 85<cr>
 
         "│-v-5 │ Digraph
         "└─────┴─────────
