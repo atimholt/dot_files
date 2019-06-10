@@ -105,10 +105,13 @@
     NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
 
     " TODO: get this working
-      "\ 'build_commands' : 'cmake',
     "NeoBundle 'kkoenig/wimproved.vim', {
     "  \ 'build' : {
-    "  \     'windows' : 'cmake -G "NMake Makefiles" . && nmake',
+    "  \     'build_commands' : 'cmake',
+    "  \     'windows' : 'cmake -G ^"NMake Makefiles^" . ^&^& nmake',
+    "        " Or try switching shell to powershell (& back, if necessary)
+    "        " (still didn’t work from actual Powershell)
+    "  \     'windows' : '^(cmake -G ^"NMake Makefiles^" .^) -and ^(nmake^)',
     "  \    },
     "  \ }
 
