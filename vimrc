@@ -90,7 +90,6 @@
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
-    NeoBundle 'reedes/vim-thematic' " ─────── combines ‘theme’ settings
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
@@ -313,38 +312,6 @@
       let g:surround_{char2nr("a")} = "‘\r’"
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
-
-    "│-v-3 │ thematic
-    "└─────┴──────────
-      let g:thematic#defaults = {
-      \ 'colorscheme': ''
-      \ }
-
-      let g:thematic#themes = {}
-      " No idea why this difference is there. I’m *pretty* sure they’re the
-      " same fonts.
-      if has('win32')
-        let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline FixedD' }
-      else
-        let g:thematic#themes.Consolas = { 'typeface': 'Consolas for Powerline' }
-        let g:thematic#themes.LibMono = { 'typeface': 'Liberation Mono for Powerline' }
-      endif
-      let g:thematic#themes._7 = {'font-size':7}
-      let g:thematic#themes._8 = {'font-size':8}
-      let g:thematic#themes._10 = {'font-size':10}
-      let g:thematic#themes._12 = {'font-size':12}
-      let g:thematic#themes._14 = {'font-size':14}
-      let g:thematic#themes._16 = {'font-size':16}
-      let g:thematic#themes._18 = {'font-size':18}
-
-      "" Mappings: ───────────────────────────────────────────────────-v-4
-      nnoremap <leader>T7 :Thematic _7<cr>
-      nnoremap <leader>T8 :Thematic _8<cr>
-      nnoremap <leader>T10 :Thematic _10<cr>
-      nnoremap <leader>T12 :Thematic _12<cr>
-      nnoremap <leader>T14 :Thematic _14<cr>
-      nnoremap <leader>T16 :Thematic _16<cr>
-      nnoremap <leader>T18 :Thematic _18<cr>
 
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
@@ -936,6 +903,28 @@
         "│-v-5 │ display remaps
         "└─────┴────────────────
           nnoremap <leader>b :set linebreak!<cr>
+
+        "│-v-5 │ font size mappings
+        "└─────┴────────────────────
+          if has('win32')
+            nnoremap <leader>T7 :set guifont=Consolas_for_Powerline_FixedD:h7<cr>
+            nnoremap <leader>T8 :set guifont=Consolas_for_Powerline_FixedD:h8<cr>
+            nnoremap <leader>T10 :set guifont=Consolas_for_Powerline_FixedD:h10<cr>
+            nnoremap <leader>T12 :set guifont=Consolas_for_Powerline_FixedD:h12<cr>
+            nnoremap <leader>T14 :set guifont=Consolas_for_Powerline_FixedD:h14<cr>
+            nnoremap <leader>T16 :set guifont=Consolas_for_Powerline_FixedD:h16<cr>
+            nnoremap <leader>T18 :set guifont=Consolas_for_Powerline_FixedD:h18<cr>
+          else
+            " TODO  Make sure this is correct!
+            nnoremap <leader>T7 :set guifont=Consolas\ for\ Powerline\ FixedD\ 7<cr>
+            nnoremap <leader>T8 :set guifont=Consolas\ for\ Powerline\ FixedD\ 8<cr>
+            nnoremap <leader>T10 :set guifont=Consolas\ for\ Powerline\ FixedD\ 10<cr>
+            nnoremap <leader>T12 :set guifont=Consolas\ for\ Powerline\ FixedD\ 12<cr>
+            nnoremap <leader>T14 :set guifont=Consolas\ for\ Powerline\ FixedD\ 14<cr>
+            nnoremap <leader>T16 :set guifont=Consolas\ for\ Powerline\ FixedD\ 16<cr>
+            nnoremap <leader>T18 :set guifont=Consolas\ for\ Powerline\ FixedD\ 18<cr>
+          endif
+
 
         "│-v-5 │ toggle showing of invisible characters
         "└─────┴────────────────────────────────────────
