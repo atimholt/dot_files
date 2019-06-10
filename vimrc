@@ -237,15 +237,6 @@
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <silent> <leader>u :UndotreeToggle<cr>
 
-    "│-v-3 │ Multiple Cursors
-    "└─────┴──────────────────
-      " No settings messed with
-
-      "" Mappings: ───────────────────────────────────────────────────-v-4
-      " Note the end-of-line space! Use 'list' to see them.
-      vnoremap <leader>N :'<,'>MultipleCursorsFind 
-      nnoremap <leader>N :MultipleCursorsFind 
-
     "│-v-3 │ OmniCppComplete Settings
     "└─────┴──────────────────────────
       " TODO: grok this to see if it needs anything.
