@@ -81,7 +81,6 @@
     NeoBundle 'fboender/bexec' " ──────────── Execute the current buffer.
     NeoBundle 'gisraptor/vim-lilypond-integrator' " ── lilypond file syntax etc.
     NeoBundle 'junegunn/vader.vim' " ──────── Unit test suite for VimL
-    NeoBundle 'kana/vim-arpeggio' " ───────── map triggers with simultaneous keys
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
@@ -192,10 +191,6 @@
       let g:airline_section_z="%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3c [%02B]"
       let g:airline#extensions#tabline#show_buffers = 0
       let g:airline#extensions#tabline#tab_min_count = 2
-
-    "│-v-3 │ Arpeggio Settings
-    "└─────┴───────────────────
-      call arpeggio#load()
 
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
@@ -965,11 +960,6 @@
         "└─────┴──────────────────────────
           nnoremap <leader><Bar>    :vertical resize 85<cr>
 
-        "│-v-5 │ Digraph
-        "└─────┴─────────
-          Arpeggio inoremap jk <c-k>
-          Arpeggio cnoremap jk <c-k>
-
         "│-v-5 │ spell
         "└─────┴───────
           nnoremap <silent> <leader>s :call g:EchoToggle('spell', 'Spell check')<cr>
@@ -996,14 +986,6 @@
             nmap <S-F3> i<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
             imap <S-F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
             vmap <S-F3> di<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
-
-          "│-v-6 │ Remove i_ctrl-u:
-          "└─────┴──────────────────
-            " When using <C-k> to trigger digraphs, <C-u> is a hugely frequent
-            " typo. Whereas <c-k> is a command I’d never actually want to use.
-            " (My arpeggio jk trigger for digraphs was incompatible with the
-            " crappy vimlatex plugin, but even without it, <c-k> is useless.)
-            imap <C-u> <nop>
 
       "│-v-4 │ Auto-commands
       "└─────┴───────────────────────────
