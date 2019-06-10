@@ -725,6 +725,7 @@
             endif
             windo difft
             normal zR
+            echom "Diff is on!"
           endfunction
 
           function! g:CurrentNetrwIsParallelDir()
@@ -981,7 +982,7 @@
         "│-v-5 │ Diff current tab's windows
         "└─────┴────────────────────────────
         
-          nnoremap <silent> <leader>dt :windo difft<cr>
+          nnoremap <silent> <leader>dt :windo difft<cr>zR
           nnoremap <silent> <leader>do :windo diffo<cr>
 
         "│-v-5 │ mappings to customized-behavior & functions.
