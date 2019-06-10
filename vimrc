@@ -240,7 +240,7 @@
     "│-v-3 │ OmniCppComplete Settings
     "└─────┴──────────────────────────
       " TODO: grok this to see if it needs anything.
-      au BufNewFile,BufRead,BufEnter *.cpp,*.h set omnifunc=omni#cpp#complete#Main
+      au BufNewFile,BufRead,BufEnter *.cpp,*.h,*.hpp set omnifunc=omni#cpp#complete#Main
       let OmniCpp_ShowPrototypeInAbbr = 1
 
     "│-v-3 │ Rainbow Parentheses Settings
