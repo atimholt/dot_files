@@ -216,6 +216,11 @@
       #  Get-ChildItem -Exclude .*
       #}
 
+      function bash
+      {
+        ubuntu run
+      }
+
 #│ ▼1 │ Prompt Line
 #└────┴─────────────
 function prompt
