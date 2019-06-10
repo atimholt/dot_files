@@ -194,6 +194,11 @@
       let g:airline_section_z="%3p%% %{g:airline_symbols.linenr}%#__accent_bold#%4l%#__restore__#:%3c [%02B]"
       let g:airline#extensions#tabline#show_buffers = 0
       let g:airline#extensions#tabline#tab_min_count = 2
+      let g:airline#extensions#tabline#tabs_label = ''
+      let g:airline#extensions#tabline#show_close_button = 0
+      let g:airline#extensions#tabline#show_tab_type = 1
+
+      let g:airline#extensions#gutentags#enabled = 1
 
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
