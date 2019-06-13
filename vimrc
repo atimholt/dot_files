@@ -75,6 +75,7 @@
 
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
+    NeoBundle 'Shougo/vimfiler.vim' " ─────── replacement for netrw
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 'Valloric/YouCompleteMe' " ──── Powerful c-family lang completion
     NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
@@ -317,6 +318,13 @@
 
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader>U :UltiSnipsEdit<cr>
+
+    "│-v-3 │ vimfiler
+    "└─────┴──────────
+      let g:vimfiler_as_default_explorer = 1
+      " TODO : unmap everything with g:vimfiler_no_default_key_mappings
+      autocmd FileType vimfiler nunmap <buffer> <Space>
+      "autocmd FileType vimfiler nmap <buffer> <something>  <Plug>(vimfiler_toggle_mark_current_line)
 
     "│-v-3 │ vim-signature
     "└─────┴───────────────
