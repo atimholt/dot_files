@@ -73,10 +73,10 @@
 
     "" Plugins from the nice people of the Vim community: ────────────────-v-3
 
-    NeoBundle 'OmniCppComplete' " ─────────── cpp completion
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
+    NeoBundle 'Valloric/YouCompleteMe' " ──── Powerful c-family lang completion
     NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
@@ -242,12 +242,6 @@
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <silent> <leader>u :UndotreeToggle<cr>
 
-    "│-v-3 │ OmniCppComplete Settings
-    "└─────┴──────────────────────────
-      " TODO: grok this to see if it needs anything.
-      au BufNewFile,BufRead,BufEnter *.cpp,*.h,*.hpp set omnifunc=omni#cpp#complete#Main
-      let OmniCpp_ShowPrototypeInAbbr = 1
-
     "│-v-3 │ Rainbow Parentheses Settings
     "└─────┴──────────────────────────────
       " Settings apply to the luochen1990 version.
@@ -370,6 +364,10 @@
     "└─────┴───────────
       " Not actually working
       "autocmd GUIEnter * silent! WToggleClean
+
+    "│-v-3 │ YouCompleteMe
+    "└─────┴───────────────
+      let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
