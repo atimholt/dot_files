@@ -467,19 +467,6 @@
         "└─────┴────────────────
           let g:netrw_liststyle=3
 
-        "│-v-5 │ External Shell Settings
-        "└─────┴─────────────────────────
-          " __requires_utf_8:
-
-          " The && !(&diff) is there because shell=powershell.exe breaks
-          " vimdiff.
-          if has('win32') && !(&diff) && 0
-            set shell=powershell.exe
-            set shellcmdflag=-c
-            set shellpipe=|
-            set shellredir=>
-          endif
-
         "│-v-5 │ Custom Digraph Settings
         "└─────┴─────────────────────────
         " Esperanto: ─────────────────────────────────────────────────────-v-6
