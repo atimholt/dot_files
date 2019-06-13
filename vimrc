@@ -73,6 +73,10 @@
 
     "" Plugins from the nice people of the Vim community: ────────────────-v-3
 
+    NeoBundle 'OmniCppComplete' " ─────────── cpp completion
+    NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
+    NeoBundle 'Shougo/unite.vim' " ────────── UI and search
+    NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
     NeoBundle 'bling/vim-airline' " ───────── status line with shiny stuff
     NeoBundle 'bpstahlman/txtfmt' " ───────── vim is now semi-WYSIWYG!
@@ -87,11 +91,7 @@
     NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
-    NeoBundle 'OmniCppComplete' " ─────────── cpp completion
-    NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
-    NeoBundle 'Shougo/unite.vim' " ────────── UI and search
-    NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
