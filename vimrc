@@ -1056,6 +1056,7 @@
       "│-v-4 │ Window Width & Such
       "└─────┴─────────────────────
         set winminwidth=5
+        set scrolloff=1
 
       "│-v-4 │ Invisible characters depiction.
       "└─────┴─────────────────────────────────
