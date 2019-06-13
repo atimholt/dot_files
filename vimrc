@@ -368,6 +368,14 @@
     "│-v-3 │ YouCompleteMe
     "└─────┴───────────────
       let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+      let g:ycm_filetype_specific_completion_to_disable = {
+            \ 'gitcommit': 1,
+            \ 'hgcommit': 1
+            \}
+      let g:ycm_collect_identifiers_from_tags_files = 1
+      let g:ycm_seed_identifiers_with_syntax = 1
+      let g:ycm_autoclose_preview_window_after_insertion = 1
+      let g:ycm_extra_conf_globlist = ['~/.ycm_extra_conf.py']
 
 "│-v-1 │ Set-up
 "└─┬───┴─┬──────
