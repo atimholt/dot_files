@@ -75,7 +75,6 @@
 
     NeoBundle 'PProvost/vim-ps1' " ────────── Syntax, etc, for powershell
     NeoBundle 'Shougo/unite.vim' " ────────── UI and search
-    NeoBundle 'Shougo/vimfiler.vim' " ─────── replacement for netrw
     NeoBundle 'SirVer/ultisnips', 'release' " ─── powerful snippets
     NeoBundle 'Valloric/YouCompleteMe' " ──── Powerful c-family lang completion
     NeoBundle 'aaronbieber/vim-vault' " ───── password manager-ness
@@ -318,34 +317,6 @@
 
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader>U :UltiSnipsEdit<cr>
-
-    "│-v-3 │ vimfiler
-    "└─────┴──────────
-      let g:vimfiler_as_default_explorer = 1
-      let g:vimfiler_no_default_key_mappings = 1
-      autocmd FileType vimfiler set number relativenumber
-
-      " This seems to be broken
-      "autocmd FileType vimfiler nmap <silent><buffer> <cr> :call vimfiler#do_action('tabopen')<cr>
-      autocmd FileType vimfiler nmap <silent><buffer> <cr> <c-w>s<c-w>T<Plug>(vimfiler_cd_or_edit)
-
-      "autocmd FileType vimfiler nmap <buffer> <something>  <Plug>(vimfiler_toggle_mark_current_line)
-      autocmd FileType vimfiler nmap <buffer> j <Plug>(vimfiler_loop_cursor_down)
-      autocmd FileType vimfiler nmap <buffer> k <Plug>(vimfiler_loop_cursor_up)
-      autocmd FileType vimfiler nmap <buffer> gg <Plug>(vimfiler_cursor_top)
-      autocmd FileType vimfiler nmap <buffer> <C-l> <Plug>(vimfiler_redraw_screen)
-      autocmd FileType vimfiler nmap <buffer> o <Plug>(vimfiler_expand_or_edit)
-      autocmd FileType vimfiler nmap <buffer> l <Plug>(vimfiler_smart_l)
-      autocmd FileType vimfiler nmap <buffer> h <Plug>(vimfiler_smart_h)
-      autocmd FileType vimfiler nmap <buffer> <C-j> <Plug>(vimfiler_switch_to_history_directory)
-      autocmd FileType vimfiler nmap <buffer> . <Plug>(vimfiler_toggle_visible_ignore_files)
-      autocmd FileType vimfiler nmap <buffer> yy <Plug>(vimfiler_yank_full_path)
-      autocmd FileType vimfiler nmap <buffer> t <Plug>(vimfiler_expand_tree)
-      autocmd FileType vimfiler nmap <buffer> T <Plug>(vimfiler_expand_tree_recursive)
-      autocmd FileType vimfiler nmap <buffer> gj <Plug>(vimfiler_jump_last_child)
-      autocmd FileType vimfiler nmap <buffer> gk <Plug>(vimfiler_jump_first_child)
-
-      autocmd FileType vimfiler vmap <buffer> <cr> <Plug>(vimfiler_toggle_mark_selected_lines)
 
     "│-v-3 │ vim-signature
     "└─────┴───────────────
