@@ -92,6 +92,7 @@
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
     NeoBundle 'scrooloose/nerdcommenter' " ── handle auto-commenting lines
+    NeoBundle 'scrooloose/nerdtree' " ─────── Tree file explorer
     NeoBundle 't9md/vim-choosewin' " ──────── “random access” window navigation
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
