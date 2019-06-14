@@ -221,6 +221,12 @@
         ubuntu run
       }
 
+      function sh([Parameter(ValueFromRemainingArguments)][string]$command)
+      {
+        invoke-expression $("ubuntu run {0}" -f $command)
+      }
+
+
 #│ ▼1 │ Prompt Line
 #└────┴─────────────
 function prompt
