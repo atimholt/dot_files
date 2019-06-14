@@ -88,6 +88,7 @@
     NeoBundle 'kshenoy/vim-signature' " ───── Show marks on the left
     NeoBundle 'ludovicchabant/vim-gutentags' " ── Tag manager
     NeoBundle 'luochen1990/rainbow' " ─────── matching brackets match colors
+    NeoBundle 'majutsushi/tagbar' " ───────── tag explorer
     NeoBundle 'mbbill/undotree' " ───────── view undo history as a tree
     NeoBundle 'mhinz/vim-startify' " ──────── covenient Vim start screen
     NeoBundle 'octol/vim-cpp-enhanced-highlight' " ── Improved C++ highlighting
