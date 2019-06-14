@@ -229,6 +229,11 @@
       "" Mappings: ───────────────────────────────────────────────────-v-4
       map <silent> <F11> <Esc>:call ToggleFullScreen()<CR>
 
+    "│-v-3 │ NERDTree
+    "└─────┴──────────
+      let NERDTreeShowHidden = 1
+      let NERDTreeShowLineNumbers = 1
+
     "│-v-3 │ Undotree Settings
     "└─────┴────────────────
       let g:undotree_SetFocusWhenToggle=1
