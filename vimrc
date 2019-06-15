@@ -235,6 +235,12 @@
     "└─────┴──────────
       let NERDTreeShowHidden = 1
       let NERDTreeShowLineNumbers = 1
+      autocmd FileType nerdtree setlocal number relativenumber
+
+      let NERDTreeMapCloseDir='zc'
+      let NERDTreeMapCloseChildren='zC'
+
+      "TODO: consider a mapping for easily opening a NERDTree window
 
     "│-v-3 │ Undotree Settings
     "└─────┴────────────────
