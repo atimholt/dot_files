@@ -203,6 +203,10 @@
 
       let g:airline#extensions#gutentags#enabled = 1
 
+    "│-v-3 │ ALE
+    "└─────┴─────
+      
+
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
       let g:ArrowKeyRepurp_settings = {}
@@ -1085,6 +1089,7 @@
       "└─────┴─────────────────────
         set winminwidth=5
         set scrolloff=1
+        set noequalalways
 
       "│-v-4 │ Invisible characters depiction.
       "└─────┴─────────────────────────────────
