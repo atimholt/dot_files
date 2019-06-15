@@ -98,6 +98,7 @@
     NeoBundle 'tmhedberg/SimpylFold' " ────── simple Python syntax folding
     NeoBundle 'tpope/vim-surround' " ──────── change surroundings (e.g. {})
     NeoBundle 'vimwiki/vimwiki' " ─────────── personal wiki in vim
+    NeoBundle 'w0rp/ale' " ────────────────── Asynchronus Lint Engine
     " Because they’re compatible with vim-airline:
     NeoBundle 'ludovicchabant/vim-lawrencium' " ── Mercurial integration
     NeoBundle 'tpope/vim-fugitive' " ──────── git integration
