@@ -309,6 +309,20 @@
       " txtfmt italics delimiters
       let g:surround_{char2nr("i")} = "\r"
 
+    "│-v-3 │ Tagbar
+    "└─────┴────────
+      " map_showproto used <space> (my <leader>), and map_help used '?'.
+      let g:tagbar_map_help = '<F1>'
+      let g:tagbar_map_showproto = '?'
+
+      let g:tagbar_width = 40
+      let g:tagbar_zoomwidth = 0
+      let g:tagbar_show_linenumbers = 2
+      let g:tagbar_autopreview = 1
+
+      nnoremap <silent> <a-t>/ :TagbarOpenAutoClose<cr>
+      nnoremap <silent> <a-t>t :TagbarToggle<cr>
+
     "│-v-3 │ UltiSnips Settings
     "└─────┴────────────────────
       let g:UltiSnipsSnippetsDir = "~/Dropbox/Vim/GlobalRuntimePath/UltiSnipsSnippets/"
