@@ -437,7 +437,7 @@
         tabedit ~/.vim/neobundle/my_vimrc_extended/
         vsplit ~/dot_files/vimrc
         set number relativenumber
-        vertical resize 100
+        vertical resize 120
         normal `.
         normal zx
       endfunction
