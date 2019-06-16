@@ -220,6 +220,8 @@
 
       nmap <a-a>t <Plug>(ale_toggle)
       nmap <a-a>d <Plug>(ale_detail)
+      nmap <a-k> <Plug>(ale_previous)
+      nmap <a-j> <Plug>(ale_next)
 
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
