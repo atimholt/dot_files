@@ -205,7 +205,21 @@
 
     "│-v-3 │ ALE
     "└─────┴─────
-      
+      let g:ale_cpp_clang_options = '-std=c++17 -Wall'
+      let g:ale_cpp_clangtidy_checks = [
+        \ 'cppcoreguidelines-*',
+        \ 'clang-analyzer-*',
+        \   '-clang-analyzer-apiModeling.*',
+        \   '-clang-analyzer-optin.*',
+        \   '-clang-analyzer-osx.*',
+        \ 'bugprone-*',
+        \ 'misc-*',
+        \ 'modernize-*',
+        \ 'readability-*',
+        \ ]
+
+      nmap <a-a>t <Plug>(ale_toggle)
+      nmap <a-a>d <Plug>(ale_detail)
 
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
