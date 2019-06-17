@@ -205,23 +205,33 @@
 
     "│-v-3 │ ALE
     "└─────┴─────
-      let g:ale_cpp_clang_options = '-std=c++17 -Wall'
-      let g:ale_cpp_clangtidy_checks = [
-        \ 'cppcoreguidelines-*',
-        \ 'clang-analyzer-*',
-        \   '-clang-analyzer-apiModeling.*',
-        \   '-clang-analyzer-optin.*',
-        \   '-clang-analyzer-osx.*',
-        \ 'bugprone-*',
-        \ 'misc-*',
-        \ 'modernize-*',
-        \ 'readability-*',
-        \ ]
-
       nmap <a-a>t <Plug>(ale_toggle)
       nmap <a-a>d <Plug>(ale_detail)
       nmap <a-k> <Plug>(ale_previous)
       nmap <a-j> <Plug>(ale_next)
+
+      " Not actually ALE, but oh well
+      function! g:DiffWithClangTidyOutput()
+        exe "normal \<c-w>s\<c-w>T"
+
+        let s:preserved_autoread = &l:autoread
+        setlocal autoread
+        !clang-tidy -fix %
+        edit
+        let &l:autoread = s:preserved_autoread
+
+        let l:file_name = expand('%:t:r')
+        let l:file_extension = expand('%:e')
+        let l:file_type = &ft
+        %yank
+        normal u
+        vnew
+        let b:ale_enabled = 0
+        exe "file " . l:file_name . ".tidied." . l:file_extension
+        let &ft = l:file_type
+        put!
+      endfunction
+      nnoremap <silent> <a-a>D :call g:DiffWithClangTidyOutput()<cr>
 
     "│-v-3 │ Arrow Key Repurpose
     "└─────┴─────────────────────
