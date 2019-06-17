@@ -106,6 +106,8 @@
     NeoBundle 'tpope/vim-repeat' " ────────── makes some plugins .-able
     " Used by ultisnips:
     NeoBundle 'honza/vim-snippets' " ──────── snippets for ultisnips
+    " Extension for fugitive:
+    NeoBundle 'junegunn/gv.vim' " ─────────── Adds log browsing, easy diffing
 
     " TODO: get this working
     "NeoBundle 'kkoenig/wimproved.vim', {
