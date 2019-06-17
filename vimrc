@@ -1051,7 +1051,31 @@
 
         "│-v-5 │ Quick window-width reset
         "└─────┴──────────────────────────
-          nnoremap <leader><Bar>    :vertical resize 85<cr>
+          let g:my_default_window_width = 85
+          function! MySmartResize()
+            let s:new_width = 85
+            if exists('w:preferred_width')
+              let s:new_width = w:preferred_width
+            else
+              let s:new_width = g:my_default_window_width
+            endif
+            exe 'vertical resize' s:new_width
+            echo "Resized to" s:new_width
+          endfunction
+
+          function! MySmartResizeSave()
+            if exists('w:preferred_width') && w:preferred_width == winwidth(0)
+              unlet w:preferred_width
+              echo "Local preferred window width now default (" . g:my_default_window_width . ")"
+            else
+              let w:preferred_width = winwidth(0)
+              echo "Local preferred window width now set to" w:preferred_width
+            endif
+          endfunction
+
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          nnoremap <leader>s<Bar> :call MySmartResizeSave()<cr>
+          nnoremap <leader><Bar>  :call MySmartResize()<cr>
 
         "│-v-5 │ spell
         "└─────┴───────
