@@ -901,15 +901,38 @@
         "└─────┴────────────────────────────────
           function! g:DiffCurrentWindow()
             if exists(':Hgvdiff') == 2
-              let l:diff_command = 'Hgvdiff'
+              let l:which_VCS = 'hg'
             elseif exists(':Gvdiff') == 2
-              let l:diff_command = 'Gvdiff'
+              let l:which_VCS = 'git'
             else
               return
             endif
 
-            exe "normal \<c-w>\<c-s>\<c-w>T"
-            exe l:diff_command
+            exe "normal \<c-w>s\<c-w>T"
+            if l:which_VCS == 'hg'
+              Hgvdiff
+            else
+              let l:file_name = expand('%')
+              let l:file_prefix = expand('%:t:r')
+              let l:file_extension = expand('%:e')
+              let l:file_type = &ft
+              let l:HEAD_SHA1 = system('git rev-parse HEAD')
+              let l:diff_buffer_name = l:file_prefix . '.' . l:HEAD_SHA1[0:9] . "." . l:file_extension
+              vnew
+              if bufnr(l:diff_buffer_name) == -1
+                let b:ale_enabled = 0
+                exe "file" l:diff_buffer_name
+                let &ft = l:file_type
+                exe 'silent read !git show HEAD:' . expand(l:file_name)
+                normal ggdd
+              else
+                exe "buffer" l:diff_buffer_name
+              endif
+              setlocal nomod noma ro
+              normal zR
+              normal \<c-w>hgg
+              windo diffthis
+            endif
           endfunction
 
           "" Mappings: ───────────────────────────────────────────────────-v-6
