@@ -5,3 +5,7 @@
 	default = simple
 [core]
 	autocrlf = false
+    editor = "C:/Program Files/Vim/vim81/gvim.exe"
+[diff]
+	tool = vimdiff
+	guitool = gvimdiff
