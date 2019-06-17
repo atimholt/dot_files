@@ -1361,7 +1361,14 @@
         "│-v-5 │ clang-include-fixer
         "└─────┴─────────────────────
           
+          function! MyClangFindAllSymbols()
+            " TODO remove all the hard-coding.
+            !C:\Python27\python.exe "C:\Program Files\LLVM\share\clang\run-find-all-symbols.py" -binary "C:\Program Files\LLVM\bin\find-all-symbols.exe"
+          endfunction
+
           "" Mappings: ───────────────────────────────────────────────────-v-6
+          noremap <leader>cF :call MyClangFindAllSymbols()<cr>
+          noremap <leader>cf :pyf C:/Program Files/LLVM/share/clang/clang-include-fixer.py<cr>
 
 " -^-1
 
