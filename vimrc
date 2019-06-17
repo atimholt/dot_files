@@ -472,7 +472,7 @@
         tabedit ~/.vim/neobundle/my_vimrc_extended/
         vsplit ~/dot_files/vimrc
         set number relativenumber
-        vertical resize 120
+        silent call MySmartResize(120)
         normal `.
         normal zx
       endfunction
@@ -1052,15 +1052,22 @@
         "│-v-5 │ Quick window-width reset
         "└─────┴──────────────────────────
           let g:my_default_window_width = 85
-          function! MySmartResize()
-            let s:new_width = 85
-            if exists('w:preferred_width')
-              let s:new_width = w:preferred_width
-            else
-              let s:new_width = g:my_default_window_width
+          function! MySmartResize(...)
+            if a:0 > 0
+              let w:preferred_width = a:1
             endif
-            exe 'vertical resize' s:new_width
-            echo "Resized to" s:new_width
+            if exists('w:preferred_width')
+              if winwidth(0) == w:preferred_width
+                echo "Width at preferred setting (" . w:preferred_width . ")"
+              else
+                exe 'vertical resize' w:preferred_width
+                echo "Resized back to" w:preferred_width
+              endif
+            else
+              g:my_default_window_width
+              exe 'vertical resize' g:my_default_window_width
+              echo "Resized to default (" . g:my_default_window_width . ")"
+            endif
           endfunction
 
           function! MySmartResizeSave()
