@@ -9,3 +9,5 @@
 [diff]
 	tool = vimdiff
 	guitool = gvimdiff
+[difftool]
+	prompt = 0
