@@ -212,6 +212,10 @@
 
       " Not actually ALE, but oh well
       function! g:DiffWithClangTidyOutput()
+        if &mod
+          echoerr "Buffer is not saved! clang-tidy uses the file!"
+          return
+        endif
         exe "normal \<c-w>s\<c-w>T"
 
         let s:preserved_autoread = &l:autoread
@@ -232,10 +236,10 @@
         let b:ale_enabled = 0
 
         if bufnr(l:tidied_buffer_name) == -1
-          exe "file" l:tidied_buffer_name
+          exe "silent! file" l:tidied_buffer_name
           let &ft = l:file_type
         else
-          exe "buffer" l:tidied_buffer_name
+          exe "silent! buffer" l:tidied_buffer_name
           setlocal ma noro
           %delete
         endif
@@ -245,12 +249,12 @@
         let @" = 'Yank buffer was eaten by a gru.'
 
         normal Gdd
-        call ClangFormatWholeBuffer()
+        silent! call ClangFormatWholeBuffer()
         normal gg
         setlocal nomod noma ro
         normal zR
         normal \<c-w>hgg
-        windo diffthis
+        silent! windo diffthis
       endfunction
       nnoremap <silent> <a-a>D :call g:DiffWithClangTidyOutput()<cr>
 
