@@ -1307,23 +1307,30 @@
         nnoremap <leader>L :call ToggleListCharsMode()<cr>
 
       "│-v-4 │ LLVM/Clang integration
-      "└─────┴────────────────────────
+      "└─┬───┴─┬──────────────────────
+        "│-v-5 │ clang-format
+        "└─────┴──────────────
+          function! ClangFormatWholeBuffer()
+            let l:lines = "all"
+            pyf C:/Program Files/LLVM/share/clang/clang-format.py
+          endfunction
 
-        function! ClangFormatWholeBuffer()
-          let l:lines = "all"
-          pyf C:/Program Files/LLVM/share/clang/clang-format.py
-        endfunction
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          " TODO: make this work for multiple machines/OS's
+          nnoremap <leader>= :call ClangFormatWholeBuffer()<cr>
+          vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
 
-        " `g:clang_rename_path` in ~/.vimrc points to valid clang-rename executable
-        let g:clang_rename_path = "C:/Program Files/LLVM/bin/clang-rename.exe"
-        " `binary` in clang-rename.py points to valid to clang-rename executable
+        "│-v-5 │ clang-rename
+        "└─────┴──────────────
+          let g:clang_rename_path = "C:/Program Files/LLVM/bin/clang-rename.exe"
 
-        "" Mappings: ───────────────────────────────────────────────────-v-5
-        " TODO: make this work for multiple machines/OS's
-        nnoremap <leader>= :call ClangFormatWholeBuffer()<cr>
-        vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+          "" Mappings: ───────────────────────────────────────────────────-v-6
+          noremap <leader>cr :py3f C:/Program Files/LLVM/share/clang/clang-rename.py<cr>
 
-        noremap <leader>cr :py3f C:/Program Files/LLVM/share/clang/clang-rename.py<cr>
+        "│-v-5 │ clang-include-fixer
+        "└─────┴─────────────────────
+          
+          "" Mappings: ───────────────────────────────────────────────────-v-6
 
 " -^-1
 
