@@ -216,20 +216,41 @@
 
         let s:preserved_autoread = &l:autoread
         setlocal autoread
-        !clang-tidy -fix %
+        silent !clang-tidy -fix %
         edit
         let &l:autoread = s:preserved_autoread
 
         let l:file_name = expand('%:t:r')
         let l:file_extension = expand('%:e')
         let l:file_type = &ft
+        let l:tidied_buffer_name = l:file_name . ".tidied." . l:file_extension
+
         %yank
+        let l:yanked_buffer = @"
         normal u
         vnew
         let b:ale_enabled = 0
-        exe "file " . l:file_name . ".tidied." . l:file_extension
-        let &ft = l:file_type
+
+        if bufnr(l:tidied_buffer_name) == -1
+          exe "file" l:tidied_buffer_name
+          let &ft = l:file_type
+        else
+          exe "buffer" l:tidied_buffer_name
+          setlocal ma noro
+          %delete
+        endif
+
+        let @" = l:yanked_buffer
         put!
+        let @" = 'Yank buffer was eaten by a gru.'
+
+        normal Gdd
+        call ClangFormatWholeBuffer()
+        normal gg
+        setlocal nomod noma ro
+        normal zR
+        normal \<c-w>hgg
+        windo diffthis
       endfunction
       nnoremap <silent> <a-a>D :call g:DiffWithClangTidyOutput()<cr>
 
