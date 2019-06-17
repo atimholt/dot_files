@@ -1314,10 +1314,16 @@
           pyf C:/Program Files/LLVM/share/clang/clang-format.py
         endfunction
 
+        " `g:clang_rename_path` in ~/.vimrc points to valid clang-rename executable
+        let g:clang_rename_path = "C:/Program Files/LLVM/bin/clang-rename.exe"
+        " `binary` in clang-rename.py points to valid to clang-rename executable
+
         "" Mappings: ───────────────────────────────────────────────────-v-5
         " TODO: make this work for multiple machines/OS's
         nnoremap <leader>= :call ClangFormatWholeBuffer()<cr>
         vnoremap <leader>= :pyf C:/Program Files/LLVM/share/clang/clang-format.py<cr>
+
+        noremap <leader>cr :py3f C:/Program Files/LLVM/share/clang/clang-rename.py<cr>
 
 " -^-1
 
