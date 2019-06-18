@@ -6,6 +6,7 @@
 [core]
 	autocrlf = false
     editor = "C:/Program Files/Vim/vim81/gvim.exe"
+	excludesfile = ~/.gitignore_global
 [diff]
 	tool = vimdiff
 	guitool = gvimdiff

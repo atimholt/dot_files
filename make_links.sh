@@ -28,6 +28,7 @@ dot_files["gitconfig"]=".gitconfig"
 dot_files["inputrc"]=".inputrc"
 dot_files["XCompose"]=".XCompose"
 dot_files["ycm_extra_conf.py"]=".ycm_extra_conf.py"
+dot_files["gitignore_global"]=".gitignore_global"
 
 #│-v-1 │ Main Body of Script
 #└─────┴─────────────────────

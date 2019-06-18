@@ -1,0 +1,26 @@
+# Vim files (if you've set up Vim badly)
+*.sw[a-p]
+.*.un~
+
+# waf stuff
+.lock-waf*
+.waf*/
+waf*/
+
+# Auto-generated docs
+doxys_docs/
+
+/build/
+/out/
+
+/.vs/
+
+tags*
+
+compile_commands.json
+find_all_symbols_db.yaml
+
+/ignore_this/
+
+# vim: ft=conf :
+
