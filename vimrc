@@ -403,6 +403,12 @@
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader>U :UltiSnipsEdit<cr>
 
+    "│-v-3 │ vim-choosewin
+    "└─────┴───────────────
+      nmap <leader>w <Plug>(choosewin)
+      nmap <nop> <Plug>NERDCommenterSexy
+      nnoremap <leader>cs :ChooseWinSwap<cr>
+
     "│-v-3 │ vim-signature
     "└─────┴───────────────
       nnoremap <silent> <leader>m :SignatureToggleSigns<cr>
