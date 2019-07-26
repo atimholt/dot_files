@@ -1119,6 +1119,12 @@
             imap <S-F3> <C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR>
             vmap <S-F3> di<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
 
+          "│-v-6 │ Run Python code from buffer
+          "└─────┴─────────────────────────────
+            nnoremap <silent> <leader>e :exe "py3 " . join(getline(0   , "$" ), "\n")<CR>
+            nnoremap <silent> <leader>E :let pyoutput = execute("py3 " . join(getline(0, "$"), "\n"))<CR>
+            vnoremap <silent> <leader>e :exe "py3 " . join(getline("'<", "'>"), "\n")<CR>
+
       "│-v-4 │ Auto-commands
       "└─────┴───────────────────────────
         autocmd BufRead,BufNewFile *.txtfmt setfiletype txtfmt
