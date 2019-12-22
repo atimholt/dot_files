@@ -277,11 +277,18 @@ function prompt
   " "
 }
 
-# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=0 :
-
+#│ ▼1 │ Some automatic garbage I didn’t put here.
+#└────┴───────────────────────────────────────────
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
+
+#┌────┬───────────────────────────────────────────
+#│ ▲1 │ End
+
+
+# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=0 :
+
