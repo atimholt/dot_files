@@ -1393,5 +1393,5 @@
 
 " -^-1
 
-" vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=0 sts=0 :
+" vim: set fmr=-v-,-^- fdm=marker cms="%s et ts=2 sw=0 sts=-1 :
 

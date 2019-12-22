@@ -290,5 +290,5 @@ if (Test-Path($ChocolateyProfile)) {
 #│ ▲1 │ End
 
 
-# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=0 :
+# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=-1 :
 

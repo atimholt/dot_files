@@ -135,4 +135,4 @@
 <Multi_key> <u> <x> 	: "ŭ"   ubreve # LATIN CAPITAL LETTER U WITH BREVE
 #-^-
 
-# vim: set fmr=-v-,-^- fdm=marker cms=#%s noet list ts=8 sw=8 sts=0 :
+# vim: set fmr=-v-,-^- fdm=marker cms=#%s noet list ts=8 sw=0 sts=-1 :

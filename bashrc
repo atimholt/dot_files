@@ -145,7 +145,7 @@
         # echo -n <value> will supress trailing newline
         # -^-
 
-# vim: set nowrap fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=2 sts=2 :
+# vim: set nowrap fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=0 sts=-1 :
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/home/tim/.gvm/bin/gvm-init.sh" ]] && source "/home/tim/.gvm/bin/gvm-init.sh"

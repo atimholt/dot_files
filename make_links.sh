@@ -41,4 +41,4 @@ done
 
 exit 0
 
-# vim: set ft=sh fmr=-v-,-^- fdm=marker cms=#%s et ts=4 sw=4 sts=4 :
+# vim: set ft=sh fmr=-v-,-^- fdm=marker cms=#%s et ts=4 sw=0 sts=-1 :
