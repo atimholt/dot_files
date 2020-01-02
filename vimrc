@@ -1346,9 +1346,9 @@
 
           let l:message_beginning = 'listchars mode set to '
           if g:listcharsmode == 'eol'
-            set listchars=tab:│·,eol:¬,extends:→
+            set listchars=tab:╌╌┨,eol:¬,extends:→
           elseif g:listcharsmode == 'trail'
-            set listchars=tab:│·,trail:·,extends:→
+            set listchars=tab:╌╌┨,trail:·,extends:→
           endif
 
           echo l:message_beginning . g:listcharsmode . l:message_tail
