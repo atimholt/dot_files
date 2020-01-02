@@ -265,6 +265,13 @@
       let g:ArrowKeyRepurp_settings = {}
       let g:ArrowKeyRepurp_settings.smart_space_mode = "always"
 
+    "│-v-3 │ Bexec
+    "└─────┴───────
+      " TODO  Check out more of the possible settings
+      "   Is it possible to override the #! directive for use in Windows?
+      let bexec_splitdir="ver"
+      
+
     "│-v-3 │ FSwitch
     "└─────┴─────────
       nmap <silent> <Leader>of :FSHere<cr>
