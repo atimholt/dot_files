@@ -1002,7 +1002,6 @@
         "│-v-5 │ font size mappings
         "└─────┴────────────────────
           if has('win32')
-            set guifont=Iosevka:h10:cANSI:qDRAFT
             nnoremap <leader>T7 :set guifont=Iosevka:h7:cANSI:qDRAFT<cr>
             nnoremap <leader>T8 :set guifont=Iosevka:h8:cANSI:qDRAFT<cr>
             nnoremap <leader>T10 :set guifont=Iosevka:h10:cANSI:qDRAFT<cr>
@@ -1010,6 +1009,14 @@
             nnoremap <leader>T14 :set guifont=Iosevka:h14:cANSI:qDRAFT<cr>
             nnoremap <leader>T16 :set guifont=Iosevka:h16:cANSI:qDRAFT<cr>
             nnoremap <leader>T18 :set guifont=Iosevka:h18:cANSI:qDRAFT<cr>
+
+            nnoremap <leader>T<k7> :set guifont=Iosevka:h7:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k8> :set guifont=Iosevka:h8:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k1><k0> :set guifont=Iosevka:h10:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k1><k2> :set guifont=Iosevka:h12:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k1><k4> :set guifont=Iosevka:h14:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k1><k6> :set guifont=Iosevka:h16:cANSI:qDRAFT<cr>
+            nnoremap <leader>T<k1><k8> :set guifont=Iosevka:h18:cANSI:qDRAFT<cr>
           else
             " TODO  Make sure this is correct!
             nnoremap <leader>T7 :set guifont=Iosevka\ 7<cr>
@@ -1019,6 +1026,14 @@
             nnoremap <leader>T14 :set guifont=Iosevka\ 14<cr>
             nnoremap <leader>T16 :set guifont=Iosevka\ 16<cr>
             nnoremap <leader>T18 :set guifont=Iosevka\ 18<cr>
+
+            nnoremap <leader>T<k7> :set guifont=Iosevka\ 7<cr>
+            nnoremap <leader>T<k8> :set guifont=Iosevka\ 8<cr>
+            nnoremap <leader>T<k1><k0> :set guifont=Iosevka\ 10<cr>
+            nnoremap <leader>T<k1><k2> :set guifont=Iosevka\ 12<cr>
+            nnoremap <leader>T<k1><k4> :set guifont=Iosevka\ 14<cr>
+            nnoremap <leader>T<k1><k6> :set guifont=Iosevka\ 16<cr>
+            nnoremap <leader>T<k1><k8> :set guifont=Iosevka\ 18<cr>
           endif
 
 
