@@ -177,18 +177,9 @@
       if !exists('g:airline_symbols')
         let g:airline_symbols = {}
       endif
+      let g:airline_powerline_fonts = 1
 
-      let g:airline_left_sep = '⮀'
-      let g:airline#extensions#tabline#left_sep = '⮀'
-      let g:airline_left_alt_sep = '⮁'
-      let g:airline#extensions#tabline#left_alt_sep = '⮁'
-      let g:airline_right_sep = '⮂'
-      let g:airline#extensions#tabline#right_sep = '⮂'
-      let g:airline_right_alt_sep = '⮃'
-      let g:airline#extensions#tabline#right_alt_sep = '⮃'
-      let g:airline_symbols.branch = '⭠'
-      let g:airline_symbols.readonly = '⭤'
-      let g:airline_symbols.linenr = '⭡'
+      let g:airline_symbols.linenr = ''
 
       "Trying this one:
       let g:airline#extensions#tabline#enabled = 1
@@ -1011,22 +1002,23 @@
         "│-v-5 │ font size mappings
         "└─────┴────────────────────
           if has('win32')
-            nnoremap <leader>T7 :set guifont=Consolas_for_Powerline_FixedD:h7<cr>
-            nnoremap <leader>T8 :set guifont=Consolas_for_Powerline_FixedD:h8<cr>
-            nnoremap <leader>T10 :set guifont=Consolas_for_Powerline_FixedD:h10<cr>
-            nnoremap <leader>T12 :set guifont=Consolas_for_Powerline_FixedD:h12<cr>
-            nnoremap <leader>T14 :set guifont=Consolas_for_Powerline_FixedD:h14<cr>
-            nnoremap <leader>T16 :set guifont=Consolas_for_Powerline_FixedD:h16<cr>
-            nnoremap <leader>T18 :set guifont=Consolas_for_Powerline_FixedD:h18<cr>
+            set guifont=Iosevka:h10:cANSI:qDRAFT
+            nnoremap <leader>T7 :set guifont=Iosevka:h7:cANSI:qDRAFT<cr>
+            nnoremap <leader>T8 :set guifont=Iosevka:h8:cANSI:qDRAFT<cr>
+            nnoremap <leader>T10 :set guifont=Iosevka:h10:cANSI:qDRAFT<cr>
+            nnoremap <leader>T12 :set guifont=Iosevka:h12:cANSI:qDRAFT<cr>
+            nnoremap <leader>T14 :set guifont=Iosevka:h14:cANSI:qDRAFT<cr>
+            nnoremap <leader>T16 :set guifont=Iosevka:h16:cANSI:qDRAFT<cr>
+            nnoremap <leader>T18 :set guifont=Iosevka:h18:cANSI:qDRAFT<cr>
           else
             " TODO  Make sure this is correct!
-            nnoremap <leader>T7 :set guifont=Consolas\ for\ Powerline\ FixedD\ 7<cr>
-            nnoremap <leader>T8 :set guifont=Consolas\ for\ Powerline\ FixedD\ 8<cr>
-            nnoremap <leader>T10 :set guifont=Consolas\ for\ Powerline\ FixedD\ 10<cr>
-            nnoremap <leader>T12 :set guifont=Consolas\ for\ Powerline\ FixedD\ 12<cr>
-            nnoremap <leader>T14 :set guifont=Consolas\ for\ Powerline\ FixedD\ 14<cr>
-            nnoremap <leader>T16 :set guifont=Consolas\ for\ Powerline\ FixedD\ 16<cr>
-            nnoremap <leader>T18 :set guifont=Consolas\ for\ Powerline\ FixedD\ 18<cr>
+            nnoremap <leader>T7 :set guifont=Iosevka\ 7<cr>
+            nnoremap <leader>T8 :set guifont=Iosevka\ 8<cr>
+            nnoremap <leader>T10 :set guifont=Iosevka\ 10<cr>
+            nnoremap <leader>T12 :set guifont=Iosevka\ 12<cr>
+            nnoremap <leader>T14 :set guifont=Iosevka\ 14<cr>
+            nnoremap <leader>T16 :set guifont=Iosevka\ 16<cr>
+            nnoremap <leader>T18 :set guifont=Iosevka\ 18<cr>
           endif
 
 
@@ -1302,9 +1294,9 @@
       "│-v-4 │ guifont
       "└─────┴─────────
         if has('win32')
-          set guifont=Consolas_for_Powerline_FixedD:h10:cDEFAULT
+          set guifont=Iosevka:h10:cANSI:qDRAFT
         else
-          set guifont=Consolas\ for\ Powerline\ 10
+          set guifont=Iosevka\ 10
         endif
       "│-v-4 │ Code indentation
       "└─────┴──────────────────
