@@ -19,15 +19,12 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
-      export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
-      #export PATH=$JAVA_HOME/bin:$PATH
-      export PATH=/home/tim/Manually_Installed_Programs/firefox:$PATH
-
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
-      ll='ls -lFh'
-      la='ls -A'
+      alias ll='ls -lFh --time-style=long-iso'
+      alias la='ls -A'
+      alias lla='ls -lFhA --time-style=long-iso'
 
       ## Mercurial
       function hgdiff()
@@ -37,13 +34,7 @@
 
       function hghp()
       {
-        hg help $1 | gvim - -R -M
-      }
-
-      ## Personal shortcuts
-      function cdtw()
-      {
-        cd ~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/
+        hg help $1 | vim - -R -M
       }
 
   #│-v-2 │ Appearance
@@ -147,5 +138,3 @@
 
 # vim: set nowrap fmr=-v-,-^- fdm=marker cms=#%s et ts=2 sw=0 sts=-1 :
 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/home/tim/.gvm/bin/gvm-init.sh" ]] && source "/home/tim/.gvm/bin/gvm-init.sh"

@@ -1,5 +1,5 @@
 [ui]
-editor = gvim -f
+editor = vim
 username = Tim Holt <atimholt@gmail.com>
 
 [extensions]
