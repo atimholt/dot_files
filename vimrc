@@ -495,7 +495,7 @@
           " TODO: set some of these in ftplugin
           set expandtab
           set shiftwidth=0
-          set softtabstop=4
+          set softtabstop=-1
           set tabstop=4
           set backspace=indent,eol,start
           set ruler
@@ -503,7 +503,7 @@
           :syntax enable
           :set cindent
 
-          :set switchbuf=useopen,usetab,newtab
+          :set switchbuf=newtab
 
           " Allows the closing of buffers without saving.
           set hidden
@@ -552,7 +552,6 @@
         "└─────┴─────────────────
           set ignorecase
           set smartcase
-          set gdefault
           set incsearch
           set hlsearch
           " Mappings (@__search_mappings):
@@ -696,22 +695,22 @@
           " └────┴─┘
         " (mapping @__box_characters_mapping)
           function! g:BoxCharacters()
-            :'<,'>s'r'┌'e
-            :'<,'>s','┐'e
-            :'<,'>s'’'┘'e
-            :'<,'>s/'/┘/e
-            :'<,'>s'L'└'e
+            :'<,'>s`r`┌`eg
+            :'<,'>s`,`┐`&
+            :'<,'>s`’`┘`&
+            :'<,'>s`'`┘`&
+            :'<,'>s`L`└`&
 
-            :'<,'>s'|'│'e
-            :'<,'>s'-'─'e
-            :'<,'>s'—'─'e
-            :'<,'>s'+'┼'e
+            :'<,'>s`|`│`&
+            :'<,'>s`-`─`&
+            :'<,'>s`—`─`&
+            :'<,'>s`+`┼`&
 
-            :'<,'>s'\^'┴'e
-            :'<,'>s'>'├'e
-            :'<,'>s'v'┬'e
-            :'<,'>s'T'┬'e
-            :'<,'>s'<'┤'e
+            :'<,'>s`\^`┴`&
+            :'<,'>s`>`├`&
+            :'<,'>s`v`┬`&
+            :'<,'>s`T`┬`&
+            :'<,'>s`<`┤`&
           endfunction
 
           "" Mappings: ───────────────────────────────────────────────────-v-6
@@ -977,16 +976,6 @@
         "└─────┴─────────────────────
           nnoremap <silent> <leader>t :tabs<cr>
           nnoremap <silent> <leader>B :buffers<cr>
-
-          nnoremap j gj
-          nnoremap k gk
-          nnoremap gj j
-          nnoremap gk k
-
-          vnoremap j gj
-          vnoremap k gk
-          vnoremap gj j
-          vnoremap gk k
 
           nnoremap <leader>h <C-W>h
           nnoremap <leader>l <C-W>l
