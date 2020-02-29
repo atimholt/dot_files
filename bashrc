@@ -34,7 +34,7 @@
 
       function hghp()
       {
-        hg help $1 | vim - -R -M
+        hg help --verbose $1 | vim - -R -M
       }
 
   #│-v-2 │ Appearance
