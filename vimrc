@@ -1075,7 +1075,6 @@
                 echo "Resized back to" w:preferred_width
               endif
             else
-              g:my_default_window_width
               exe 'vertical resize' g:my_default_window_width
               echo "Resized to default (" . g:my_default_window_width . ")"
             endif
