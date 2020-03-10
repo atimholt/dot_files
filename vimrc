@@ -644,6 +644,10 @@
         "└─────┴───────────────────────
           set splitright
 
+        "│-v-5 │ Editor number recognition
+        "└─────┴───────────────────────────
+          set nrformats=bin,hex
+
       "│-v-4 │ Encryption Settings
       "└─────┴─────────────────────
         set cm=blowfish2
