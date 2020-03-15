@@ -19,6 +19,11 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
+    #│-v-3 │ Tool Settings
+    #└─────┴───────────────
+
+      export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
