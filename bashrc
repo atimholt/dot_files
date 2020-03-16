@@ -27,9 +27,11 @@
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
-      alias ll='ls -lFh --time-style=long-iso'
-      alias la='ls -A'
-      alias lla='ls -lFhA --time-style=long-iso'
+      alias l='ls -F'
+      alias la='ls -FA'
+
+      alias ll='ls -Flh --time-style=long-iso'
+      alias lla='ls -FAlh --time-style=long-iso'
 
       ## Mercurial
       function hgdiff()
