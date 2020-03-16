@@ -301,6 +301,8 @@
     "└─────┴────────────────
       let g:undotree_SetFocusWhenToggle=1
       let g:undotree_SplitWidth=40
+      let g:undotree_TreeNodeShape='●'
+      let g:undotree_ShortIndicators=1
 
       " May as well try this again.
       if has("persistent_undo")
