@@ -24,6 +24,8 @@
 
       export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+      export MANWIDTH=80
+
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
