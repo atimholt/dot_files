@@ -423,27 +423,19 @@
     "└─────┴──────────────────
       let g:vimwiki_folding = 'expr'
 
-      let wiki_1 = {}
-      let wiki_1.path = '~/Dropbox/Vim/vimwiki/'
-      let wiki_1.nested_syntaxes = {'c++': 'cpp', 'asm': 'asm', 'sh': 'sh'}
+      let main_wiki = {}
+      let main_wiki.path = '~/vimwiki/'
+      let main_wiki.auto_tags = 1
+      let main_wiki.maxhi = 1
+      let main_wiki.nested_syntaxes = {'c++': 'cpp', 'python': 'python', 'sh': 'sh'}
 
-      let wiki_2 = {}
-      let wiki_2.path = '~/Documents (Actual)/Inhuman Universe/wiki/'
-      let wiki_2.index = 'index'
-      let wiki_2.auto_toc = 1
-      let wiki_2.auto_tags = 1
-      let wiki_2.maxhi = 1
+      let old_wiki = {}
+      let old_wiki.path = '~/Dropbox/Vim/vimwiki/'
+      let old_wiki.nested_syntaxes = {'c++': 'cpp', 'asm': 'asm', 'sh': 'sh'}
 
-      let wiki_3 = {}
-      let wiki_3.path = '~/Dropbox/code/zigzagdungeon/productionwiki/'
+      let g:vimwiki_list = [main_wiki, old_wiki]
 
-      " The old Inhuman Universe wiki
-      "let wiki_4 = {}
-      "let wiki_4.path = '~/Dropbox/timwrite/vimfriendly/Inhuman_Universe/wiki/'
-
-      let g:vimwiki_list = [wiki_1, wiki_2, wiki_3]
-
-      let g:vimwiki_dir_link = 'main_page'
+      let g:vimwiki_dir_link = 'index'
 
       "" Mappings: ───────────────────────────────────────────────────-v-4
       nnoremap <leader># :VimwikiTable<cr>
