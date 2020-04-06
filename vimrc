@@ -1295,9 +1295,9 @@
       "│-v-4 │ guifont
       "└─────┴─────────
         if has('win32')
-          set guifont=Iosevka:h10:cANSI:qDRAFT
+          set guifont=Iosevka:h12:cANSI:qDRAFT
         else
-          set guifont=Iosevka\ 10
+          set guifont=Iosevka\ 12
         endif
       "│-v-4 │ Code indentation
       "└─────┴──────────────────
