@@ -316,7 +316,7 @@
     "│-v-3 │ Rainbow Parentheses Settings
     "└─────┴──────────────────────────────
       " Settings apply to the luochen1990 version.
-      let g:rainbow_active = 1
+      let g:rainbow_active = 0
 
       function! RainbowOff()
         if exists('b:rainbow_loaded')
