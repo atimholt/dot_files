@@ -22,5 +22,7 @@ find_all_symbols_db.yaml
 
 /ignore_this/
 
+*.o
+
 # vim: ft=conf :
 

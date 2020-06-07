@@ -8,6 +8,11 @@
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
+  #│-v-2 │ X in WSL
+  #└─────┴──────────
+   export DISPLAY=:0
+   export LIBGL_ALWAYS_INDIRECT=1
+
   #│-v-2 │ Behavior
   #└─┬───┴─┬────────
     #│-v-3 │ Built-in Settings
@@ -19,12 +24,15 @@
       export EDITOR="vim"
       export VISUAL="vim"
 
-    #│-v-3 │ Tool Settings
-    #└─────┴───────────────
+    #│-v-3 │ Tools
+    #└─┬───┴─┬─────
+      #│-v-4 │ Setup
+      #└─────┴───────
+        source ~/code/git-subrepo/.rc
 
-      export STARSHIP_CONFIG=~/.config/starship/starship.toml
-
-      export MANWIDTH=80
+      #│-v-4 │ Settings
+      #└─────┴──────────
+        export MANWIDTH=80
 
     #│-v-3 │ Aliases
     #└─────┴─────────
@@ -34,6 +42,8 @@
 
       alias ll='ls -Flh --time-style=long-iso'
       alias lla='ls -FAlh --time-style=long-iso'
+
+      alias glog="git log --all --graph --decorate --date=short-local --format='format:%Cblue%ad %h %Cred%d%Creset %s'"
 
       ## Mercurial
       function hgdiff()
