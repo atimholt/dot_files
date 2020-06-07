@@ -1303,9 +1303,10 @@
       "└─────┴──────────────────
         au BufNewFile,BufRead *.cpp,*.h,*.hpp,*.vim,*.rb,*.java,*.snippets,*.py set et ts=4 sw=0 sts=0
 
-      "│-v-4 │ Fold method defaults
-      "└─────┴──────────────────────
+      "│-v-4 │ Fold Settings
+      "└─────┴───────────────
         au BufNewFile,BufRead *.java set fdm=syntax
+        set nofoldenable
 
     "│-v-3 │ Custom Settings
     "└─┬───┴─┬───────────────
