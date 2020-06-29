@@ -21,8 +21,8 @@
       set -o vi
 
       # default editors
-      export EDITOR="vim"
-      export VISUAL="vim"
+      export EDITOR="nvim"
+      export VISUAL="nvim"
 
     #│-v-3 │ Tools
     #└─┬───┴─┬─────
@@ -37,23 +37,22 @@
     #│-v-3 │ Aliases
     #└─────┴─────────
       ## ls
-      alias l='ls -F'
-      alias la='ls -FA'
-
-      alias ll='ls -Flh --time-style=long-iso'
-      alias lla='ls -FAlh --time-style=long-iso'
+      alias l='ls -xF --color=auto --time-style=long-iso'
+      alias ll='ls -lhF --color=auto --time-style=long-iso'
+      alias la='ls -xAF --color=auto --time-style=long-iso'
+      alias lla='ls -lhAF --color=auto --time-style=long-iso'
 
       alias glog="git log --all --graph --decorate --date=short-local --format='format:%Cblue%ad %h %Cred%d%Creset %s'"
 
       ## Mercurial
       function hgdiff()
       {
-        hg diff $1 | vim - -R -M
+        hg diff $1 | nvim - -R -M
       }
 
       function hghp()
       {
-        hg help --verbose $1 | vim - -R -M
+        hg help --verbose $1 | nvim - -R -M
       }
 
   #│-v-2 │ Appearance
