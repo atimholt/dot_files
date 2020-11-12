@@ -10,8 +10,11 @@
 #└─┬───┴─┬──────
   #│-v-2 │ X in WSL
   #└─────┴──────────
-   export DISPLAY=:0
-   export LIBGL_ALWAYS_INDIRECT=1
+   if [[ `cat /proc/version`  =~ "microsoft" ]]; then
+     export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
+     #export DISPLAY=:0
+     export LIBGL_ALWAYS_INDIRECT=1
+   fi
 
   #│-v-2 │ Behavior
   #└─┬───┴─┬────────
