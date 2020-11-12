@@ -16,6 +16,10 @@
 
 #│ ▼1 │ Set-Up
 #└─┬──┴─┬──────
+  #│ ▼2 │ Prompt Options
+  #└────┴────────────────
+    Set-PSReadlineOption -EditMode Vi
+
   #│ ▼2 │ Code Page-ness
   #└────┴────────────────
     # From https://www.reddit.com/r/PowerShell/comments/3lym4q/cvalfcx
@@ -116,6 +120,8 @@
       set-alias say out-speech
 
       set-alias vs "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe"
+
+      Function glog {Invoke-Expression "git log --all --graph --decorate --date=short-local --format=`"format:%Cblue%ad %h %Cred%d%Creset %s`""}
 
     #│ ▼3 │ Utility Functions
     #└────┴───────────────────
@@ -290,5 +296,5 @@ if (Test-Path($ChocolateyProfile)) {
 #│ ▲1 │ End
 
 
-# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=-1 :
+# vim: set fmr=▼,▲ fdm=marker cms=#%s et ts=2 sw=0 sts=0 :
 

@@ -24,5 +24,8 @@ find_all_symbols_db.yaml
 
 *.o
 
-# vim: ft=conf :
+# ctest stuff:
+/Testing/
+
+# vim: set ft=conf :
 
