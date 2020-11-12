@@ -8,10 +8,14 @@
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
+  #│-v-2 │ Other stuff
+  #└─────┴─────────────
+   [ -f /home/atimholt/.profile ] && source /home/atimholt/.profile
+
   #│-v-2 │ X in WSL
   #└─────┴──────────
    export DISPLAY=:0
-   export LIBGL_ALWAYS_INDIRECT=1
+   export LIBGL_ALWAYS_INDIRECT=0
 
   #│-v-2 │ Behavior
   #└─┬───┴─┬────────
