@@ -17,6 +17,10 @@
    # expected to source ~/.bashrc
    [[ -f ~/.profile ]] && ([[ $(cat ~/.profile) =~ '.bashrc' ]] || source /home/atimholt/.profile)
 
+   if [ -d "$HOME/.local/bin" ] ; then
+     export PATH="$HOME/.local/bin:$PATH"
+   fi
+
   #│-v-2 │ X settings
   #└─────┴────────────
    if [[ `cat /proc/version`  =~ "microsoft" ]]; then
