@@ -10,7 +10,12 @@
 #└─┬───┴─┬──────
   #│-v-2 │ Other stuff
   #└─────┴─────────────
-   [ -f /home/atimholt/.profile ] && source /home/atimholt/.profile
+   # (Roughly) check whether .profile exists and doesn't contain the substring
+   # '.bashrc' (guessing that it attempts to source it).
+   # 
+   # TODO: determine whether any distro actually has a ~/.profile that is not
+   # expected to source ~/.bashrc
+   [[ -f ~/.profile ]] && [[ $(cat ~/.profile) =~ '.bashrc' ]] || source /home/atimholt/.profile
 
   #│-v-2 │ X settings
   #└─────┴────────────
