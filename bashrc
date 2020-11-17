@@ -15,7 +15,7 @@
    # 
    # TODO: determine whether any distro actually has a ~/.profile that is not
    # expected to source ~/.bashrc
-   [[ -f ~/.profile ]] && [[ $(cat ~/.profile) =~ '.bashrc' ]] || source /home/atimholt/.profile
+   [[ -f ~/.profile ]] && ([[ $(cat ~/.profile) =~ '.bashrc' ]] || source /home/atimholt/.profile)
 
   #│-v-2 │ X settings
   #└─────┴────────────
