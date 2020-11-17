@@ -40,7 +40,7 @@
     #└─┬───┴─┬─────
       #│-v-4 │ Setup
       #└─────┴───────
-        source ~/code/git-subrepo/.rc
+        source ~/code/from_others/git-subrepo/.rc
 
       #│-v-4 │ Settings
       #└─────┴──────────
