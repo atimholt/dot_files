@@ -45,8 +45,10 @@
       shopt -s dotglob
 
       # default editors
-      export EDITOR="nvim"
-      export VISUAL="nvim"
+      if  ! `which eselect &>/dev/null`; then
+        export EDITOR="nvim"
+        export VISUAL="nvim"
+      fi
 
     #│-v-3 │ Tools
     #└─┬───┴─┬─────
