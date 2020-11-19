@@ -15,7 +15,9 @@
    # 
    # TODO: determine whether any distro actually has a ~/.profile that is not
    # expected to source ~/.bashrc
-   [[ -f ~/.profile ]] && ([[ $(cat ~/.profile) =~ '.bashrc' ]] || source /home/atimholt/.profile)
+   if [[ -f ~/.profile ]] && [[ ! `cat ~/.profile` =~ '.bashrc' ]]; then
+     source /home/atimholt/.profile
+   fi
 
    if [ -d "$HOME/.local/bin" ] ; then
      export PATH="$HOME/.local/bin:$PATH"
