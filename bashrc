@@ -42,6 +42,7 @@
     #└─────┴───────────────────
       # vi input mode for the command line
       set -o vi
+      shopt -s dotglob
 
       # default editors
       export EDITOR="nvim"
