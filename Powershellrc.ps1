@@ -94,6 +94,16 @@
 
 #│ ▼1 │ Utility
 #└─┬──┴─┬───────
+  #│ ▼2 │ Mappings (Key Bindings)
+  #└────┴─────────────────────────
+    # I was *wondering* why my leave-term-mode mapping in NeoVim wasn't working.
+    # ...except this solved nothing. Powershell is a piece of crap.
+    Remove-PSReadLineKeyHandler -Chord ctrl+spacebar
+    Remove-PSReadLineKeyHandler -Chord ctrl+spacebar -ViMode Insert
+    Remove-PSReadLineKeyHandler -Chord ctrl+spacebar -ViMode Command
+
+    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
+
   #│ ▼2 │ Aliases & Utility Functions
   #└─┬──┴─┬───────────────────────────
     #│ ▼3 │ Aliases
