@@ -121,8 +121,6 @@
 
       set-alias vs "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\devenv.exe"
 
-      Function glog {Invoke-Expression "git log --all --graph --decorate --date=short-local --format=`"format:%Cblue%ad %h %Cred%d%Creset %s`""}
-
     #│ ▼3 │ Utility Functions
     #└────┴───────────────────
       function list_path
@@ -232,6 +230,38 @@
         invoke-expression $("ubuntu run {0}" -f $command)
       }
 
+      function glog {Invoke-Expression "git log --all --graph --decorate --date=short-local --format=`"format:%Cblue%ad %h %Cred%d%Creset %s`""}
+
+      $Shlwapi = Add-Type -MemberDefinition '
+        [DllImport("Shlwapi.dll", CharSet=CharSet.Auto)]public static extern int StrFormatByteSize(long fileSize, System.Text.StringBuilder pwszBuff, int cchBuff);
+      ' -Name "ShlwapiFunctions" -namespace ShlwapiFunctions -PassThru
+
+      function Format-ByteSize([Long]$Size)
+      {
+        $Bytes = New-Object Text.StringBuilder 20
+        $Return = $Shlwapi::StrFormatByteSize($Size, $Bytes, $Bytes.Capacity)
+        If ($Return) {$Bytes.ToString()}
+      }
+
+      function ll
+      {
+        gci $args                                           `
+        | Format-Table -AutoSize                            `
+          Mode,                                             `
+          @{                                                `
+            Name='LastWriteTime';                           `
+            Expression={                                    `
+              $_.LastWriteTime.ToString('yyyy-MM-dd HH:mm') `
+            }                                               `
+          },                                                `
+          @{                                                `
+            Name='Size';                                    `
+            Expression={                                    `
+              Format-ByteSize($_.Length)                    `
+            }                                               `
+          },                                                `
+          Name
+      }
 
 #│ ▼1 │ Prompt Line
 #└────┴─────────────
