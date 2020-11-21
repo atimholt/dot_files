@@ -8,12 +8,32 @@
 
 #│-v-1 │ Set-up
 #└─┬───┴─┬──────
-  #│-v-2 │ X in WSL
-  #└─────┴──────────
+  #│-v-2 │ Other stuff
+  #└─────┴─────────────
+   # (Roughly) check whether .profile exists and doesn't contain the substring
+   # '.bashrc' (guessing that it attempts to source it).
+   # 
+   # TODO: determine whether any distro actually has a ~/.profile that is not
+   # expected to source ~/.bashrc
+   if [[ -f ~/.profile ]] && [[ ! `cat ~/.profile` =~ '.bashrc' ]]; then
+     source /home/atimholt/.profile
+   fi
+
+   if [ -d "$HOME/.local/bin" ] ; then
+     export PATH="$HOME/.local/bin:$PATH"
+   fi
+
+  #│-v-2 │ X settings
+  #└─────┴────────────
    if [[ `cat /proc/version`  =~ "microsoft" ]]; then
+     # In WSL2
      export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0
      #export DISPLAY=:0
      export LIBGL_ALWAYS_INDIRECT=1
+   else
+     # Real linux
+     export DISPLAY=:0
+     export LIBGL_ALWAYS_INDIRECT=0
    fi
 
   #│-v-2 │ Behavior
@@ -22,16 +42,19 @@
     #└─────┴───────────────────
       # vi input mode for the command line
       set -o vi
+      shopt -s dotglob
 
       # default editors
-      export EDITOR="nvim"
-      export VISUAL="nvim"
+      if  ! `which eselect &>/dev/null`; then
+        export EDITOR="nvim"
+        export VISUAL="nvim"
+      fi
 
     #│-v-3 │ Tools
     #└─┬───┴─┬─────
       #│-v-4 │ Setup
       #└─────┴───────
-        source ~/code/git-subrepo/.rc
+        source ~/code/from_others/git-subrepo/.rc
 
       #│-v-4 │ Settings
       #└─────┴──────────
