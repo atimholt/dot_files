@@ -253,19 +253,23 @@
         If ($Return) {$Bytes.ToString()}
       }
 
-      function ll
+      function ll()
       {
         gci $args                                           `
-        | Format-Table -AutoSize                            `
-          Mode,                                             `
+        | Format-Table                                      `
+          -AutoSize                                         `
           @{                                                `
-            Name='LastWriteTime';                           `
+            Name='Mode   ';                                 `
+            Expression={$_.Mode}                            `
+          },                                                `
+          @{                                                `
+            Name='Last Write Time    ';                     `
             Expression={                                    `
               $_.LastWriteTime.ToString('yyyy-MM-dd HH:mm') `
             }                                               `
           },                                                `
           @{                                                `
-            Name='Size';                                    `
+            Name='Size      ';                              `
             Expression={                                    `
               Format-ByteSize($_.Length)                    `
             }                                               `
