@@ -17,8 +17,18 @@
 #│ ▼1 │ Set-Up
 #└─┬──┴─┬──────
   #│ ▼2 │ Prompt Options
-  #└────┴────────────────
-    Set-PSReadlineOption -EditMode Vi
+  #└─┬──┴─┬──────────────
+    #│ ▼3 │ Various
+    #└────┴─────────
+      Set-PSReadlineOption -EditMode Vi
+
+    #│ ▼3 │ posh-git
+    #└────┴──────────
+      # NEVER install posh-git with chocolatey! It's fundamentally broken, and
+      # the posh-git devs see absolutely nothing wrong with this.
+      # Instead, use:
+      # PowerShellGet\Install-Module posh-git -Scope AllUsers -AllowPrerelease -Force
+      Import-Module posh-git
 
   #│ ▼2 │ Code Page-ness
   #└────┴────────────────
