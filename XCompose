@@ -5,6 +5,10 @@
 # To make this work (as per
 # http://forums.mate-desktop.org/viewtopic.php?f=2&t=135 ):
 # Put "GTK_IM_MODULE=xim" in /etc/environment
+#
+# Or maybe just `setxkbmap -option compose:ralt`? Does it need to be in ~/.xinitrc?
+# I guess I need this line, too:
+include "%L" # include the default mappings
 
 # Punctuation
 #-v-
