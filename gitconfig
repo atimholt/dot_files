@@ -1,15 +1,14 @@
 [user]
 	name  = Tim Holt
 	email = atimholt@gmail.com
-[push]
-	default = simple
 [core]
 	autocrlf = false
 	editor = "nvim"
 	excludesfile = ~/.gitignore_global
-;[diff]
-	;tool = "nvim -d"
-;[difftool]
+[push]
+	default = simple
+[pull]
+	rebase = false
 
 [diff]
 	tool = vimdiff
