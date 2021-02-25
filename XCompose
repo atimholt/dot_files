@@ -28,6 +28,11 @@ include "%L" # include the default mappings
 <Multi_key> <quotedbl> <comma> 		: "“"   U201c # LEFT DOUBLE QUOTATION MARK
 <Multi_key> <quotedbl> <period> 	: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
 
+<Multi_key> <apostrophe> <Right> 	: "‘"   U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <Left> 	: "’"   U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <quotedbl> <Right> 		: "“"   U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <Left> 		: "”"   U201d # RIGHT DOUBLE QUOTATION MARK
+
 # Dashes
 <Multi_key> <minus> <minus> <period> 	: "–"   U2013 # EN DASH
 <Multi_key> <minus> <n> 		: "–"   U2013 # EN DASH
@@ -39,6 +44,10 @@ include "%L" # include the default mappings
 <Multi_key> <o> <r> 			: "®"   registered # REGISTERED SIGN
 <Multi_key> <r> <o> 			: "®"   registered # REGISTERED SIGN
 <Multi_key> <t> <m> 		 	: "™"   U2122 # TRADE MARK SIGN
+
+# Brackets and paired characters
+<Multi_key> <braceleft> <Down> 		: "︷"   UFE37 # PRESENTATION FORM FOR VERTICAL LEFT CURLY BRACKET
+<Multi_key> <braceright> <Up> 		: "︸"   UFE38 # PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET
 #-^-
 
 # Math
