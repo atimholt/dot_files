@@ -50,6 +50,12 @@ include "%L" # include the default mappings
 <Multi_key> <braceright> <Up> 		: "︸"   UFE38 # PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET
 #-^-
 
+# Dunno
+#-v-
+# See: https://tedclancy.wordpress.com/2015/06/03/which-unicode-character-should-represent-the-english-apostrophe-and-why-the-unicode-committee-is-very-wrong/
+<Multi_key> <apostrophe> <apostrophe> 	: "ʼ"   U02BC # MODIFIER LETTER APOSTROPHE
+#-^-
+
 # Math
 #-v-
 <Multi_key> <o> <o> 			: "°"   degree # DEGREE SIGN
