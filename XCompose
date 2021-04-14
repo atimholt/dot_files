@@ -84,6 +84,14 @@ include "%L" # include the default mappings
 <Multi_key> <3> <u> 			: "↋"   turned digit three # TURNED DIGIT THREE
 #-^-
 
+# Mathematically useful
+#-v-
+<Multi_key> <asterisk> <p>            : "π"   U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <p> <i>                   : "π"   U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <asterisk> <t>            : "τ"   U03C4    # GREEK SMALL LETTER TAU
+<Multi_key> <t> <a> <u>               : "τ"   U03C4    # GREEK SMALL LETTER TAU
+#-^-
+
 # Symbols
 #-v-
 <Multi_key> <less> <minus> 		: "←" U2190 # LEFTWARDS ARROW
