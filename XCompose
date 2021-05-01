@@ -59,6 +59,12 @@ include "%L" # include the default mappings
 <Multi_key> <braceright> <Up> 		: "︸"   UFE38 # PRESENTATION FORM FOR VERTICAL RIGHT CURLY BRACKET
 #-^-
 
+# Dunno
+#-v-
+# See: https://tedclancy.wordpress.com/2015/06/03/which-unicode-character-should-represent-the-english-apostrophe-and-why-the-unicode-committee-is-very-wrong/
+<Multi_key> <apostrophe> <apostrophe> 	: "ʼ"   U02BC # MODIFIER LETTER APOSTROPHE
+#-^-
+
 # Math
 #-v-
 <Multi_key> <o> <o> 			: "°"   degree # DEGREE SIGN
@@ -85,6 +91,14 @@ include "%L" # include the default mappings
 
 <Multi_key> <2> <u> 			: "↊"   turned digit two # TURNED DIGIT TWO
 <Multi_key> <3> <u> 			: "↋"   turned digit three # TURNED DIGIT THREE
+#-^-
+
+# Mathematically useful
+#-v-
+<Multi_key> <asterisk> <p>            : "π"   U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <p> <i>                   : "π"   U03C0    # GREEK SMALL LETTER PI
+<Multi_key> <asterisk> <t>            : "τ"   U03C4    # GREEK SMALL LETTER TAU
+<Multi_key> <t> <a> <u>               : "τ"   U03C4    # GREEK SMALL LETTER TAU
 #-^-
 
 # Symbols
