@@ -1,12 +1,21 @@
 # Tim Holt’s custom compose sequences.
 # Default is at /usr/share/X11/locale/en_US.UTF-8/Compose
 # Go there for proper syntax in this file.
-#
+
 # To make this work (as per
 # http://forums.mate-desktop.org/viewtopic.php?f=2&t=135 ):
 # Put "GTK_IM_MODULE=xim" in /etc/environment
 #
 # Or maybe just `setxkbmap -option compose:ralt`? Does it need to be in ~/.xinitrc?
+#
+# NOTE: hot-swapping keyboards seems to deactivate the compose key—at least,
+# that's my current guess. I've found it useful to place this in a script on the
+# path (I just used /usr/local/bin/recompose, but ~./local/bin would probably
+# be better. Eh.
+#
+# #!/usr/bin/env sh
+# setxkbmap -option compose:ralt
+
 # I guess I need this line, too:
 include "%L" # include the default mappings
 
